@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/audio/UI/error_002.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/audio/ui/error_002.ogg" type="AudioStream" id=1]
 [ext_resource path="res://src/UI/Audio/ConnectAudio/UiConnectAudioToBlocked.tscn" type="PackedScene" id=3]
 
 [node name="UiErrorSfx" type="AudioStreamPlayer"]

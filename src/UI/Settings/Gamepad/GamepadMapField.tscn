@@ -3,7 +3,7 @@
 [ext_resource path="res://src/UI/Settings/Gamepad/GamepadMapButton.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Settings/Gamepad/GamepadMapField.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/Audio/Positive/UiItemSelectedSfx.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/UI/icons/input_icons_atlas_texture.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/icons/input_icons_atlas_texture.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
