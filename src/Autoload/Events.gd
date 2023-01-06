@@ -49,6 +49,7 @@ signal overlay_hidden
 
 # player
 signal player_max_health_changed(value)
+signal player_moved(player)
 
 # Required field unmapped
 signal required_field_unmapped_displayed(unmapped_fields)
