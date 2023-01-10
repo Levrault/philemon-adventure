@@ -2,7 +2,7 @@ extends Actor
 class_name Player
 
 enum CollisionType {
-	STANDING, DUCKING
+	STANDING, DUCKING, LADDER
 }
 
 const FLOOR_NORMAL := Vector2.UP
@@ -23,7 +23,6 @@ var flag := {
 
 onready var state_machine: StateMachine = $StateMachine
 onready var collider: CollisionShape2D = $CollisionShape2D
-onready var duck_collider: CollisionShape2D = $DuckCollisionShape2D
 onready var momentum := $Momentum
 onready var stats := $Stats
 onready var hitbox: Hitbox = $Hitbox as Hitbox
@@ -34,7 +33,6 @@ onready var world_detector := $WorldDetector
 
 func _ready() -> void:
 	skin = get_node("Skin")
-	switch_collision(CollisionType.STANDING)
 
 
 func connect_camera(camera: Camera2D) -> void:
@@ -51,20 +49,9 @@ func flip(direction: float) -> void:
 
 func set_is_active(value: bool) -> void:
 	is_active = value
-	if not collider:
-		return
-	collider.set_deferred("disabled", not value)
+	collider.set_deffered("disabled", true)
 
 
 func set_is_handling_input(value: bool) -> void:
 	state_machine.set_process_unhandled_input(value)
 	is_handling_input = value
-
-
-func switch_collision(type: int) -> void:
-	if type == CollisionType.DUCKING:
-		duck_collider.disabled = false
-		collider.disabled = true
-		return
-	duck_collider.disabled = true
-	collider.disabled = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -17,10 +17,8 @@
 [ext_resource path="res://assets/audio/impact/sfx_sounds_impact1.wav" type="AudioStream" id=15]
 [ext_resource path="res://src/Player/Momentum.gd" type="Script" id=16]
 [ext_resource path="res://assets/audio/jingles/jingles_PIZZI07.ogg" type="AudioStream" id=17]
-[ext_resource path="res://src/Player/States/Move/Duck.gd" type="Script" id=18]
 [ext_resource path="res://src/Player/States/Spawn.gd" type="Script" id=19]
 [ext_resource path="res://src/Player/Muzzle.gd" type="Script" id=20]
-[ext_resource path="res://src/Player/States/Move/Slide.gd" type="Script" id=21]
 [ext_resource path="res://src/Player/States/Climbing.gd" type="Script" id=22]
 [ext_resource path="res://src/Player/DebugPlayerInfo.gd" type="Script" id=23]
 [ext_resource path="res://assets/theme/minecraftia_8.tres" type="DynamicFont" id=24]
@@ -31,7 +29,7 @@
 extents = Vector2( 7, 14.5 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 7, 12 )
+extents = Vector2( 8, 15 )
 
 [sub_resource type="RayShape2D" id=15]
 length = 1.0
@@ -48,13 +46,8 @@ collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -14.5 )
+position = Vector2( 0, -14.5 )
 shape = SubResource( 14 )
-
-[node name="DuckCollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -12 )
-shape = SubResource( 18 )
-disabled = true
 
 [node name="Skin" parent="." instance=ExtResource( 1 )]
 
@@ -74,11 +67,12 @@ script = ExtResource( 16 )
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2( 1, -14.5 )
 collision_layer = 0
-collision_mask = 32
+collision_mask = 16
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource( 14 )
+position = Vector2( -1, -0.5 )
+shape = SubResource( 18 )
 
 [node name="MovingPlatformDetector" type="Area2D" parent="."]
 position = Vector2( 0, 1 )
@@ -97,7 +91,7 @@ collision_mask = 32
 script = ExtResource( 25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LadderOneWayPlatformDetector"]
-position = Vector2( 1, 1.5 )
+position = Vector2( 0, 1.5 )
 shape = SubResource( 17 )
 
 [node name="WorldDetector" type="Area2D" parent="."]
@@ -121,26 +115,12 @@ script = ExtResource( 3 )
 [node name="Idle" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 8 )
 
-[node name="Duck" type="Node2D" parent="StateMachine/Move/Idle"]
-script = ExtResource( 18 )
-
 [node name="JumpInputBuffering" type="Timer" parent="StateMachine/Move/Idle"]
 wait_time = 0.15
 one_shot = true
 
 [node name="Run" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 5 )
-
-[node name="Slide" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 21 )
-
-[node name="Timer" type="Timer" parent="StateMachine/Move/Slide"]
-wait_time = 0.25
-one_shot = true
-
-[node name="Cooldown" type="Timer" parent="StateMachine/Move/Slide"]
-wait_time = 0.5
-one_shot = true
 
 [node name="Air" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 7 )

@@ -53,10 +53,7 @@ func unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("jump"):
 			_state_machine.transition_to("Move/Air", {impulse = true})
 			return
-		if event.is_action_pressed("duck"):
-			_state_machine.transition_to("Move/Idle/Duck")
-			return
-			
+
 	if owner.flag.ladder and not owner.flag.ladder_one_way_platform:
 		if event.is_action_pressed("move_up"):
 			_state_machine.transition_to("Climbing")

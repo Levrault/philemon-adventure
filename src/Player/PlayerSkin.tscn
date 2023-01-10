@@ -184,7 +184,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=11]
 resource_name = "shoot"
-length = 0.4
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -192,10 +192,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 17, 18, 19, 20 ]
+"values": [ 20, 19, 18, 17 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -253,6 +253,8 @@ anims/run_shoot = SubResource( 10 )
 anims/shoot = SubResource( 11 )
 anims/slide = SubResource( 12 )
 anims/spin = SubResource( 13 )
+next/run_shoot = "run"
+next/shoot = "idle"
 __meta__ = {
 "_editor_description_": ""
 }

@@ -1,8 +1,8 @@
 extends State
 
-const FRAME_BUFFERING := 1
+const FRAME_BUFFERING := 2
 
-export var velocity := Vector2(0, 75)
+export var velocity := Vector2(0, 55)
 var frame := 0
 
 
