@@ -56,7 +56,7 @@ func physics_process(delta: float) -> void:
 	# Landing
 	if owner.is_on_floor():
 		owner.is_snapped_to_floor = true
-		var target_state := "Move/Idle" if _parent.get_move_direction().x == 0 else "Move/Run"
+		var target_state := "Move/Idle" if _parent.get_horizontal_move_direction().x == 0 else "Move/Run"
 		_state_machine.transition_to(target_state, {contact = true})
 
 

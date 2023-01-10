@@ -1,1 +1,5 @@
+/.vscode
+.import/
+builds/
+i18n/*.translation
 .import

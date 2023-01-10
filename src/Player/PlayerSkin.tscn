@@ -18,6 +18,23 @@ tracks/0/keys = {
 "values": [ 26 ]
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "climbing"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( -2, 1, -2, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
 [sub_resource type="Animation" id=14]
 resource_name = "duck"
 length = 0.001
@@ -132,23 +149,6 @@ tracks/0/keys = {
 "values": [ 21 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "ladder"
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( -2, 1, -2, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
 [sub_resource type="Animation" id=9]
 resource_name = "run"
 length = 0.6
@@ -240,6 +240,7 @@ frame = 26
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/RESET = SubResource( 1 )
+anims/climbing = SubResource( 8 )
 anims/duck = SubResource( 14 )
 anims/duck_shoot = SubResource( 3 )
 anims/duck_transition = SubResource( 2 )
@@ -247,7 +248,6 @@ anims/fall = SubResource( 4 )
 anims/hurt = SubResource( 5 )
 anims/idle = SubResource( 6 )
 anims/jump = SubResource( 7 )
-anims/ladder = SubResource( 8 )
 anims/run = SubResource( 9 )
 anims/run_shoot = SubResource( 10 )
 anims/shoot = SubResource( 11 )

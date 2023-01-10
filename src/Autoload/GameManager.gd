@@ -1,5 +1,8 @@
 extends Node
 
 const LAYER = {
-	"DAMAGE_SOURCE_LAYER" : 7
+	"WORLD": 0,
+	"MOVING_PLATFORM" : 3,
+	"DAMAGE_SOURCE_LAYER" : 4,
+	"LADDER_ONE_WAY_PLATFORM_LAYER" : 5
 }

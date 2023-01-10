@@ -12,7 +12,13 @@ var max_speed := max_speed_default
 var velocity := Vector2.ZERO
 
 
-static func get_move_direction() -> Vector2:
+static func get_vertical_move_direction() -> Vector2:
+	return Vector2(
+		0, Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	)
+
+
+static func get_horizontal_move_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), 1.0
 	)
@@ -50,10 +56,20 @@ func unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("duck"):
 			_state_machine.transition_to("Move/Idle/Duck")
 			return
+			
+	if owner.flag.ladder and not owner.flag.ladder_one_way_platform:
+		if event.is_action_pressed("move_up"):
+			_state_machine.transition_to("Climbing")
+			return
+	
+	if owner.flag.ladder_one_way_platform:
+		if event.is_action_pressed("move_down"):
+			_state_machine.transition_to("Climbing", { climb_from_top = true })
+			return
 
 
 func physics_process(delta: float) -> void:
-	var direction := get_move_direction()
+	var direction := get_horizontal_move_direction()
 
 	if not owner.is_handling_input:
 		direction.x = 0
