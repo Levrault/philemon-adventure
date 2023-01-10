@@ -8,12 +8,21 @@ signal damage_source_enabled
 signal damage_source_disabled
 
 var current_anim := "RESET"
+var default_playback_speed := 1.0
 
 onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
 	anim.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
+	default_playback_speed = $AnimationPlayer.playback_speed
+
+func freeze() -> void:
+	anim.playback_speed = 0.0
+
+
+func unfreeze() -> void:
+	anim.playback_speed = default_playback_speed
 
 
 func play(anim_name: String) -> void:

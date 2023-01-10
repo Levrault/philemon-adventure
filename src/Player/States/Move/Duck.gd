@@ -24,10 +24,12 @@ func physics_process(delta: float) -> void:
 func enter(msg: Dictionary = {}) -> void:
 	_parent.enter(msg)
 	owner.skin.play("duck_transition")
+	owner.switch_collision(Player.CollisionType.DUCKING)
 
 
 func exit() -> void:
 	_parent.exit()
+	owner.switch_collision(Player.CollisionType.STANDING)
 
 
 func _on_Skin_animation_finished(anim_name: String) -> void:

@@ -2,9 +2,9 @@ extends State
 
 signal jumped
 
-export var acceleration_x := 5000.0
-export var min_jump_impulse := 250.0
-export var jump_impulse := 900.0
+export var acceleration_x := 1000.0
+export var min_jump_impulse := 200.0
+export var jump_impulse := 275.0
 export var max_jump_count := 1
 
 var _jump_count := 1

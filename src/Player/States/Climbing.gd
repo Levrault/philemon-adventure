@@ -25,6 +25,11 @@ func physics_process(delta: float) -> void:
 	
 	var direction := Move.get_vertical_move_direction()
 	owner.move_and_collide(velocity * direction * delta)
+	
+	if direction.y == 0:
+		owner.skin.freeze()
+	else:
+		owner.skin.unfreeze()
 
 
 func enter(msg: Dictionary = {}) -> void:

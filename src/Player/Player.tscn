@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -28,7 +28,10 @@
 [ext_resource path="res://src/Player/MovingPlatformDetector.gd" type="Script" id=26]
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 7.5, 14.5 )
+extents = Vector2( 7, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 7, 12 )
 
 [sub_resource type="RayShape2D" id=15]
 length = 1.0
@@ -47,6 +50,11 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, -14.5 )
 shape = SubResource( 14 )
+
+[node name="DuckCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, -12 )
+shape = SubResource( 18 )
+disabled = true
 
 [node name="Skin" parent="." instance=ExtResource( 1 )]
 

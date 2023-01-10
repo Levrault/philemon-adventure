@@ -14,7 +14,7 @@ var velocity := Vector2.ZERO
 
 static func get_vertical_move_direction() -> Vector2:
 	return Vector2(
-		0, Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+		1.0, Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	)
 
 

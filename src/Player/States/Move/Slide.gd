@@ -23,6 +23,7 @@ func physics_process(delta: float) -> void:
 func enter(msg: Dictionary = {}) -> void:
 	owner.skin.play("slide")
 	timer.connect("timeout", self, "_on_Timer_timeout")
+	owner.switch_collision(Player.CollisionType.DUCKING)
 
 	if "max_force" in msg:
 		force = max_force_default
@@ -35,6 +36,7 @@ func exit() -> void:
 	timer.disconnect("timeout", self, "_on_Timer_timeout")
 	force = force_default
 	timer.wait_time = min_wait_time
+	owner.switch_collision(Player.CollisionType.STANDING)
 
 
 func _on_Timer_timeout() -> void:
