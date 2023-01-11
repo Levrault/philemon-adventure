@@ -17,11 +17,12 @@
 [ext_resource path="res://assets/audio/impact/sfx_sounds_impact1.wav" type="AudioStream" id=15]
 [ext_resource path="res://src/Player/Momentum.gd" type="Script" id=16]
 [ext_resource path="res://assets/audio/jingles/jingles_PIZZI07.ogg" type="AudioStream" id=17]
+[ext_resource path="res://assets/theme/Debug.tres" type="Theme" id=18]
 [ext_resource path="res://src/Player/States/Spawn.gd" type="Script" id=19]
-[ext_resource path="res://src/Player/Muzzle.gd" type="Script" id=20]
+[ext_resource path="res://src/Commons/Combat/Muzzle.gd" type="Script" id=20]
+[ext_resource path="res://src/Resources/Projectiles/beam.tres" type="Resource" id=21]
 [ext_resource path="res://src/Player/States/Climbing.gd" type="Script" id=22]
 [ext_resource path="res://src/Player/DebugPlayerInfo.gd" type="Script" id=23]
-[ext_resource path="res://assets/theme/minecraftia_8.tres" type="DynamicFont" id=24]
 [ext_resource path="res://src/Player/LadderOneWayPlatformDetector.gd" type="Script" id=25]
 [ext_resource path="res://src/Player/MovingPlatformDetector.gd" type="Script" id=26]
 
@@ -37,13 +38,11 @@ length = 1.0
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 6, 1.5 )
 
-[sub_resource type="Theme" id=16]
-Label/fonts/font = ExtResource( 24 )
-
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 3
 collision_mask = 2
 script = ExtResource( 4 )
+projectile_resource = ExtResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -14.5 )
@@ -54,6 +53,7 @@ shape = SubResource( 14 )
 [node name="Muzzle" type="Position2D" parent="Skin"]
 position = Vector2( 19, -17 )
 script = ExtResource( 20 )
+projectile_data = ExtResource( 21 )
 
 [node name="Stats" parent="." instance=ExtResource( 11 )]
 max_health = 2.0
@@ -62,6 +62,7 @@ max_health = 2.0
 script = ExtResource( 16 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 9 )]
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -15 )
@@ -117,6 +118,10 @@ one_shot = true
 [node name="Run" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 5 )
 
+[node name="TransitionInterval" type="Timer" parent="StateMachine/Move/Run"]
+wait_time = 0.5
+one_shot = true
+
 [node name="Air" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 7 )
 
@@ -137,6 +142,7 @@ script = ExtResource( 6 )
 
 [node name="Impact" parent="StateMachine/Move/Hurt" instance=ExtResource( 12 )]
 stream = ExtResource( 15 )
+max_pitch_scale = 1.1
 
 [node name="Die" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 10 )
@@ -155,7 +161,7 @@ script = ExtResource( 19 )
 [node name="DebugPlayerInfo" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 16 )
+theme = ExtResource( 18 )
 script = ExtResource( 23 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DebugPlayerInfo"]
@@ -210,5 +216,3 @@ margin_top = 105.0
 margin_right = 147.0
 margin_bottom = 116.0
 text = "is on floor"
-
-[editable path="Skin"]

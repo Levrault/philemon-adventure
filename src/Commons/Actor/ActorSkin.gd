@@ -4,6 +4,7 @@ class_name ActorSkin
 extends Node2D
 
 signal animation_finished(anim_name)
+signal attack_triggered
 signal damage_source_enabled
 signal damage_source_disabled
 
@@ -11,11 +12,18 @@ var current_anim := "RESET"
 var default_playback_speed := 1.0
 
 onready var anim: AnimationPlayer = $AnimationPlayer
+onready var sprite := $Sprite
 
 
 func _ready() -> void:
 	anim.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 	default_playback_speed = $AnimationPlayer.playback_speed
+
+
+func hit_flash() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite.get_material(), "shader_param/active", true, .15)
+	tween.tween_property(sprite.get_material(), "shader_param/active", false, .15)
 
 
 func freeze() -> void:
@@ -30,6 +38,10 @@ func play(anim_name: String) -> void:
 	assert(anim_name in anim.get_animation_list())
 	current_anim = anim_name
 	anim.play(anim_name)
+
+
+func stop() -> void:
+	anim.stop()
 
 
 func queue(animations: Array) -> void:

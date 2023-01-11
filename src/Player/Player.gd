@@ -1,3 +1,4 @@
+tool
 extends Actor
 class_name Player
 
@@ -7,6 +8,8 @@ enum CollisionType {
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP := Vector2(0, 10)
+
+export(Resource) var projectile_resource
 
 var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
@@ -21,7 +24,6 @@ var flag := {
 	"moving_platform": false
 }
 
-onready var state_machine: StateMachine = $StateMachine
 onready var collider: CollisionShape2D = $CollisionShape2D
 onready var momentum := $Momentum
 onready var hitbox: Hitbox = $Hitbox as Hitbox
@@ -31,7 +33,6 @@ onready var visibility_notified := $VisibilityNotifier2D
 
 
 func _ready() -> void:
-	skin = get_node("Skin")
 	spawn_position = global_position
 
 
@@ -39,16 +40,9 @@ func connect_camera(camera: Camera2D) -> void:
 	$RemoteTransform2D.remote_path = camera.get_path()
 
 
-func flip(direction: float) -> void:
-	if direction == 0:
-		return
-	# warning-ignore:narrowing_conversion
-	look_direction = sign(direction)
-	skin.scale.x = look_direction
-
-
 func take_damage(source: Hit) -> void:
 	.take_damage(source)
+	skin.hit_flash()
 	if stats.health > 0 and not source.is_instakill:
 		state_machine.transition_to("Move/Hurt", {impulse = true})
 		return
@@ -60,6 +54,7 @@ func set_is_active(value: bool) -> void:
 	if not collider:
 		return
 	collider.set_deferred("disabled", not value)
+	hitbox.set_is_active(value)
 
 
 func set_is_handling_input(value: bool) -> void:
