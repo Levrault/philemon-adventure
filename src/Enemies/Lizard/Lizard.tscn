@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Enemies/Lizard/LizardSkin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Enemies/Lizard/Lizard.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Lizard" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 0, -10 )
+shape = SubResource( 1 )
+
+[node name="Skin" parent="." index="1" instance=ExtResource( 1 )]
+position = Vector2( 0, -16 )
+
+[node name="Stats" parent="." index="2"]
+max_health = 5.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, -10 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="DamageSource" index="0"]
+position = Vector2( 0, -10 )
+shape = SubResource( 2 )

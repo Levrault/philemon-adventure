@@ -17,6 +17,7 @@ func _ready() -> void:
 	anim.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 	default_playback_speed = $AnimationPlayer.playback_speed
 
+
 func freeze() -> void:
 	anim.playback_speed = 0.0
 
@@ -29,6 +30,15 @@ func play(anim_name: String) -> void:
 	assert(anim_name in anim.get_animation_list())
 	current_anim = anim_name
 	anim.play(anim_name)
+
+
+func queue(animations: Array) -> void:
+	for anim_name in animations:
+		assert(anim_name in anim.get_animation_list())
+	
+	anim.play(animations.pop_front())
+	for anim_name in animations:
+		anim.queue(anim_name)
 
 
 # Gate to let the owner and the skin node communicate

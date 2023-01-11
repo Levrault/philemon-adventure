@@ -3,15 +3,9 @@ extends State
 
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
-		owner.skin.connect("animation_finished", self, "_on_Skin_animation_finished")
 		owner.skin.play("run_shoot")
 		owner.muzzle.shoot()
 		return
-	
-	if event.is_action_pressed("slide") and _parent.get_node("Slide").cooldown.is_stopped():
-		_state_machine.transition_to("Move/Slide", { max_force = true })
-		return
-	
 	_parent.unhandled_input(event)
 
 
@@ -32,9 +26,3 @@ func enter(msg: Dictionary = {}) -> void:
 
 func exit() -> void:
 	_parent.exit()
-
-
-func _on_Skin_animation_finished(anim_name: String) -> void:
-	owner.skin.disconnect("animation_finished", self, "_on_Skin_animation_finished")
-	owner.skin.play("run")
-	

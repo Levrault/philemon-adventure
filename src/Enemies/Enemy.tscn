@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Enemies/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://src/Commons/Combat/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Commons/Actor/Stats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=4]
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, -9.5 )
+
+[node name="Stats" parent="." instance=ExtResource( 3 )]
+max_health = 2.0
+
+[node name="Hitbox" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -0.5, -10 )
+
+[node name="DamageSource" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSource"]

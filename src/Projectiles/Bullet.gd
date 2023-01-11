@@ -1,6 +1,8 @@
 extends Node2D
 
-var velocity := 200
+const BulletExplosion:PackedScene = preload("res://src/VFX/BulletExplosion.tscn")
+
+var velocity := 300
 var direction := 1
 
 onready var sprite := $Sprite
@@ -20,5 +22,5 @@ func _process(delta: float) -> void:
 
 
 func _on_Body_entered(body) -> void:
-	set_process(false)
-	animation_player.play("feedback")
+	GameManager.add_child_to_root(BulletExplosion.instance(), global_position)
+	call_deferred("queue_free")

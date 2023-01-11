@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lizard-shoot.png-7133f33657e60c9eea30c45220ee4b74.stex"
+path="res://.import/bullet-feedback.png-842a54eaceb82f0528b2383b304a01dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/lizard-shoot.png"
-dest_files=[ "res://.import/lizard-shoot.png-7133f33657e60c9eea30c45220ee4b74.stex" ]
+source_file="res://assets/vfx/bullet-feedback.png"
+dest_files=[ "res://.import/bullet-feedback.png-842a54eaceb82f0528b2383b304a01dc.stex" ]
 
 [params]
 

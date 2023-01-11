@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/characters/player/player-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://src/Commons/Actor/ActorSkin.tscn" type="PackedScene" id=2]
@@ -33,6 +33,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( -2, 1, -2, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "die"
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -184,7 +201,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=11]
 resource_name = "shoot"
-length = 0.4
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -192,10 +209,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 17, 18, 19, 20 ]
+"values": [ 20, 19, 18, 17 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -241,6 +258,7 @@ frame = 26
 [node name="AnimationPlayer" parent="." index="1"]
 anims/RESET = SubResource( 1 )
 anims/climbing = SubResource( 8 )
+anims/die = SubResource( 15 )
 anims/duck = SubResource( 14 )
 anims/duck_shoot = SubResource( 3 )
 anims/duck_transition = SubResource( 2 )
@@ -253,6 +271,8 @@ anims/run_shoot = SubResource( 10 )
 anims/shoot = SubResource( 11 )
 anims/slide = SubResource( 12 )
 anims/spin = SubResource( 13 )
+next/run_shoot = "run"
+next/shoot = "idle"
 __meta__ = {
 "_editor_description_": ""
 }

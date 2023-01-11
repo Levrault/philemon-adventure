@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/environment/back.png" type="Texture" id=6]
 [ext_resource path="res://assets/environment/far.png" type="Texture" id=7]
 [ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Enemies/Lizard/Lizard.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -79,6 +80,12 @@ tiles_y_multiplier = 3
 position = Vector2( 312, 40 )
 tiles_y_multiplier = 5
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Lizard" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 232, 0 )
+collision_layer = 1
+
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 offset = Vector2( 0, -10 )
 limit_left = -208
@@ -88,6 +95,6 @@ limit_bottom = 138
 limit_smoothed = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -112, 0 )
+position = Vector2( 176, 0 )
 
 [editable path="Props/Ladder"]
