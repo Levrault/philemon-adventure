@@ -9,3 +9,9 @@ var skin: Node2D = null
 var is_snapped_to_floor := false
 var stop_on_slope := true
 var hit_direction := 1.0
+
+onready var stats: Stats = $Stats as Stats
+
+
+func take_damage(source: Hit) -> void:
+	stats.take_damage(source)

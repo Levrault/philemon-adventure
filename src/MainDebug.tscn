@@ -84,6 +84,7 @@ tiles_y_multiplier = 5
 
 [node name="Lizard" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 232, 0 )
+collision_layer = 1
 
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 offset = Vector2( 0, -10 )

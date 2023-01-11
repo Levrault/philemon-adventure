@@ -13,7 +13,7 @@ var is_handling_input := true setget set_is_handling_input
 var is_on_moving_platform := false
 var initial_state_data := {}
 var life := 3
-var spawn_position := position
+var spawn_position := Vector2.ZERO
 var ladder_position := Vector2.ZERO
 var flag := {
 	"ladder": false,
@@ -24,15 +24,15 @@ var flag := {
 onready var state_machine: StateMachine = $StateMachine
 onready var collider: CollisionShape2D = $CollisionShape2D
 onready var momentum := $Momentum
-onready var stats := $Stats
 onready var hitbox: Hitbox = $Hitbox as Hitbox
 onready var muzzle := $Skin/Muzzle
-onready var muzzle_duck := $Skin/MuzzleDuck
 onready var world_detector := $WorldDetector
+onready var visibility_notified := $VisibilityNotifier2D
 
 
 func _ready() -> void:
 	skin = get_node("Skin")
+	spawn_position = global_position
 
 
 func connect_camera(camera: Camera2D) -> void:
@@ -47,9 +47,19 @@ func flip(direction: float) -> void:
 	skin.scale.x = look_direction
 
 
+func take_damage(source: Hit) -> void:
+	.take_damage(source)
+	if stats.health > 0 and not source.is_instakill:
+		state_machine.transition_to("Move/Hurt", {impulse = true})
+		return
+	state_machine.transition_to("Move/Die")
+
+
 func set_is_active(value: bool) -> void:
 	is_active = value
-	collider.set_deffered("disabled", true)
+	if not collider:
+		return
+	collider.set_deferred("disabled", not value)
 
 
 func set_is_handling_input(value: bool) -> void:

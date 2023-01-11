@@ -96,3 +96,11 @@ func enter(msg: Dictionary = {}) -> void:
 
 func exit() -> void:
 	$Air.disconnect("jumped", $Idle.jump_input_buffering, "start")
+
+
+func throwback(throwback_force: Vector2) -> void:
+	velocity.y = 0
+	var impulse := Vector2(throwback_force.x * owner.hit_direction, throwback_force.y)
+	velocity += calculate_velocity(
+		velocity, max_speed, impulse, Vector2.ZERO, 1.0, Vector2.UP
+	)
