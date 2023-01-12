@@ -10,6 +10,9 @@ func enter(msg: Dictionary = {}) -> void:
 	if not owner.skin.is_connected("animation_finished", self, "_on_Skin_animation_finished"):
 		owner.skin.connect("animation_finished", self, "_on_Skin_animation_finished")
 
+	if "spawn_position" in msg:
+		owner.position = owner.spawn_position
+
 
 func exit() -> void:
 	owner.is_active = true

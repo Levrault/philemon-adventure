@@ -51,6 +51,7 @@ static func calculate_velocity(
 func unhandled_input(event: InputEvent) -> void:
 	if owner.is_on_floor():
 		if event.is_action_pressed("jump"):
+			print_debug("jump from move")
 			_state_machine.transition_to("Move/Air", {impulse = true})
 			return
 

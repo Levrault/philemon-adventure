@@ -9,8 +9,9 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	
 	if event.is_action_pressed("debug_spawn"):
-		player.state_machine.transition_to("Spawn")
+		player.state_machine.transition_to("Spawn", { spawn_position = player.spawn_position })
 		
 	if event.is_action_pressed("debug_die"):
 		player.state_machine.transition_to("Die")

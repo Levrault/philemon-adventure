@@ -216,3 +216,9 @@ margin_top = 105.0
 margin_right = 147.0
 margin_bottom = 116.0
 text = "is on floor"
+
+[node name="LookDirection" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+margin_top = 120.0
+margin_right = 147.0
+margin_bottom = 131.0
+text = "is on floor"

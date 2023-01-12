@@ -54,17 +54,21 @@ func physics_process(delta: float) -> void:
 		owner.skin.play("jump")
 	
 	# Landing
-	if owner.is_on_floor():
-		owner.is_snapped_to_floor = true
-		var target_state := "Move/Idle" if _parent.get_horizontal_move_direction().x == 0 else "Move/Run"
-		_state_machine.transition_to(target_state, {contact = true})
+	if not owner.is_on_floor():
+		return
+	owner.is_snapped_to_floor = true
+	var target_state := "Move/Idle" if _parent.get_horizontal_move_direction().x == 0 else "Move/Run"
+	_state_machine.transition_to(target_state, {contact = true})
 
 
 func enter(msg: Dictionary = {}) -> void:
 	_parent.enter(msg)
 	_parent.acceleration.x = acceleration_x
 	owner.is_snapped_to_floor = false
-
+	
+	if "ladder" in msg:
+		_parent.velocity = Vector2.ZERO
+	
 	if "coyote_time" in msg:
 		_coyote_time.start()
 		return
@@ -93,7 +97,6 @@ func exit() -> void:
 
 
 func jump(force: float) -> void:
-	owner.skin.play("jump")
 	_parent.velocity.y = 0
 	_parent.velocity += calculate_jump_velocity(force)
 	_jump_count += 1

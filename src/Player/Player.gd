@@ -34,6 +34,7 @@ onready var visibility_notified := $VisibilityNotifier2D
 
 func _ready() -> void:
 	spawn_position = global_position
+	visibility_notified.connect("screen_exited", self, "_on_Screen_exited")
 
 
 func connect_camera(camera: Camera2D) -> void:
@@ -60,3 +61,8 @@ func set_is_active(value: bool) -> void:
 func set_is_handling_input(value: bool) -> void:
 	state_machine.set_process_unhandled_input(value)
 	is_handling_input = value
+
+
+func _on_Screen_exited() -> void:
+	if stats.health > 0:
+		state_machine.transition_to("Move/Die")

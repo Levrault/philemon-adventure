@@ -8,7 +8,7 @@ var frame := 0
 
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
-		_state_machine.transition_to("Move/Air", { impulse = true })
+		_state_machine.transition_to("Move/Air", { impulse = true, ladder = true })
 		return
 
 
@@ -25,7 +25,6 @@ func physics_process(delta: float) -> void:
 	
 	var direction := Move.get_vertical_move_direction()
 	owner.move_and_collide(velocity * direction * delta)
-	
 	if direction.y == 0:
 		owner.skin.freeze()
 	else:

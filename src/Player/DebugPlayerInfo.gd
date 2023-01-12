@@ -10,3 +10,4 @@ func _process(delta: float) -> void:
 	$VBoxContainer/VerticalMove.text = "Vertical %s" % Move.get_vertical_move_direction()
 	$VBoxContainer/HorizontalMove.text = "Horizontal %s" % Move.get_horizontal_move_direction()
 	$VBoxContainer/IsOnFloor.text = "IsOnFloor %s" % owner.is_on_floor()
+	$VBoxContainer/LookDirection.text = "LookDirection %s" % owner.look_direction
