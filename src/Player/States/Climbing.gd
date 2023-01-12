@@ -43,6 +43,7 @@ func enter(msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
+	owner.skin.unfreeze()
 	frame = -1
 	owner.set_collision_layer_bit(GameManager.LAYER.WORLD, true)
 	if owner.world_detector.is_connected("body_entered", self, "_on_Body_entered"):

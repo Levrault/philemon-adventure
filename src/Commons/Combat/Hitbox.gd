@@ -29,6 +29,7 @@ func set_collider_name(node_name: String) -> void:
 
 
 func _on_Area_entered(damage_source: Area2D) -> void:
+
 	var direction = 1
 	if damage_source.global_position.x > global_position.x:
 		direction = -1

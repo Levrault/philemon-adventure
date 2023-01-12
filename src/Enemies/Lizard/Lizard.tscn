@@ -1,25 +1,40 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Enemies/Lizard/LizardSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Enemies/Lizard/Lizard.gd" type="Script" id=3]
+[ext_resource path="res://src/Enemies/Lizard/States/Attack.gd" type="Script" id=4]
+[ext_resource path="res://src/Enemies/Lizard/States/Idle.gd" type="Script" id=5]
+[ext_resource path="res://src/Enemies/Lizard/Debug.gd" type="Script" id=6]
+[ext_resource path="res://assets/theme/Debug.tres" type="Theme" id=7]
+[ext_resource path="res://src/Commons/Combat/Muzzle.gd" type="Script" id=8]
+[ext_resource path="res://src/Resources/Projectiles/fireball.tres" type="Resource" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.5, 9.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 [node name="Lizard" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
+iteration_before_attack = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( 0, -10 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Skin" parent="." index="1" instance=ExtResource( 1 )]
 position = Vector2( 0, -16 )
 
+[node name="Muzzle" type="Position2D" parent="Skin" index="2"]
+position = Vector2( 18, 6 )
+script = ExtResource( 8 )
+projectile_data = ExtResource( 9 )
+
 [node name="Stats" parent="." index="2"]
 max_health = 5.0
+
+[node name="Hitbox" parent="." index="3"]
+collision_layer = 0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, -10 )
@@ -28,3 +43,31 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" parent="DamageSource" index="0"]
 position = Vector2( 0, -10 )
 shape = SubResource( 2 )
+
+[node name="StateMachine" parent="." index="5"]
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine" index="0"]
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Idle" index="0"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Attack" type="Node2D" parent="StateMachine" index="1"]
+script = ExtResource( 4 )
+projectile_resource = ExtResource( 9 )
+
+[node name="Debug" type="Control" parent="." index="6"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 7 )
+script = ExtResource( 6 )
+
+[node name="State" type="Label" parent="Debug" index="0"]
+margin_left = -20.0
+margin_top = -39.0
+margin_right = 20.0
+margin_bottom = -25.0
+text = "state:"
+align = 1

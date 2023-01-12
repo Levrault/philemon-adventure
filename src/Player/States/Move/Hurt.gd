@@ -43,5 +43,5 @@ func exit() -> void:
 	owner.hitbox.set_collision_mask_bit(GameManager.LAYER.DAMAGE_SOURCE_LAYER, true)
 	owner.is_handling_input = true
 	owner.is_snapped_to_floor = true
-	owner.stats.set_invulnerable_for_seconds(1)
+	owner.stats.set_invulnerable_for_seconds(.5)
 	_parent.velocity = Vector2.ZERO
