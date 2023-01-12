@@ -7,5 +7,6 @@
 script = ExtResource( 2 )
 damage = 1
 is_instakill = false
-scene = ExtResource( 1 )
 speed = 100.0
+cooldown = 0.0
+scene = ExtResource( 1 )
