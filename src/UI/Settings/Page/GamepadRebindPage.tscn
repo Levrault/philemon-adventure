@@ -7,7 +7,7 @@
 [ext_resource path="res://src/UI/Settings/Form/GamepadRebindForm.gd" type="Script" id=5]
 [ext_resource path="res://src/UI/Settings/Dialog/RequiredFieldUnmapped.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=8]
+[ext_resource path="res://assets/theme/main_menu.tres" type="Theme" id=8]
 
 [node name="GamepadRebindPage" instance=ExtResource( 1 )]
 theme = ExtResource( 8 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -23,8 +23,13 @@
 [ext_resource path="res://src/Resources/Projectiles/beam.tres" type="Resource" id=21]
 [ext_resource path="res://src/Player/States/Climbing.gd" type="Script" id=22]
 [ext_resource path="res://src/Player/DebugPlayerInfo.gd" type="Script" id=23]
+[ext_resource path="res://assets/theme/player_hud.tres" type="Theme" id=24]
 [ext_resource path="res://src/Player/LadderOneWayPlatformDetector.gd" type="Script" id=25]
 [ext_resource path="res://src/Player/MovingPlatformDetector.gd" type="Script" id=26]
+[ext_resource path="res://assets/theme/minecraftia_8.tres" type="DynamicFont" id=27]
+[ext_resource path="res://assets/characters/player/hud/heart.png" type="Texture" id=29]
+[ext_resource path="res://assets/characters/player/hud/heart_progress.png" type="Texture" id=30]
+[ext_resource path="res://src/Player/HUD/HealthBar.gd" type="Script" id=31]
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 7, 14.5 )
@@ -56,7 +61,7 @@ script = ExtResource( 20 )
 projectile_data = ExtResource( 21 )
 
 [node name="Stats" parent="." instance=ExtResource( 11 )]
-max_health = 2.0
+max_health = 99.0
 
 [node name="Momentum" type="Node2D" parent="."]
 script = ExtResource( 16 )
@@ -156,69 +161,122 @@ script = ExtResource( 22 )
 [node name="Spawn" type="Node2D" parent="StateMachine"]
 script = ExtResource( 19 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="DebugCanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="DebugPlayerInfo" type="Control" parent="CanvasLayer"]
+[node name="DebugPlayerInfo" type="Control" parent="DebugCanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 18 )
 script = ExtResource( 23 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DebugPlayerInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugCanvasLayer/DebugPlayerInfo"]
 margin_left = 5.0
 margin_top = 4.0
 margin_right = 152.0
 margin_bottom = 90.0
 
-[node name="State" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="State" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_right = 147.0
 margin_bottom = 11.0
 text = "State: Idle"
 
-[node name="FlagLadder" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="FlagLadder" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 15.0
 margin_right = 147.0
 margin_bottom = 26.0
 text = "Moving Platform: False"
 
-[node name="LadderOneWayPlatform" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="LadderOneWayPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 30.0
 margin_right = 147.0
 margin_bottom = 41.0
 text = "Ladder OneWayPlatform: False"
 
-[node name="LadderPosition" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="LadderPosition" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 45.0
 margin_right = 147.0
 margin_bottom = 56.0
 text = "Ladder Position: False"
 
-[node name="MovingPlatform" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="MovingPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 60.0
 margin_right = 147.0
 margin_bottom = 71.0
 text = "Ladder: False"
 
-[node name="VerticalMove" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="VerticalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 75.0
 margin_right = 147.0
 margin_bottom = 86.0
 text = "Vertical"
 
-[node name="HorizontalMove" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="HorizontalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 90.0
 margin_right = 147.0
 margin_bottom = 101.0
 text = "Horizontal"
 
-[node name="IsOnFloor" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="IsOnFloor" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 105.0
 margin_right = 147.0
 margin_bottom = 116.0
 text = "is on floor"
 
-[node name="LookDirection" type="Label" parent="CanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="LookDirection" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 120.0
 margin_right = 147.0
 margin_bottom = 131.0
 text = "is on floor"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 24 )
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="Energy" type="Label" parent="HUD/Control/MarginContainer/VBoxContainer"]
+margin_right = 36.0
+margin_bottom = 11.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 27 )
+text = "Energy"
+uppercase = true
+
+[node name="HealthBar" type="HBoxContainer" parent="HUD/Control/MarginContainer/VBoxContainer"]
+margin_top = 11.0
+margin_right = 36.0
+margin_bottom = 23.0
+script = ExtResource( 31 )
+
+[node name="TextureProgress" type="TextureProgress" parent="HUD/Control/MarginContainer/VBoxContainer/HealthBar"]
+margin_right = 9.0
+margin_bottom = 12.0
+max_value = 99.0
+value = 99.0
+rounded = true
+texture_over = ExtResource( 29 )
+texture_progress = ExtResource( 30 )
+fill_mode = 3
+
+[node name="Health" type="Label" parent="HUD/Control/MarginContainer/VBoxContainer/HealthBar"]
+margin_left = 13.0
+margin_right = 25.0
+margin_bottom = 11.0
+text = "99"

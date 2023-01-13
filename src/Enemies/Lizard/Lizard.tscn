@@ -31,7 +31,7 @@ script = ExtResource( 8 )
 projectile_data = ExtResource( 9 )
 
 [node name="Stats" parent="." index="2"]
-max_health = 5.0
+max_health = 50.0
 
 [node name="Hitbox" parent="." index="3"]
 collision_layer = 0

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
-damage = 1
+damage = 25
 is_instakill = false
 speed = 300.0
 cooldown = 0.25

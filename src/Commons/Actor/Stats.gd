@@ -11,7 +11,6 @@ signal damage_taken
 signal is_invulnerable(value)
 
 export var max_health := 1.0 setget set_max_health
-export var attack: int = 1
 
 var modifiers := {}
 var invulnerable := false
