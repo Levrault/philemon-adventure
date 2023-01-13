@@ -13,3 +13,6 @@ texture = ExtResource( 2 )
 stream = ExtResource( 3 )
 min_pitch_scale = 0.9
 max_pitch_scale = 0.9
+
+[node name="Label" parent="." index="6"]
+text = "fireball"

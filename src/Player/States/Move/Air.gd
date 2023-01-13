@@ -15,12 +15,18 @@ onready var _impulse_sfx := $Impulse
 onready var _bounce_sfx := $Bounce
 
 
+func _ready() -> void:
+	Events.connect("ability_unlocked", self, "_on_Ability_unlocked")
+	if GameManager.is_ability_upgrade_status_unlocked(GameManager.Ability.DOUBLE_JUMP):
+		max_jump_count = 2
+
+
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		emit_signal("jumped")
 		if _jump_count < max_jump_count:
 			_impulse_sfx.play_sound()
-			jump(jump_impulse / 2)
+			jump(jump_impulse - 75.0)
 
 # TODO: add particules
 #			if _jump_count > 1:
@@ -107,3 +113,9 @@ func calculate_jump_velocity(impulse: float = 0.0) -> Vector2:
 	return _parent.calculate_velocity(  # replace delta
 		_parent.velocity, _parent.max_speed, Vector2(0.0, impulse), Vector2.ZERO, 1.0, Vector2.UP
 	)
+
+
+func _on_Ability_unlocked(ability_type: int) -> void:
+	if ability_type != GameManager.Ability.DOUBLE_JUMP:
+		return
+	max_jump_count = 2

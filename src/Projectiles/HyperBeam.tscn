@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Projectiles/Beam.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/projectiles/hyperbeam.png" type="Texture" id=2]
+
+[node name="HyperBeam" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="Label" parent="." index="6"]
+margin_left = -27.0
+margin_right = 27.0
+text = "hyperbeam"

@@ -47,10 +47,6 @@ signal navigation_enabled
 signal overlay_displayed
 signal overlay_hidden
 
-# player
-signal player_max_health_changed(value)
-signal player_moved(player)
-
 # Required field unmapped
 signal required_field_unmapped_displayed(unmapped_fields)
 
@@ -59,3 +55,20 @@ signal save_notification_enabled
 
 # user
 signal user_has_changed_gamepad_bindind
+
+
+############
+#### Game ####
+############
+
+# ability
+signal ability_unlocked(ability_type)
+
+# beam
+signal beam_selected(beam_type)
+signal beam_unlocked(beam_type)
+
+# player
+signal player_max_health_changed(value)
+signal player_moved(player)
+
