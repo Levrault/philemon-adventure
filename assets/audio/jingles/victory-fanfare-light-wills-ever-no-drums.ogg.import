@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/victory-fanfare-light-wills-ever-no-drums.ogg-50328da5d2396e7233c76bd9dc8a790f.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/jingles/victory-fanfare-light-wills-ever-no-drums.ogg"
+dest_files=[ "res://.import/victory-fanfare-light-wills-ever-no-drums.ogg-50328da5d2396e7233c76bd9dc8a790f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

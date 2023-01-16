@@ -6,10 +6,10 @@ onready var transition_interval := $TransitionInterval
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("fire") and GameManager.is_beam_upgrade_status_unlocked(GameManager.BeamType.BEAM):
 		transition_interval.start()
 		owner.skin.play("run_shoot")
-		owner.muzzle.shoot(owner.projectile_resource)
+		owner.muzzle.shoot(owner.get_current_beam_resource())
 		return
 	_parent.unhandled_input(event)
 

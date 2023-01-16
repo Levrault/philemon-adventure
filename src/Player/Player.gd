@@ -2,14 +2,13 @@ tool
 extends Actor
 class_name Player
 
-enum CollisionType {
-	STANDING, DUCKING, LADDER
-}
-
 const FLOOR_NORMAL := Vector2.UP
 const SNAP := Vector2(0, 10)
 
-export(Resource) var projectile_resource
+export(Resource) var beam_resource
+export(Resource) var hyper_beam_resource
+export(Resource) var curved_beam_resource
+export(GameManager.BeamType) var current_beam_type := GameManager.BeamType.BEAM setget set_current_beam_type
 
 var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
@@ -58,9 +57,27 @@ func set_is_active(value: bool) -> void:
 	hitbox.set_is_active(value)
 
 
+func set_current_beam_type(value: int) -> void:
+	if value == current_beam_type:
+		return
+	current_beam_type = value
+	muzzle.reset_cooldown()
+	Events.emit_signal("beam_selected", value)
+
+
 func set_is_handling_input(value: bool) -> void:
 	state_machine.set_process_unhandled_input(value)
 	is_handling_input = value
+
+
+func get_current_beam_resource() -> Resource:
+	match(current_beam_type):
+		GameManager.BeamType.HYPERBEAM:
+			return hyper_beam_resource
+		GameManager.BeamType.CURVED_BEAM:
+			return curved_beam_resource
+		_:
+			return beam_resource
 
 
 func _on_Screen_exited() -> void:

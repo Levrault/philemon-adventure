@@ -4,8 +4,8 @@ onready var jump_input_buffering: Timer = $JumpInputBuffering
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
-		owner.muzzle.shoot(owner.projectile_resource)
+	if event.is_action_pressed("fire") and GameManager.is_beam_upgrade_status_unlocked(GameManager.BeamType.BEAM):
+		owner.muzzle.shoot(owner.get_current_beam_resource())
 		owner.skin.stop()
 		owner.skin.play("shoot")
 		return
