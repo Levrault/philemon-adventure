@@ -14,5 +14,5 @@ func take_damage(source: Hit) -> void:
 		skin.hit_flash()
 		return
 		
-	GameManager.add_child_to_root(Explosion.instance(), global_position)
+	Global.add_child_to_root(Explosion.instance(), global_position)
 	call_deferred("queue_free")

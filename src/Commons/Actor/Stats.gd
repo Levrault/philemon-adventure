@@ -16,6 +16,8 @@ var modifiers := {}
 var invulnerable := false
 var health := max_health
 
+onready var timer := $Timer
+
 
 func _ready() -> void:
 	health = max_health
@@ -81,7 +83,8 @@ func set_invulnerable_for_seconds(time: float) -> void:
 	invulnerable = true
 	emit_signal("is_invulnerable", true)
 
-	var timer := get_tree().create_timer(time)
+	timer.wait_time = time
+	timer.start()
 	yield(timer, "timeout")
 
 	invulnerable = false
