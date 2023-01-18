@@ -17,5 +17,5 @@ func _on_Body_entered(body: Node) -> void:
 	print_debug("Player has picked the %s" % get_name())
 	
 	GameManager.unlock_ability(type)
-	GameManager.add_child_to_root(PickFeedback.instance(), global_position)
+	Global.add_child_to_root(PickFeedback.instance(), global_position)
 	call_deferred("queue_free")

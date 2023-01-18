@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 
 func _on_Body_entered(body: Node) -> void:
 	var feedback := Feedback.instance()
-	GameManager.add_child_to_root(feedback, global_position)
+	Global.add_child_to_root(feedback, global_position)
 	print_debug("%s has hit %s" % [get_name(), body.get_name()])
 	feedback.play_impact_sfx(body)
 	call_deferred("queue_free")

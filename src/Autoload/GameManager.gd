@@ -29,9 +29,16 @@ var beam_keys := BeamType.keys()
 var ability_keys := Ability.keys()
 
 
-func add_child_to_root(instance: Node, global_position: Vector2) -> void:
-	get_tree().get_root().add_child(instance)
-	instance.global_position = global_position
+func _ready() -> void:
+	if OS.has_feature("debug"):
+		if ProjectSettings.get_setting("game/beam_unlocked"):
+			unlock_beam(BeamType.BEAM)
+		if ProjectSettings.get_setting("game/hyperbeam_unlocked"):
+			unlock_beam(BeamType.HYPERBEAM)
+		if ProjectSettings.get_setting("game/curvedbeam_unlocked"):
+			unlock_beam(BeamType.CURVED_BEAM)
+		if ProjectSettings.get_setting("game/double_jump_unlocked"):
+			unlock_ability(Ability.DOUBLE_JUMP)
 
 
 func is_beam_upgrade_status_unlocked(beam_type: int) -> bool:

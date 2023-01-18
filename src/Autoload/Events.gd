@@ -72,3 +72,8 @@ signal beam_unlocked(beam_type)
 signal player_max_health_changed(value)
 signal player_moved(player)
 
+# transition
+signal scene_fadeout_transition_displayed(type)
+signal scene_fadein_transition_displayed(type)
+signal scene_loading_started
+signal scene_loaded
