@@ -1,5 +1,5 @@
-extends TextureRect
 class_name AtlasIcon
+extends TextureRect
 
 enum Icon { DEFAULT, ALT }
 

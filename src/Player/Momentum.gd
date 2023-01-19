@@ -1,7 +1,7 @@
 # Slow down time with an ease out effect to set 'momentum' when something
 # great happen
-extends Node2D
 class_name Momentum
+extends Node2D
 
 export (float) var DURATION := 0.07
 export (float) var STRENGTH := 1.0

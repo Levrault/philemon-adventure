@@ -308,7 +308,6 @@ anims/shoot = SubResource( 11 )
 anims/slide = SubResource( 12 )
 anims/spin = SubResource( 13 )
 next/run_shoot = "run"
-next/shoot = "idle"
 __meta__ = {
 "_editor_description_": ""
 }

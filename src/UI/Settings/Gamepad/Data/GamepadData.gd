@@ -1,5 +1,5 @@
-extends TextureRect
 class_name GamepadData
+extends TextureRect
 
 var action := "" setget set_action
 

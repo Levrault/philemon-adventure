@@ -3,7 +3,6 @@ extends HBoxContainer
 const TRANSPARENCY := .5
 
 onready var beam := $Beam
-onready var hyperbeam := $HyperBeam
 onready var curvedbeam := $CurvedBeam
 
 

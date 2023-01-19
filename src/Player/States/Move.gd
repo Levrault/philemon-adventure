@@ -1,5 +1,5 @@
-extends State
 class_name Move
+extends State
 
 export var max_speed_default := Vector2(100.0, 325.00)
 export var acceleration_default := Vector2(10000, 900.0)

@@ -1,5 +1,5 @@
 extends DamageSourceResourceBase
-class_name ProjectileResource
+class_name ProjectileResourceBase
 
 export var speed: float = 200.0
 export var cooldown: float = 0.00
