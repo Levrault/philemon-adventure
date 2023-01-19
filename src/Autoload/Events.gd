@@ -47,6 +47,12 @@ signal navigation_enabled
 signal overlay_displayed
 signal overlay_hidden
 
+# profile
+signal erase_profile_dialog_displayed(for_profile, button)
+signal erase_profile_dialog_confirm_button_pressed
+signal new_profile_page_displayed(for_profile)
+signal new_profile_created(profile)
+
 # Required field unmapped
 signal required_field_unmapped_displayed(unmapped_fields)
 

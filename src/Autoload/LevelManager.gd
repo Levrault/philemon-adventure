@@ -3,6 +3,7 @@ extends Node
 signal scene_changed(path)
 
 enum Level {
+	MAIN_MENU,
 	DEBUG_LEVEL_1,
 	DEBUG_LEVEL_2,
 	DEBUG_LEVEL_3
@@ -26,6 +27,8 @@ func change_scene_for(level: int) -> void:
 
 func get_level_path(level: int) -> String:
 	match level:
+		Level.MAIN_MENU:
+			return "res://src/UI/MainMenu.tscn"
 		Level.DEBUG_LEVEL_1:
 			return "res://src/World/Debug/DebugLevel1.tscn"
 		Level.DEBUG_LEVEL_2:

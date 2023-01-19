@@ -15,8 +15,10 @@ func _ready() -> void:
 	pause_mode = PAUSE_MODE_PROCESS
 	
 	if get_children().empty():
-		Events.emit_signal("scene_fadein_transition_displayed")
-		yield(get_tree().create_timer(.5), "timeout")
+
+		if current_level != LevelManager.Level.MAIN_MENU:
+			Events.emit_signal("scene_fadein_transition_displayed")
+			yield(get_tree().create_timer(.5), "timeout")
 		goto_scene(LevelManager.get_level_path(current_level))
 		return
 	current_scene = get_child(0)

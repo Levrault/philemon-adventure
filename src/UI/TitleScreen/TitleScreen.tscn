@@ -19,6 +19,7 @@ size_flags_horizontal = 2
 margin_top = 43.0
 margin_bottom = 63.0
 text = "commons.play"
+navigate_to = "ProfilesPage"
 is_default_focused = true
 
 [node name="Settings" parent="Wrapper/Page/Contents" index="1" instance=ExtResource( 4 )]
