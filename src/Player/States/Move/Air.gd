@@ -2,6 +2,8 @@ extends State
 
 signal jumped
 
+var LandDust := preload("res://src/VFX/LandDust.tscn")
+
 export var acceleration_x := 1000.0
 export var min_jump_impulse := 200.0
 export var jump_impulse := 275.0
@@ -28,12 +30,8 @@ func unhandled_input(event: InputEvent) -> void:
 			_impulse_sfx.play_sound()
 			jump(jump_impulse - 75.0)
 
-# TODO: add particules
-#			if _jump_count > 1:
-#				var dust = dust_scene.instance()
-#				owner.get_parent().add_child(dust)
-#				dust.position = owner.position
-#				dust.emitting = true
+			if _jump_count > 1:
+				Global.add_child_to_root(LandDust.instance(), owner.global_position)
 		elif _coyote_time.time_left > 0.0:
 			_coyote_time.stop()
 			_impulse_sfx.play_sound()
@@ -65,6 +63,7 @@ func physics_process(delta: float) -> void:
 	owner.is_snapped_to_floor = true
 	var target_state := "Move/Idle" if _parent.get_horizontal_move_direction().x == 0 else "Move/Run"
 	_state_machine.transition_to(target_state, {contact = true})
+	Global.add_child_to_root(LandDust.instance(), owner.global_position)
 
 
 func enter(msg: Dictionary = {}) -> void:
@@ -82,6 +81,7 @@ func enter(msg: Dictionary = {}) -> void:
 	if "impulse" in msg:
 		if not "mute_sfx" in msg:
 			_impulse_sfx.play_sound()
+		Global.add_child_to_root(LandDust.instance(), owner.global_position)
 		jump(jump_impulse)
 	
 	if "bouncing_force" in msg:
