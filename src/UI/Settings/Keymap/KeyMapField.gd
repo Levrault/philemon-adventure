@@ -15,7 +15,6 @@ signal input_focus_exited
 export var action := ""
 export var description := ""
 export var required := true
-export var alt_placeholder := "alt_placeholder" setget _set_alt_placeholder
 export var placeholder := "placeholder" setget _set_placeholder
 
 var values := {}
@@ -125,10 +124,3 @@ func _set_placeholder(value: String) -> void:
 		return
 	placeholder = value
 	$Default.text = placeholder
-
-
-func _set_alt_placeholder(value: String) -> void:
-	if not has_node("Alt"):
-		return
-	alt_placeholder = value
-	$Alt.text = alt_placeholder

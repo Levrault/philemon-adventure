@@ -11,7 +11,7 @@
 
 [node name="GamepadRebindPage" instance=ExtResource( 1 )]
 theme = ExtResource( 8 )
-default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/KeyMapTable/Run/MarginContainer/FieldContainer/Run")
+default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer/FieldContainer/Fire")
 
 [node name="Form" parent="." index="0"]
 script = ExtResource( 5 )
@@ -36,65 +36,39 @@ margin_bottom = 138.0
 
 [node name="KeyMapTable" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 435.0
-margin_bottom = 212.0
+margin_bottom = 140.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Run" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="0" instance=ExtResource( 3 )]
+[node name="Fire" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="0" instance=ExtResource( 3 )]
 margin_right = 435.0
 margin_bottom = 32.0
 rect_clip_content = false
 
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Run/MarginContainer" index="0"]
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer" index="0"]
 margin_right = 427.0
 
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Run/MarginContainer/FieldContainer" index="0"]
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer/FieldContainer" index="0"]
 margin_top = 10.0
 margin_right = 207.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
-text = "input.run"
+text = "input.fire"
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Run" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Run/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
+[node name="Fire" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 211.0
 margin_right = 419.0
 margin_bottom = 32.0
-action = "run"
-description = "input.run_description"
+action = "fire"
+description = "input.fire_description"
 
-[node name="Inventory" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="1" instance=ExtResource( 3 )]
+[node name="Jump" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="1" instance=ExtResource( 3 )]
 margin_top = 36.0
 margin_right = 435.0
 margin_bottom = 68.0
-rect_clip_content = false
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Inventory/MarginContainer" index="0"]
-margin_right = 427.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Inventory/MarginContainer/FieldContainer" index="0"]
-margin_top = 10.0
-margin_right = 207.0
-margin_bottom = 22.0
-size_flags_horizontal = 3
-text = "input.inventory"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Inventory" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Inventory/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
-margin_left = 211.0
-margin_right = 419.0
-margin_bottom = 32.0
-action = "inventory"
-description = "input.inventory_description"
-
-[node name="Jump" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="2" instance=ExtResource( 3 )]
-margin_top = 72.0
-margin_right = 435.0
-margin_bottom = 104.0
 rect_clip_content = false
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Jump/MarginContainer" index="0"]
@@ -117,83 +91,57 @@ margin_bottom = 32.0
 action = "jump"
 description = "input.jump_description"
 
-[node name="Evade" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="3" instance=ExtResource( 3 )]
+[node name="Hyperbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="2" instance=ExtResource( 3 )]
+margin_top = 72.0
+margin_right = 435.0
+margin_bottom = 104.0
+rect_clip_content = false
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam/MarginContainer" index="0"]
+margin_right = 427.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam/MarginContainer/FieldContainer" index="0"]
+margin_top = 10.0
+margin_right = 207.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "input.hyperbeam"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Hyperbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
+margin_left = 211.0
+margin_right = 419.0
+margin_bottom = 32.0
+action = "hyperbeam"
+description = "input.hyperbeam_description"
+
+[node name="Curvedbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="3" instance=ExtResource( 3 )]
 margin_top = 108.0
 margin_right = 435.0
 margin_bottom = 140.0
 rect_clip_content = false
 
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Evade/MarginContainer" index="0"]
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam/MarginContainer" index="0"]
 margin_right = 427.0
 
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Evade/MarginContainer/FieldContainer" index="0"]
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam/MarginContainer/FieldContainer" index="0"]
 margin_top = 10.0
 margin_right = 207.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
-text = "input.evade"
+text = "input.curvedbeam"
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Evade" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Evade/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
+[node name="Curvedbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 211.0
 margin_right = 419.0
 margin_bottom = 32.0
-action = "evade"
-description = "input.evade_description"
-
-[node name="Attack" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="4" instance=ExtResource( 3 )]
-margin_top = 144.0
-margin_right = 435.0
-margin_bottom = 176.0
-rect_clip_content = false
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Attack/MarginContainer" index="0"]
-margin_right = 427.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Attack/MarginContainer/FieldContainer" index="0"]
-margin_top = 10.0
-margin_right = 207.0
-margin_bottom = 22.0
-size_flags_horizontal = 3
-text = "input.attack"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Attack" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Attack/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
-margin_left = 211.0
-margin_right = 419.0
-margin_bottom = 32.0
-action = "attack"
-description = "input.attack_description"
-
-[node name="Block" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="5" instance=ExtResource( 3 )]
-margin_top = 180.0
-margin_right = 435.0
-margin_bottom = 212.0
-rect_clip_content = false
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Block/MarginContainer" index="0"]
-margin_right = 427.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Block/MarginContainer/FieldContainer" index="0"]
-margin_top = 10.0
-margin_right = 207.0
-margin_bottom = 22.0
-size_flags_horizontal = 3
-text = "input.block"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Block" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Block/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
-margin_left = 211.0
-margin_right = 419.0
-margin_bottom = 32.0
-action = "block"
-description = "input.block_description"
+action = "curvedbeam"
+description = "input.curvedbeam_description"
 
 [node name="HSeparator" parent="Wrapper/Page" index="2"]
 margin_top = 158.0
@@ -219,9 +167,7 @@ margin_bottom = 30.0
 
 [node name="RequiredFieldUnmapped" parent="." index="3" instance=ExtResource( 6 )]
 
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Run"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Inventory"]
+[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire"]
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Jump"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Evade"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Attack"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Block"]
+[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam"]
+[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam"]

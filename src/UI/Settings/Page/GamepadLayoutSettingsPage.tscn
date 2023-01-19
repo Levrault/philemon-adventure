@@ -30,7 +30,7 @@ margin_bottom = 153.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 428.0
-margin_bottom = 196.0
+margin_bottom = 206.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -65,19 +65,19 @@ script = ExtResource( 2 )
 [node name="LayoutPreview" type="CenterContainer" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="1"]
 margin_top = 36.0
 margin_right = 428.0
-margin_bottom = 136.0
+margin_bottom = 146.0
 
 [node name="GamepadLayoutPreview" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/LayoutPreview" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 74.0
-margin_right = 354.0
-margin_bottom = 100.0
+margin_left = 9.0
+margin_right = 419.0
+margin_bottom = 110.0
 
 [node name="GamepadStickLayout" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="2" instance=ExtResource( 6 )]
-margin_top = 140.0
+margin_top = 150.0
 margin_right = 428.0
-margin_bottom = 172.0
+margin_bottom = 182.0
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/GamepadStickLayout/MarginContainer" index="0"]
 margin_right = 420.0
@@ -102,9 +102,9 @@ description = "controls.gamepad_stick_layout_description"
 script = ExtResource( 8 )
 
 [node name="GamepadBindind" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="3" instance=ExtResource( 5 )]
-margin_top = 176.0
+margin_top = 186.0
 margin_right = 428.0
-margin_bottom = 196.0
+margin_bottom = 206.0
 mouse_default_cursor_shape = 0
 text = "rebind.gamepad"
 align = 1
