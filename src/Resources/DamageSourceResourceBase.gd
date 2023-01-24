@@ -1,5 +1,5 @@
-extends Resource
 class_name DamageSourceResourceBase
+extends Resource
 
 
 export var damage: int = 1

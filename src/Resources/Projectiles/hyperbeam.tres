@@ -1,12 +1,14 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://src/Resources/ProjectileResourceBase.gd" type="Script" id=1]
+[ext_resource path="res://src/Resources/BeamChargedResource.gd" type="Script" id=1]
 [ext_resource path="res://src/Projectiles/HyperBeam.tscn" type="PackedScene" id=2]
 
 [resource]
 script = ExtResource( 1 )
 damage = 100
 is_instakill = false
-speed = 50.0
-cooldown = 2.0
+speed = 150.0
+cooldown = 1.0
 scene = ExtResource( 2 )
+id = 1
+charged_wait_time = 0.25

@@ -29,6 +29,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/UI/Commons/TextureRect/AtlasIcon.gd"
 }, {
+"base": "BeamResource",
+"class": "BeamChargedResource",
+"language": "GDScript",
+"path": "res://src/Resources/BeamChargedResource.gd"
+}, {
+"base": "Node2D",
+"class": "BeamFireMode",
+"language": "GDScript",
+"path": "res://src/Player/BeamFireMode.gd"
+}, {
+"base": "ProjectileResourceBase",
+"class": "BeamResource",
+"language": "GDScript",
+"path": "res://src/Resources/BeamResource.gd"
+}, {
 "base": "Area2D",
 "class": "BeamUpgrade",
 "language": "GDScript",
@@ -165,7 +180,7 @@ _global_script_classes=[ {
 "path": "res://src/Player/Player.gd"
 }, {
 "base": "DamageSourceResourceBase",
-"class": "ProjectileResource",
+"class": "ProjectileResourceBase",
 "language": "GDScript",
 "path": "res://src/Resources/ProjectileResourceBase.gd"
 }, {
@@ -204,6 +219,9 @@ _global_script_class_icons={
 "Actor": "",
 "ActorSkin": "",
 "AtlasIcon": "",
+"BeamChargedResource": "",
+"BeamFireMode": "res://editor/icons/attack_factory.svg",
+"BeamResource": "",
 "BeamUpgrade": "",
 "CheckboxField": "res://editor/icons/check-square.svg",
 "DamageSource": "",
@@ -231,7 +249,7 @@ _global_script_class_icons={
 "NavigationSwitch": "",
 "NewProfileForm": "",
 "Player": "",
-"ProjectileResource": "",
+"ProjectileResourceBase": "",
 "RebindForm": "",
 "SliderField": "res://editor/icons/percent.svg",
 "State": "res://editor/icons/state.svg",
@@ -269,8 +287,8 @@ gdscript/warnings/return_value_discarded=false
 window/size/width=480
 window/size/height=270
 window/size/resizable=false
-window/size/test_width=1920
-window/size/test_height=1080
+window/size/test_width=960
+window/size/test_height=540
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -282,6 +300,7 @@ hyperbeam_unlocked=true
 curvedbeam_unlocked=true
 double_jump_unlocked=true
 skip_boot_screen=true
+show_fps=true
 
 [input]
 
@@ -430,12 +449,7 @@ fire={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
-hyperbeam={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
- ]
-}
-curvedbeam={
+fire_mode={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":81,"unicode":0,"echo":false,"script":null)
  ]

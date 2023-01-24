@@ -1,15 +1,14 @@
 extends State
 
+var transition_enabled := false
+
 onready var jump_input_buffering: Timer = $JumpInputBuffering
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("fire") and GameManager.is_beam_upgrade_status_unlocked(GameManager.BeamType.BEAM):
-		owner.muzzle.shoot(owner.get_current_beam_resource())
-		owner.skin.stop()
-		owner.skin.play("shoot")
+	if event.is_action_pressed("fire"):
+		_state_machine.transition_to("Move/FiringIdle")
 		return
-	
 	_parent.unhandled_input(event)
 
 

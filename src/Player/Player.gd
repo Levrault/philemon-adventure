@@ -29,6 +29,8 @@ onready var hitbox: Hitbox = $Hitbox as Hitbox
 onready var muzzle := $Skin/Muzzle
 onready var world_detector := $WorldDetector
 onready var visibility_notified := $VisibilityNotifier2D
+onready var beam_state_machine := $BeamStateMachine
+onready var beam_fire_mode := $BeamFireMode
 
 
 func _ready() -> void:
@@ -70,12 +72,34 @@ func set_is_handling_input(value: bool) -> void:
 	is_handling_input = value
 
 
-func get_current_beam_resource() -> Resource:
+func has_charged_beam(beam_type: int) -> bool:
+	match beam_type:
+		GameManager.BeamType.BEAM:
+			return true
+		_:
+			return false
+
+
+func get_next_beam(beam_type: int) -> int:
+	match beam_type:
+		GameManager.BeamType.BEAM:
+			return GameManager.BeamType.CURVED_BEAM
+		_:
+			return GameManager.BeamType.BEAM
+
+
+func get_firing_beam_resource() -> Resource:
 	match(current_beam_type):
-		GameManager.BeamType.HYPERBEAM:
-			return hyper_beam_resource
 		GameManager.BeamType.CURVED_BEAM:
 			return curved_beam_resource
+		_:
+			return beam_resource
+
+
+func get_charged_beam_resource() -> Resource:
+	match(current_beam_type):
+		GameManager.BeamType.BEAM:
+			return hyper_beam_resource
 		_:
 			return beam_resource
 

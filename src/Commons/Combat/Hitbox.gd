@@ -1,5 +1,5 @@
-extends Area2D
 class_name Hitbox
+extends Area2D
 
 export (String) var collider_name := "CollisionShape2D" setget set_collider_name
 onready var collider: CollisionShape2D = get_node_or_null(collider_name)

@@ -38,6 +38,7 @@ func goto_scene(path: String) -> void:
 		show_error()
 		return
 
+	pause_mode = PAUSE_MODE_PROCESS
 	set_process(true)
 	if current_scene:
 		current_scene.queue_free()
@@ -80,3 +81,4 @@ func set_new_scene(scene_resource: Resource) -> void:
 	LevelManager.current_scene_node = current_scene
 	add_child(current_scene)
 	set_process(false)
+	pause_mode = PAUSE_MODE_STOP

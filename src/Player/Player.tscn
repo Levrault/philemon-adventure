@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -31,13 +31,17 @@
 [ext_resource path="res://assets/characters/player/hud/heart.png" type="Texture" id=29]
 [ext_resource path="res://assets/characters/player/hud/heart_progress.png" type="Texture" id=30]
 [ext_resource path="res://src/Player/HUD/HealthBar.gd" type="Script" id=31]
-[ext_resource path="res://src/Player/WeaponsInputAlt.gd" type="Script" id=32]
+[ext_resource path="res://src/Player/States/Move/FiringIdle.gd" type="Script" id=32]
 [ext_resource path="res://assets/upgrade/beam_upgrade.png" type="Texture" id=33]
 [ext_resource path="res://assets/upgrade/hyperbeam_upgrade.png" type="Texture" id=34]
 [ext_resource path="res://src/Resources/Projectiles/curvedbeam.tres" type="Resource" id=35]
-[ext_resource path="res://assets/upgrade/curvedbeam_upgrade.png" type="Texture" id=36]
 [ext_resource path="res://src/Player/HUD/BeamsSelectorBar.gd" type="Script" id=37]
 [ext_resource path="res://src/Player/HUD/BeamUIID.gd" type="Script" id=38]
+[ext_resource path="res://src/Player/BeamStates/Firing.gd" type="Script" id=39]
+[ext_resource path="res://src/Player/BeamStates/Charged.gd" type="Script" id=40]
+[ext_resource path="res://src/Player/BeamStates/Charging.gd" type="Script" id=41]
+[ext_resource path="res://src/Player/States/Move/FiringRun.gd" type="Script" id=42]
+[ext_resource path="res://src/Player/BeamFireMode.gd" type="Script" id=43]
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 7, 14.5 )
@@ -74,9 +78,6 @@ max_health = 99.0
 
 [node name="Momentum" type="Node2D" parent="."]
 script = ExtResource( 16 )
-
-[node name="WeaponAltInput" type="Node2D" parent="."]
-script = ExtResource( 32 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 9 )]
 collision_mask = 64
@@ -118,6 +119,30 @@ update_scale = false
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[node name="BeamFireMode" type="Node2D" parent="."]
+script = ExtResource( 43 )
+
+[node name="BeamStateMachine" type="Node2D" parent="."]
+script = ExtResource( 2 )
+initial_state = NodePath("Firing")
+
+[node name="Firing" type="Node2D" parent="BeamStateMachine"]
+script = ExtResource( 39 )
+
+[node name="Timer" type="Timer" parent="BeamStateMachine/Firing"]
+wait_time = 0.25
+one_shot = true
+
+[node name="Charging" type="Node2D" parent="BeamStateMachine"]
+script = ExtResource( 41 )
+
+[node name="Timer" type="Timer" parent="BeamStateMachine/Charging"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Charged" type="Node2D" parent="BeamStateMachine"]
+script = ExtResource( 40 )
+
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource( 2 )
 initial_state = NodePath("Move/Idle")
@@ -132,12 +157,17 @@ script = ExtResource( 8 )
 wait_time = 0.15
 one_shot = true
 
+[node name="FiringIdle" type="Node2D" parent="StateMachine/Move"]
+script = ExtResource( 32 )
+
 [node name="Run" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 5 )
 
-[node name="TransitionInterval" type="Timer" parent="StateMachine/Move/Run"]
-wait_time = 0.5
-one_shot = true
+[node name="FiringRun" type="Node2D" parent="StateMachine/Move"]
+script = ExtResource( 42 )
+
+[node name="TransitionInterval" type="Timer" parent="StateMachine/Move/FiringRun"]
+wait_time = 0.75
 
 [node name="Air" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 7 )
@@ -193,53 +223,59 @@ margin_right = 147.0
 margin_bottom = 11.0
 text = "State: Idle"
 
-[node name="FlagLadder" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="Beam" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 15.0
 margin_right = 147.0
 margin_bottom = 26.0
-text = "Moving Platform: False"
+text = "State: Idle"
 
-[node name="LadderOneWayPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="FlagLadder" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 30.0
 margin_right = 147.0
 margin_bottom = 41.0
-text = "Ladder OneWayPlatform: False"
+text = "Moving Platform: False"
 
-[node name="LadderPosition" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="LadderOneWayPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 45.0
 margin_right = 147.0
 margin_bottom = 56.0
-text = "Ladder Position: False"
+text = "Ladder OneWayPlatform: False"
 
-[node name="MovingPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="LadderPosition" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 60.0
 margin_right = 147.0
 margin_bottom = 71.0
-text = "Ladder: False"
+text = "Ladder Position: False"
 
-[node name="VerticalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="MovingPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 75.0
 margin_right = 147.0
 margin_bottom = 86.0
-text = "Vertical"
+text = "Ladder: False"
 
-[node name="HorizontalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="VerticalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 90.0
 margin_right = 147.0
 margin_bottom = 101.0
-text = "Horizontal"
+text = "Vertical"
 
-[node name="IsOnFloor" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="HorizontalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 105.0
 margin_right = 147.0
 margin_bottom = 116.0
-text = "is on floor"
+text = "Horizontal"
 
-[node name="LookDirection" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+[node name="IsOnFloor" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
 margin_top = 120.0
 margin_right = 147.0
 margin_bottom = 131.0
 text = "is on floor"
+
+[node name="LookDirection" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
+margin_top = 135.0
+margin_right = 147.0
+margin_bottom = 146.0
+text = "lookdirection"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -302,18 +338,9 @@ rect_pivot_offset = Vector2( 0.8, 0.8 )
 texture = ExtResource( 33 )
 script = ExtResource( 38 )
 
-[node name="HyperBeam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar"]
+[node name="CurvedBeam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar"]
 margin_left = 20.0
 margin_right = 36.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0.8, 0.8 )
-texture = ExtResource( 36 )
-script = ExtResource( 38 )
-id = 1
-
-[node name="CurvedBeam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar"]
-margin_left = 40.0
-margin_right = 56.0
 margin_bottom = 16.0
 rect_pivot_offset = Vector2( 0.8, 0.8 )
 texture = ExtResource( 34 )

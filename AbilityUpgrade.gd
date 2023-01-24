@@ -1,5 +1,5 @@
-extends Area2D
 class_name AbilityUpgrade
+extends Area2D
 
 var PickFeedback := preload("res://src/VFX/PickFeedbackCircle.tscn")
 

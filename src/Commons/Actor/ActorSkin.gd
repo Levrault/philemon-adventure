@@ -44,6 +44,10 @@ func stop() -> void:
 	anim.stop()
 
 
+func seek(second: float, update:= true) -> void:
+	anim.seek(second, update)
+
+
 func queue(animations: Array) -> void:
 	for anim_name in animations:
 		assert(anim_name in anim.get_animation_list())

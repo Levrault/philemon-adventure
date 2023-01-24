@@ -49,14 +49,6 @@ func is_ability_upgrade_status_unlocked(ability_type: int) -> bool:
 	return ability_upgrades_status[ability_keys[ability_type]]
 
 
-func pause_game() -> void:
-	get_tree().paused = true
-
-
-func unpause_game() -> void:
-	get_tree().paused = false
-
-
 func unlock_beam(beam_type: int) -> void:
 	print_debug("Beam %s has been unlocked" % beam_keys[beam_type])
 	beam_upgrades_status[beam_keys[beam_type]] = true

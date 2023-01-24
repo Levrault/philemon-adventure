@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://src/Resources/ProjectileResourceBase.gd" type="Script" id=1]
+[ext_resource path="res://src/Resources/BeamResource.gd" type="Script" id=1]
 [ext_resource path="res://src/Projectiles/Beam.tscn" type="PackedScene" id=2]
 
 [resource]
@@ -10,3 +10,4 @@ is_instakill = false
 speed = 300.0
 cooldown = 0.25
 scene = ExtResource( 2 )
+id = 0

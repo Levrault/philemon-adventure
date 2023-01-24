@@ -16,7 +16,7 @@ tiles_y_multiplier = 7
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 3 )]
 position = Vector2( 387, -30 )
-go_to = 1
+go_to = 2
 spawn_point = "SpawnPoint1"
 tiles_x_multiplier = 2
 tiles_y_multiplier = 5
@@ -30,4 +30,4 @@ limit_right = 362
 limit_bottom = 131
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 287, 0 )
+position = Vector2( 82, 0 )

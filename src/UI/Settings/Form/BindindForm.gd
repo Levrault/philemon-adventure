@@ -1,7 +1,7 @@
 # Manage rebind page
 # @category: Form
-extends Form
 class_name RebindForm
+extends Form
 
 
 func invalid_callback() -> void:

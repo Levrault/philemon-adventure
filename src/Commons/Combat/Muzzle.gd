@@ -13,7 +13,7 @@ func reset_cooldown() -> void:
 	timer.stop()
 
 
-func shoot(res: ProjectileResource) -> void:
+func shoot(res: ProjectileResourceBase) -> void:
 	if not timer.is_stopped():
 		return
 	elif res.cooldown > 0:

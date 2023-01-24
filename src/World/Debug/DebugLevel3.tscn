@@ -15,7 +15,7 @@ position = Vector2( 96, 112 )
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 2 )]
 position = Vector2( -231, 94 )
-spawn_point = "Spawn1"
+spawn_point = "SpawnPoint2"
 
 [node name="Portal2" parent="Portals" index="1" instance=ExtResource( 2 )]
 position = Vector2( 271, 99 )

@@ -17,7 +17,7 @@ func _ready() -> void:
 	area.connect("body_entered", self, "_on_Body_entered")
 
 
-func init(res: ProjectileResource) -> void:
+func init(res: ProjectileResourceBase) -> void:
 	speed = res.speed
 	damage_source.damage = res.damage
 	damage_source.is_instakill = res.is_instakill
