@@ -34,8 +34,13 @@ onready var beam_fire_mode := $BeamFireMode
 
 
 func _ready() -> void:
-	spawn_position = global_position
 	visibility_notified.connect("screen_exited", self, "_on_Screen_exited")
+	Events.connect("player_teleported_to", self, "_on_Player_teleported_to")
+	Events.connect("player_input_disabled", self, "set_is_handling_input", [false])
+	Events.connect("player_input_enabled", self, "set_is_handling_input", [true])
+	Events.connect("save_data_started", self, "_on_Save_data_started")
+	Events.connect("player_state_changed_to", self, "_on_Player_state_changed_to")
+	spawn_position = global_position
 
 
 func connect_camera(camera: Camera2D) -> void:
@@ -107,3 +112,16 @@ func get_charged_beam_resource() -> Resource:
 func _on_Screen_exited() -> void:
 	if stats.health > 0:
 		state_machine.transition_to("Move/Die")
+
+
+func _on_Player_teleported_to(global_position: Vector2) -> void:
+	print_debug("Player has been teleported to %s" % global_position)
+	self.global_position = global_position
+
+
+func _on_Save_data_started() -> void:
+	state_machine.transition_to("Spawn", { saving_data = true })
+
+
+func _on_Player_state_changed_to(state: String, msg := {}) -> void:
+	state_machine.transition_to(state, msg)

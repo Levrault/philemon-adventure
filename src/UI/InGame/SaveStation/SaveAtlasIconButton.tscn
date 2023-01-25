@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/UI/Commons/Button/AtlasIconButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/icons/input_icons_atlas_texture.png" type="Texture" id=2]
+
+[sub_resource type="InputEventAction" id=1]
+action = "ui_cancel"
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[node name="SaveAtlasIconButton" instance=ExtResource( 1 )]
+margin_right = 110.0
+margin_bottom = 22.0
+shortcut = SubResource( 2 )
+text = "ingame.save"
+icon = SubResource( 3 )
+action = "ui_accept"

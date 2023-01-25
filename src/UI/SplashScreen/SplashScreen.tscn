@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/ui/splash_screen/subtitle_game_engine.PNG" type="Texture" id=10]
 [ext_resource path="res://src/UI/SplashScreen/SplashScreen.gd" type="Script" id=11]
 [ext_resource path="res://assets/audio/metal/metalLatch.ogg" type="AudioStream" id=12]
-[ext_resource path="res://src/UI/Commons/TextureRect/AtlasIcon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/UI/Commons/AtlasIcon/AtlasIcon.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 length = 0.001

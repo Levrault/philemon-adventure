@@ -18,14 +18,14 @@ func _on_Beam_message_displayed(beam_type) -> void:
 	Global.pause_game()
 	show()
 	$AnimationPlayer.play("show")
-	$"%Message".text = "upgrade.%s_unlocked" % GameManager.BeamType.keys()[beam_type].to_lower()
+	$"%Message".text = "ingame.%s_unlocked" % GameManager.BeamType.keys()[beam_type].to_lower()
 
 
 func _on_Ability_message_displayed(ability_type) -> void:
 	Global.pause_game()
 	show()
 	$AnimationPlayer.play("show")
-	$"%Message".text = "upgrade.%s_unlocked" % GameManager.Ability.keys()[ability_type].to_lower()
+	$"%Message".text = "ingame.%s_unlocked" % GameManager.Ability.keys()[ability_type].to_lower()
 
 
 func _on_Animation_finished(anim_name: String) -> void:

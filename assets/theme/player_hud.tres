@@ -3,4 +3,5 @@
 [ext_resource path="res://assets/theme/minecraftia_8.tres" type="DynamicFont" id=1]
 
 [resource]
+Button/fonts/font = ExtResource( 1 )
 Label/fonts/font = ExtResource( 1 )

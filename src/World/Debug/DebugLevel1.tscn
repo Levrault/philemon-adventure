@@ -16,12 +16,12 @@ tiles_y_multiplier = 7
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 3 )]
 position = Vector2( 387, -30 )
-go_to = 2
+go_to = 4
 spawn_point = "SpawnPoint1"
 tiles_x_multiplier = 2
 tiles_y_multiplier = 5
 
-[node name="Spawn1" parent="Spawns" index="0" instance=ExtResource( 4 )]
+[node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 4 )]
 position = Vector2( 337, -22 )
 
 [node name="Camera" parent="." index="8"]

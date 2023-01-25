@@ -94,6 +94,18 @@ func sync(slot: String, profile: Dictionary, new_template: Dictionary) -> Dictio
 	return profile
 
 
+func save_data() -> void:
+	var data := get_current_profile()
+	data.ability = GameManager.serialize_ability_status()
+	print(data.ability)
+	data.beam = GameManager.serialize_beam_status()
+	print(data.beam )
+	data.progression.last_saveroom = LevelManager.serialize_level()
+	
+	if OS.has_feature("debug") and ProjectSettings.get_setting("game/save_allowed"):
+		save_profile(current_profile, get_current_profile())
+
+
 func save_profile(profile_name: String, values: Dictionary) -> void:
 	var profile_file := File.new()
 	if not profile_file.file_exists(SAVE_PATH % profile_name):
@@ -104,6 +116,7 @@ func save_profile(profile_name: String, values: Dictionary) -> void:
 	profile_file.store_line(to_json(values))
 	profile_file.close()
 	print_debug("%s has been saved" % profile_name)
+	print_debug(values)
 
 
 func erase_profile(profile_name: String) -> void:

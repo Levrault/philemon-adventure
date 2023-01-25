@@ -1,5 +1,11 @@
 extends Node
 
+enum PlayerStatus {
+	alive,
+	spawing,
+	death
+}
+
 enum BeamType {
 	BEAM, HYPERBEAM, CURVED_BEAM
 }
@@ -27,6 +33,7 @@ var ability_upgrades_status = {
 
 var beam_keys := BeamType.keys()
 var ability_keys := Ability.keys()
+var player_status: int = PlayerStatus.alive
 
 
 func _ready() -> void:
@@ -59,3 +66,23 @@ func unlock_ability(ability_type: int) -> void:
 	print_debug("Ability %s has been unlocked" % ability_keys[ability_type])
 	ability_upgrades_status[ability_keys[ability_type]] = true
 	Events.emit_signal("ability_unlocked", ability_type)
+
+
+func player_died() -> void:
+	player_status = PlayerStatus.death
+	Events.emit_signal("scene_fadeout_transition_displayed", LevelTransition.Transition.THEATRAL)
+	LevelManager.current_level_id = LevelManager.Level.keys().find(Serialize.get_current_profile().progression.last_saveroom)
+
+
+func serialize_ability_status() -> Dictionary:
+	var data := {}
+	for value in ability_keys:
+		data[value.to_lower()] = ability_upgrades_status[value]
+	return data
+
+
+func serialize_beam_status() -> Dictionary:
+	var data := {}
+	for value in beam_keys:
+		data[value.to_lower()] = beam_upgrades_status[value]
+	return data
