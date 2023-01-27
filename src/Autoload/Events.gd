@@ -62,7 +62,6 @@ signal save_notification_enabled
 # user
 signal user_has_changed_gamepad_bindind
 
-
 ############
 #### Game ####
 ############
@@ -74,9 +73,29 @@ signal ability_unlocked(ability_type)
 signal beam_selected(beam_type)
 signal beam_unlocked(beam_type)
 
+# data
+signal data_saved
+
 # player
+signal player_input_disabled
+signal player_input_enabled
 signal player_max_health_changed(value)
 signal player_moved(player)
+signal player_teleported_to(global_position)
+signal player_state_changed_to(state, msg)
+signal player_spawned
+
+# popup
+signal popup_displayed(text)
+signal popup_closed
+
+# save
+signal save_data_started
+signal save_data_completed
+signal saving_data_player_animation_finished
+
+# saveroom
+signal save_room_enabled
 
 # transition
 signal scene_fadeout_transition_displayed(type)

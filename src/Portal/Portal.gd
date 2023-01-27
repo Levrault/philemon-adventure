@@ -36,4 +36,4 @@ func _on_Body_entered(body: Node) -> void:
 	LevelManager.spawn_point = spawn_point
 	LevelManager.last_look_direction_of_player = body.look_direction
 	Events.emit_signal("scene_fadeout_transition_displayed", level_transition)
-	LevelManager.next_scene = go_to
+	LevelManager.current_level_id = go_to

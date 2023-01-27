@@ -13,22 +13,27 @@ script = ExtResource( 2 )
 
 [node name="DebugInputListener" parent="." instance=ExtResource( 7 )]
 
-[node name="Backgrounds" type="ColorRect" parent="."]
+[node name="Backgrounds" type="Node2D" parent="."]
+z_index = -2
+
+[node name="ColorBackground" type="ColorRect" parent="Backgrounds"]
 margin_left = -259.0
 margin_top = -171.0
 margin_right = 488.0
 margin_bottom = 137.0
 color = Color( 0.0823529, 0.0666667, 0.137255, 1 )
 
-[node name="Far" parent="Backgrounds" instance=ExtResource( 5 )]
-
 [node name="Back" parent="Backgrounds" instance=ExtResource( 4 )]
+position = Vector2( 266, -115 )
+
+[node name="Far" parent="Backgrounds" instance=ExtResource( 5 )]
+position = Vector2( 75, 29 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131058, 20, 0, 196594, 20, 0, 262130, 20, 0, 262139, 20, 0, 262141, 20, 0, 327666, 20, 0, 327675, 20, 0, 327677, 20, 0, 262145, 20, 0, 393202, 20, 0, 327681, 20, 0, 458738, 20, 0, 458741, 20, 0, 458742, 20, 0, 458743, 20, 0, 458744, 20, 0, 524274, 20, 0, 524275, 20, 0, 524276, 20, 0, 524277, 20, 0 )
+tile_data = PoolIntArray( 131058, 20, 0, 196594, 20, 0, 262130, 20, 0, 262139, 20, 0, 262141, 20, 0, 327666, 20, 0, 393202, 20, 0, 458738, 20, 0, 458741, 20, 0, 458742, 20, 0, 458743, 20, 0, 458744, 20, 0, 524274, 20, 0, 524275, 20, 0, 524276, 20, 0, 524277, 20, 0 )
 
 [node name="Props" type="Node2D" parent="."]
 

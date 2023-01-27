@@ -1,6 +1,6 @@
 # Manage page's data changes state
 # @category: Form
-class_name NewProfileForm, "res://assets/icons/form.svg"
+class_name NewProfileForm, "res://editor/icons/form.svg"
 extends Form
 
 export var text_input_node_path: NodePath

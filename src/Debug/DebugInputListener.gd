@@ -10,11 +10,10 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	
-	if event.is_action_pressed("debug_spawn"):
-		player.state_machine.transition_to("Spawn", { spawn_position = player.spawn_position })
-		
 	if event.is_action_pressed("debug_die"):
-		player.state_machine.transition_to("Die")
+		var damage_source := DamageSource.new()
+		damage_source.is_instakill = true
+		player.take_damage(Hit.new(damage_source))
 		return
 	
 	if event.is_action_pressed("debug_free_camera"):

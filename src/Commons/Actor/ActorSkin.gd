@@ -57,6 +57,10 @@ func queue(animations: Array) -> void:
 		anim.queue(anim_name)
 
 
+func get_animation(anim_name: String) -> Animation:
+	return anim.get_animation(anim_name)
+
+
 # Gate to let the owner and the skin node communicate
 # @param {String} anim_name
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:

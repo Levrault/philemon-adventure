@@ -37,4 +37,5 @@ func exit() -> void:
 
 
 func _on_Screen_exited() -> void:
-	_state_machine.transition_to("Spawn", {spawn_position = owner.spawn_position})
+	_state_machine.transition_to("Spawn")
+	GameManager.player_died()
