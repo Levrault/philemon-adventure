@@ -30,9 +30,8 @@ func set_look_direction(value: int) -> void:
 		flip(look_direction)
 
 
-func flip(direction: float) -> void:
+func flip(direction:int = 0) -> void:
 	if direction == 0 :
 		return
-	# warning-ignore:narrowing_conversion
-	look_direction = sign(direction)
+	look_direction = int(sign(direction))
 	skin.scale.x = look_direction

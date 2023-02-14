@@ -41,7 +41,7 @@ func take_damage(hit: Hit) -> void:
 	emit_signal("health_changed", health, old_health)
 	if health == 0:
 		emit_signal("health_depleted")
-	print_debug("%s has taken damage of : %x | heath is %d/%d" % [owner.get_name(), hit.damage, health, max_health])
+	print_debug("%s has taken damage of : %s | heath is %d/%d" % [owner.get_name(), hit.damage, health, max_health])
 
 
 # Healing
