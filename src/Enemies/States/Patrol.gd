@@ -6,6 +6,7 @@ export var max_speed_default := Vector2(75.0, 275.00)
 export var acceleration_default := Vector2(10000, 800.0)
 export var decceleration_default := Vector2(10000, 300.0)
 export var max_speed_fall := 300.00
+export var loop := 2
 
 var acceleration := acceleration_default
 var decceleration := decceleration_default
@@ -19,8 +20,7 @@ func unhandled_input(event: InputEvent) -> void:
 
 func physics_process(delta: float) -> void:
 	if owner.ray_cast_wall.is_colliding() or not owner.ray_cast_floor.is_colliding():
-		owner.flip(owner.look_direction * -1)
-		_state_machine.transition_to("Idle", { loop = 1 })
+		_state_machine.transition_to("Idle", { loop = loop, flip = true })
 	
 	velocity = Move.calculate_velocity(
 		velocity, max_speed, acceleration, decceleration, delta, Vector2(owner.look_direction, 1.0)

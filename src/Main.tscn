@@ -138,4 +138,4 @@ rect_pivot_offset = Vector2( -40, 459 )
 
 [node name="AsyncSceneLoading" type="Node2D" parent="."]
 script = ExtResource( 3 )
-current_level = 3
+current_level = 2
