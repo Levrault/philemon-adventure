@@ -12,8 +12,11 @@
 
 [node name="DebugLevel2" instance=ExtResource( 1 )]
 
+[node name="ColorBackground" parent="Backgrounds" index="0"]
+margin_right = 1216.0
+
 [node name="Back2" parent="Backgrounds" index="2" instance=ExtResource( 4 )]
-position = Vector2( 1346, 69 )
+position = Vector2( 760, 24 )
 
 [node name="Far2" parent="Backgrounds" index="3" instance=ExtResource( 5 )]
 position = Vector2( 793, 186 )
@@ -36,10 +39,11 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, -60, 0, -60 )
 wait_time = 2.0
 
 [node name="Waypoints" parent="Enemies" index="0" instance=ExtResource( 8 )]
-position = Vector2( 196, 45 )
-points = PoolVector2Array( 0, 0, 0, -128, 100, -128 )
+position = Vector2( 192, 94 )
+points = PoolVector2Array( 0, 0, 128, 0 )
 
 [node name="Bat" parent="Enemies/Waypoints" index="0" instance=ExtResource( 9 )]
+collision_mask = 1
 
 [node name="HyperBeamUpgrade" parent="Upgrades" index="0" instance=ExtResource( 6 )]
 position = Vector2( -47, 99 )
@@ -61,4 +65,4 @@ position = Vector2( 1201, 99 )
 limit_right = 1217
 
 [node name="Player" parent="." index="9"]
-position = Vector2( -126, -65 )
+position = Vector2( 136, 112 )
