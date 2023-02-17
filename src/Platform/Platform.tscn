@@ -19,6 +19,8 @@ one_way_collision = true
 playback_process_mode = 0
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 0.5 )
 texture = ExtResource( 2 )
