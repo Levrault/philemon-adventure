@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Enemies/Lizard/LizardSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Enemies/Lizard/Lizard.gd" type="Script" id=3]
 [ext_resource path="res://src/Enemies/Lizard/States/Attack.gd" type="Script" id=4]
 [ext_resource path="res://src/Enemies/Lizard/States/Idle.gd" type="Script" id=5]
-[ext_resource path="res://src/Enemies/Lizard/Debug.gd" type="Script" id=6]
-[ext_resource path="res://assets/theme/debug.tres" type="Theme" id=7]
 [ext_resource path="res://src/Commons/Combat/Muzzle.gd" type="Script" id=8]
-[ext_resource path="res://src/Resources/Projectiles/fireball.tres" type="Resource" id=9]
+[ext_resource path="res://src/Resources/Projectiles/Resources/fireball.tres" type="Resource" id=9]
+[ext_resource path="res://src/Resources/Enemies/Resources/Lizard.tres" type="Resource" id=10]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 7.5, 9.5 )
@@ -17,6 +16,7 @@ extents = Vector2( 7.5, 9.5 )
 
 [node name="Lizard" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
+resource = ExtResource( 10 )
 iteration_before_attack = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -53,17 +53,3 @@ one_shot = true
 [node name="Attack" type="Node2D" parent="StateMachine" index="1"]
 script = ExtResource( 4 )
 projectile_resource = ExtResource( 9 )
-
-[node name="Debug" type="Control" parent="." index="6"]
-margin_right = 40.0
-margin_bottom = 40.0
-theme = ExtResource( 7 )
-script = ExtResource( 6 )
-
-[node name="State" type="Label" parent="Debug" index="0"]
-margin_left = -20.0
-margin_top = -39.0
-margin_right = 20.0
-margin_bottom = -25.0
-text = "state:"
-align = 1

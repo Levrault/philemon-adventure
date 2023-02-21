@@ -7,6 +7,7 @@ enum Level {
 	DEBUG_LEVEL_1,
 	DEBUG_LEVEL_2,
 	DEBUG_LEVEL_3,
+	DEBUG_NAVIGATION_AGENT,
 	SAVE_ROOM_1
 }
 
@@ -37,6 +38,8 @@ func get_level_path(level: int) -> String:
 			return "res://src/World/Debug/DebugLevel2.tscn"
 		Level.DEBUG_LEVEL_3:
 			return "res://src/World/Debug/DebugLevel3.tscn"
+		Level.DEBUG_NAVIGATION_AGENT:
+			return "res://src/World/Debug/DebugNavigationAgent.tscn"
 		Level.SAVE_ROOM_1:
 			return "res://src/World/SaveRoom/SaveRoom1.tscn"
 		_:

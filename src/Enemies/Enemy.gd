@@ -1,8 +1,12 @@
 class_name Enemy
 extends Actor
 
+export(Resource) var resource
 
-const Explosion:PackedScene = preload("res://src/VFX/Explosion.tscn")
+
+func _ready() -> void:
+	stats.max_health = resource.health
+	stats.health = resource.health
 
 
 func take_damage(source: Hit) -> void:
@@ -11,5 +15,5 @@ func take_damage(source: Hit) -> void:
 		skin.hit_flash()
 		return
 		
-	Global.add_child_to_root(Explosion.instance(), global_position)
+	Global.add_child_to_root(resource.explosion.instance(), global_position)
 	call_deferred("queue_free")
