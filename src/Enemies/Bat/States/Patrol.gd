@@ -19,7 +19,6 @@ func set_wait_time(value: float) -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
-#	owner.player_detector.connect("player_entered", self, "_on_Player_entered")
 	_timer.connect("timeout", self, "_on_Timeout")
 	_tween.connect("tween_all_completed", self, "_on_Tween_all_completed")
 
@@ -34,7 +33,6 @@ func enter(msg: Dictionary = {}) -> void:
 
 func exit() -> void:
 	owner.set_sync_to_physics(false)
-#	owner.player_detector.disconnect("player_entered", self, "_on_Player_entered")
 	_timer.disconnect("timeout", self, "_on_Timeout")
 	_tween.disconnect("tween_all_completed", self, "_on_Tween_all_completed")
 
