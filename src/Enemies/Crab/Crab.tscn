@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/PatrolEnemy.gd" type="Script" id=2]
 [ext_resource path="res://src/Enemies/Crab/CrabSkin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Enemies/States/Idle.gd" type="Script" id=4]
 [ext_resource path="res://src/Enemies/States/Patrol.gd" type="Script" id=5]
+[ext_resource path="res://src/Resources/Enemies/Resources/Crab.tres" type="Resource" id=6]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 18, 10 )
@@ -13,8 +14,8 @@ extents = Vector2( 18, 10 )
 extents = Vector2( 18, 11 )
 
 [node name="Crab" instance=ExtResource( 1 )]
-collision_mask = 9
 script = ExtResource( 2 )
+resource = ExtResource( 6 )
 is_patrolling = true
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -22,7 +23,7 @@ position = Vector2( 0, -11 )
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." index="1"]
-max_health = 40.0
+max_health = 10
 
 [node name="Skin" parent="." index="2" instance=ExtResource( 3 )]
 position = Vector2( 0, -16 )

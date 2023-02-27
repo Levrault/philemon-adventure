@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://src/Commons/Combat/Hitbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Commons/Actor/Stats.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=5]
+[ext_resource path="res://assets/theme/debug.tres" type="Theme" id=6]
+[ext_resource path="res://src/Enemies/Lizard/Debug.gd" type="Script" id=7]
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4
@@ -27,3 +29,25 @@ max_health = 2.0
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="Debug" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="State" type="Label" parent="Debug"]
+margin_left = -70.0
+margin_top = -53.0
+margin_right = 70.0
+margin_bottom = -41.0
+text = "state:"
+align = 1
+
+[node name="Health" type="Label" parent="Debug"]
+margin_left = -31.0
+margin_top = -38.0
+margin_right = 31.0
+margin_bottom = -27.0
+text = "health:"
+align = 1

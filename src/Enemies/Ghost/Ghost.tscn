@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Enemies/Ghost/States/Steering.gd" type="Script" id=2]
+[ext_resource path="res://src/Enemies/Ghost/States/Chasing.gd" type="Script" id=3]
+[ext_resource path="res://src/Enemies/Ghost/States/Idle.gd" type="Script" id=4]
+[ext_resource path="res://src/Enemies/Ghost/GhostSkin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Resources/Enemies/Resources/Ghost.tres" type="Resource" id=6]
+[ext_resource path="res://src/Enemies/NavigationAgentEnemy.gd" type="Script" id=7]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 8.0
+height = 8.0
+
+[sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 91.0494
+
+[node name="Ghost" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+resource = ExtResource( 6 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 5 )
+
+[node name="Stats" parent="." index="1"]
+max_health = 60
+
+[node name="Skin" parent="." index="2" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="DamageSource" index="0"]
+shape = SubResource( 3 )
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="5"]
+path_desired_distance = 16.0
+target_desired_distance = 8.0
+avoidance_enabled = true
+max_neighbors = 16
+max_speed = 75.0
+
+[node name="StateMachine" parent="." index="6"]
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine" index="0"]
+script = ExtResource( 4 )
+
+[node name="Vision" type="Area2D" parent="StateMachine/Idle" index="0"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StateMachine/Idle/Vision" index="0"]
+shape = SubResource( 4 )
+
+[node name="Steering" type="Node2D" parent="StateMachine" index="1"]
+script = ExtResource( 2 )
+
+[node name="Chasing" type="Node" parent="StateMachine" index="2"]
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Chasing" index="0"]
+wait_time = 0.1
+
+[node name="SteeringTimer" type="Timer" parent="StateMachine/Chasing" index="1"]
+wait_time = 2.0
+one_shot = true
