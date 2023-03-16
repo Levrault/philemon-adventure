@@ -13,10 +13,17 @@ enum Level {
 
 var level_keys := Level.keys()
 var spawn_point := ""
-var current_level_id = Level.DEBUG_LEVEL_1
+var current_level_id = Level.DEBUG_LEVEL_1 setget set_current_level_id
+var current_level_name = level_keys[current_level_id]
 var last_look_direction_of_player := 0
 
 onready var current_scene_node: Node = get_tree().get_root()
+onready var states:Dictionary = Serialize.get_current_profile().progression.level_state
+
+
+func set_current_level_id(value: int) -> void:
+	current_level_id = value
+	current_level_name = level_keys[current_level_id]
 
 
 func change_for_next_scene() -> void:
@@ -47,5 +54,25 @@ func get_level_path(level: int) -> String:
 			return ""
 
 
-func serialize_level() -> String:
-	return level_keys[current_level_id]
+func update_level_state(new_data) -> void:
+	var level_key = current_level_name
+	if states.get(level_key) == null:
+		states[level_key] = {}
+	states[level_key] = new_data
+	print_debug("LevelManager: %s has been stocked inside states" % new_data)
+
+
+func get_level_state(level_name) -> Dictionary:
+	print(states)
+	var data = states.get(level_name)
+	if data:
+		return data
+	return {}
+
+
+func serialize_last_saveroom() -> String:
+	return current_level_name
+
+
+func serialize_level_state() -> Dictionary:
+	return states

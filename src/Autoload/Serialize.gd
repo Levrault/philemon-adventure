@@ -1,6 +1,7 @@
 # Load and save progression
 extends Node
 
+const ALLOW_DYNAMIC_VALUES = ["level_state"]
 const PROFILE_TEMPLATE_PATH := "res://engine/profile_template.cfg"
 const PROFILE_SLOTS := ["profile0", "profile1", "profile2"]
 const SAVE_PATH := "user://%s.save"
@@ -38,7 +39,6 @@ func initialize() -> void:
 		profile_file.open(SAVE_PATH % profile, File.WRITE)
 		profile_file.store_line(to_json(template.duplicate(true)))
 		profile_file.close()
-	print_debug("Profiles are created")
 
 
 func load_profiles() -> void:
@@ -48,6 +48,7 @@ func load_profiles() -> void:
 		profiles[profile] = sync(
 			profile, parse_json(profile_file.get_line()), template.duplicate(true)
 		)
+	print_debug("Profiles are loaded")
 
 
 # sync current profile with profile_template
@@ -82,6 +83,9 @@ func sync(slot: String, profile: Dictionary, new_template: Dictionary) -> Dictio
 				has_changed = true
 				continue
 
+			if ALLOW_DYNAMIC_VALUES.has(key):
+				continue
+
 			if typeof(profile[section][key]) == TYPE_DICTIONARY:
 				for inner_key in profile[section][key].keys():
 					if not new_template[section][key].has(inner_key):
@@ -97,10 +101,9 @@ func sync(slot: String, profile: Dictionary, new_template: Dictionary) -> Dictio
 func save_data() -> void:
 	var data := get_current_profile()
 	data.ability = GameManager.serialize_ability_status()
-	print(data.ability)
 	data.beam = GameManager.serialize_beam_status()
-	print(data.beam )
-	data.progression.last_saveroom = LevelManager.serialize_level()
+	data.progression.last_saveroom = LevelManager.serialize_last_saveroom()
+	data.progression.level_state = LevelManager.states
 	
 	if OS.has_feature("debug") and ProjectSettings.get_setting("game/save_allowed"):
 		save_profile(current_profile, get_current_profile())
