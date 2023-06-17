@@ -88,10 +88,7 @@ margin_left = 154.0
 margin_top = 52.0
 margin_right = 194.0
 margin_bottom = 66.0
-text = "Bottom"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "input.jump"
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel"]
 anchor_left = 0.5
@@ -110,12 +107,13 @@ margin_left = 154.0
 margin_top = 18.0
 margin_right = 194.0
 margin_bottom = 32.0
-text = "Left"
+text = "input.fire"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonRight" type="TextureRect" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -154,7 +152,7 @@ margin_left = 154.0
 margin_top = 28.0
 margin_right = 194.0
 margin_bottom = 36.0
-text = "Top"
+text = "input.fire_mode"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -177,7 +175,7 @@ margin_top = 69.0
 margin_right = -1.0
 margin_bottom = 77.0
 grow_horizontal = 0
-text = "DPadDown"
+text = "input.move_down"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -201,7 +199,7 @@ margin_top = 59.0
 margin_right = -1.0
 margin_bottom = 67.0
 grow_horizontal = 0
-text = "DPadLeft"
+text = "input.move_left"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -225,7 +223,7 @@ margin_top = 78.0
 margin_right = -1.0
 margin_bottom = 86.0
 grow_horizontal = 0
-text = "DPadRight"
+text = "input.move_right"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -249,13 +247,14 @@ margin_top = 49.0
 margin_right = -1.0
 margin_bottom = 57.0
 grow_horizontal = 0
-text = "DpadUp"
+text = "input.move_up"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LB" type="TextureRect" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -280,6 +279,7 @@ __meta__ = {
 }
 
 [node name="LT" type="TextureRect" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -304,6 +304,7 @@ __meta__ = {
 }
 
 [node name="RB" type="TextureRect" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -326,6 +327,7 @@ __meta__ = {
 }
 
 [node name="RT" type="TextureRect" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -348,6 +350,7 @@ __meta__ = {
 }
 
 [node name="Select" type="TextureRect" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -411,13 +414,14 @@ margin_top = 36.0
 margin_right = -1.0
 margin_bottom = 44.0
 grow_horizontal = 0
-text = "Stick"
+text = "input.move"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StickRight" type="TextureRect" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

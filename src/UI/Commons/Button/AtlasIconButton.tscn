@@ -14,7 +14,7 @@ shortcut = SubResource( 1 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 176, 32, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [node name="AtlasIconButton" type="Button"]
 margin_right = 59.0

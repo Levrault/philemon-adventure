@@ -12,15 +12,15 @@ var max_speed := max_speed_default
 var velocity := Vector2.ZERO
 
 
-static func get_vertical_move_direction() -> Vector2:
+static func get_vertical_move_direction(actions: Dictionary) -> Vector2:
 	return Vector2(
-		1.0, Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+		1.0, Input.get_action_strength(actions.move_down) - Input.get_action_strength(actions.move_up)
 	)
 
 
-static func get_horizontal_move_direction() -> Vector2:
+static func get_horizontal_move_direction(actions: Dictionary) -> Vector2:
 	return Vector2(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), 1.0
+		Input.get_action_strength(actions.move_right) - Input.get_action_strength(actions.move_left), 1.0
 	)
 
 
@@ -50,24 +50,23 @@ static func calculate_velocity(
 
 func unhandled_input(event: InputEvent) -> void:
 	if owner.is_on_floor():
-		if event.is_action_pressed("jump"):
-			print_debug("jump from move")
+		if event.is_action_pressed(owner.actions.jump):
 			_state_machine.transition_to("Move/Air", {impulse = true})
 			return
 
 	if owner.flag.ladder and not owner.flag.ladder_one_way_platform:
-		if event.is_action_pressed("move_up"):
+		if event.is_action_pressed(owner.actions.move_up):
 			_state_machine.transition_to("Climbing")
 			return
 	
 	if owner.flag.ladder_one_way_platform:
-		if event.is_action_pressed("move_down"):
+		if event.is_action_pressed(owner.actions.move_down):
 			_state_machine.transition_to("Climbing", { climb_from_top = true })
 			return
 
 
 func physics_process(delta: float) -> void:
-	var direction := get_horizontal_move_direction()
+	var direction := get_horizontal_move_direction(owner.actions)
 
 	if not owner.is_handling_input:
 		direction.x = 0

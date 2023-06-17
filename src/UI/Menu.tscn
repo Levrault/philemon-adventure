@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/UI/Settings/Page/SettingsListPage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/TitleScreen/TitleScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationRouter.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Credits/CreditsPage.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/UI/Settings/Page/GamepadRebindPage.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/UI/Settings/Page/AudioSettingsPage.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UI/Settings/Page/DisplaySettingsPage.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/Commons/Transition/UiTransition.tscn" type="PackedScene" id=8]
@@ -50,9 +49,6 @@ visible = false
 visible = false
 
 [node name="GamepadLayoutSettingsPage" parent="." instance=ExtResource( 9 )]
-visible = false
-
-[node name="GamepadRebindPage" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="KeyboardRebindPage" parent="." instance=ExtResource( 11 )]

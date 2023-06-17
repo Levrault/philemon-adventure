@@ -23,16 +23,13 @@ section_title = "commons.keyboard"
 [node name="Breadcrumb" parent="Wrapper/Page" index="0"]
 breadcrumbs = [ "commons.settings", "rebind.keyboard" ]
 
-[node name="Contents" parent="Wrapper/Page" index="1"]
-margin_bottom = 171.0
-
 [node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 4 )]
 margin_top = 0.0
 margin_bottom = 153.0
 
 [node name="KeyMapTable" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 428.0
-margin_bottom = 284.0
+margin_bottom = 248.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -58,7 +55,7 @@ __meta__ = {
 margin_left = 208.0
 margin_right = 412.0
 margin_bottom = 32.0
-action = "move_up"
+action = "move_up_0"
 description = "input.move_up_description"
 placeholder = "W"
 
@@ -82,7 +79,7 @@ text = "input.move_down"
 margin_left = 208.0
 margin_right = 412.0
 margin_bottom = 32.0
-action = "move_down"
+action = "move_down_0"
 description = "input.move_down_description"
 placeholder = "S"
 
@@ -105,7 +102,7 @@ text = "input.move_left"
 margin_left = 208.0
 margin_right = 412.0
 margin_bottom = 32.0
-action = "move_left"
+action = "move_left_0"
 description = "input.move_left_description"
 placeholder = "A"
 
@@ -128,37 +125,14 @@ text = "input.move_right"
 margin_left = 208.0
 margin_right = 412.0
 margin_bottom = 32.0
-action = "move_right"
+action = "move_right_0"
 description = "input.move_right_description"
 placeholder = "D"
 
-[node name="Fire" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="4" instance=ExtResource( 2 )]
+[node name="Jump" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="4" instance=ExtResource( 2 )]
 margin_top = 144.0
 margin_right = 428.0
 margin_bottom = 176.0
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer" index="0"]
-margin_right = 420.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer/FieldContainer" index="0"]
-margin_top = 9.0
-margin_right = 204.0
-margin_bottom = 23.0
-size_flags_horizontal = 3
-text = "input.fire"
-
-[node name="Fire" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
-margin_left = 208.0
-margin_right = 412.0
-margin_bottom = 32.0
-action = "fire"
-description = "input.fire_description"
-placeholder = "shift"
-
-[node name="Jump" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="5" instance=ExtResource( 2 )]
-margin_top = 180.0
-margin_right = 428.0
-margin_bottom = 212.0
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Jump/MarginContainer" index="0"]
 margin_right = 420.0
@@ -174,75 +148,55 @@ text = "input.jump"
 margin_left = 208.0
 margin_right = 412.0
 margin_bottom = 32.0
-action = "jump"
+action = "jump_0"
 description = "input.jump_description"
 placeholder = "SPACE"
 
-[node name="Hyperbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="6" instance=ExtResource( 2 )]
+[node name="Fire" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="5" instance=ExtResource( 2 )]
+margin_top = 180.0
+margin_right = 428.0
+margin_bottom = 212.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer" index="0"]
+margin_right = 420.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 204.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.fire"
+
+[node name="Fire" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 208.0
+margin_right = 412.0
+margin_bottom = 32.0
+action = "fire_0"
+description = "input.fire_description"
+placeholder = "shift"
+
+[node name="FireMode" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="6" instance=ExtResource( 2 )]
 margin_top = 216.0
 margin_right = 428.0
 margin_bottom = 248.0
 
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam/MarginContainer" index="0"]
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode/MarginContainer" index="0"]
 margin_right = 420.0
 
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam/MarginContainer/FieldContainer" index="0"]
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode/MarginContainer/FieldContainer" index="0"]
 margin_top = 9.0
 margin_right = 204.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.block"
+text = "input.fire_mode"
 
-[node name="Hyperbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+[node name="FireMode" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 208.0
 margin_right = 412.0
 margin_bottom = 32.0
-action = "hyperbeam"
-description = "input.hyperbeam_description"
-placeholder = "right mouse button"
-
-[node name="Curvedbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="7" instance=ExtResource( 2 )]
-margin_top = 252.0
-margin_right = 428.0
-margin_bottom = 284.0
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam/MarginContainer" index="0"]
-margin_right = 420.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam/MarginContainer/FieldContainer" index="0"]
-margin_top = 9.0
-margin_right = 204.0
-margin_bottom = 23.0
-size_flags_horizontal = 3
-text = "input.curvedbeam"
-
-[node name="Curvedbeam" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
-margin_left = 208.0
-margin_right = 412.0
-margin_bottom = 32.0
-action = "curvedbeam"
-description = "input.curvedbeam_description"
+action = "fire_mode_0"
+description = "input.fire_mode_description"
 placeholder = "ctrl"
-
-[node name="HSeparator" parent="Wrapper/Page" index="2"]
-margin_top = 175.0
-margin_bottom = 179.0
-
-[node name="FieldDescription" parent="Wrapper/Page" index="3"]
-margin_top = 183.0
-margin_bottom = 214.0
-
-[node name="Footer" parent="Wrapper/Page" index="4"]
-margin_top = 218.0
-
-[node name="ResetToDefaultButton" parent="Wrapper/Page/Footer" index="0"]
-margin_left = 112.0
-margin_right = 293.0
-margin_bottom = 22.0
-
-[node name="PreviousPagePage" parent="Wrapper/Page/Footer" index="1"]
-margin_left = 297.0
-margin_bottom = 22.0
 
 [node name="KeyMapListenerDialog" parent="." index="3" instance=ExtResource( 5 )]
 
@@ -252,7 +206,6 @@ margin_bottom = 22.0
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/MoveDown"]
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/MoveRight"]
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/MoveLeft"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire"]
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Jump"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Hyperbeam"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Curvedbeam"]
+[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire"]
+[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode"]

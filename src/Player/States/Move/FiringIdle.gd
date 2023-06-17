@@ -4,14 +4,14 @@ var transition_enabled := false
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_released("fire"):
+	if event.is_action_released(owner.actions.fire):
 		owner.skin.seek(0)
 		owner.skin.unfreeze()
 		return
 
 
 func physics_process(delta: float) -> void:
-	if owner.is_handling_input and owner.is_on_floor() and _parent.get_horizontal_move_direction().x != 0.0:
+	if owner.is_handling_input and owner.is_on_floor() and _parent.get_horizontal_move_direction(owner.actions).x != 0.0:
 		_state_machine.transition_to("Move/FiringRun")
 	elif not owner.is_on_floor():
 		_state_machine.transition_to("Move/Air")

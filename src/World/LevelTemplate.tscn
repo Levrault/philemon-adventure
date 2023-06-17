@@ -45,11 +45,11 @@ format = 1
 
 [node name="Spawns" type="Node2D" parent="."]
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
 [node name="Camera" parent="." instance=ExtResource( 6 )]
 offset = Vector2( 0, -10 )
 limit_left = -208
 limit_top = -134
 limit_right = 448
 limit_bottom = 138
-
-[node name="Player" parent="." instance=ExtResource( 1 )]

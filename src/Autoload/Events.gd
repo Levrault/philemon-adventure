@@ -27,6 +27,11 @@ signal gamepad_listening_started
 signal gamepad_layout_changed
 signal gamepad_stick_layout_changed(joy_actions, translation_key)
 
+# in-game interfaces
+signal game_paused
+signal game_unpaused
+signal in_game_menu_hidden
+
 # keybinding
 signal key_listening_started(field, button, scancode)
 
@@ -73,6 +78,9 @@ signal ability_unlocked(ability_type)
 signal beam_selected(beam_type)
 signal beam_unlocked(beam_type)
 
+# co-op
+signal coop_player_removed(device_index)
+
 # data
 signal data_saved
 
@@ -88,6 +96,7 @@ signal player_spawned
 # popup
 signal popup_displayed(text)
 signal popup_closed
+signal popup_coop_displayed(device_index)
 
 # save
 signal save_data_started

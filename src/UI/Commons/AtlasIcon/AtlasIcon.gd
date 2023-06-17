@@ -38,6 +38,9 @@ func toggle_icon(icon: int) -> void:
 
 
 func _on_Device_changed(device: String, device_index: int) -> void:
+	if not InputManager.is_using_gamepad() or device == InputManager.DEVICE_GENERIC:
+		device = InputManager.DEVICE_XBOX_CONTROLLER
+
 	var joy_string := InputManager.get_device_button_from_action(action, device)
 	icon_texture = InputManager.get_device_icon_texture_from_action(joy_string, device)
 	alt_icon_texture = InputManager.get_device_icon_texture_from_action(joy_string, device, true)

@@ -35,7 +35,8 @@ func enter(msg: Dictionary = {}) -> void:
 	owner.momentum.start()
 	sfx.play_sound()
 	if InputManager.is_using_gamepad():
-		Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .3)
+		print_debug("code joy vibration")
+		#Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .3)
 
 	if "impulse" in msg:
 		_parent.throwback(throwback_force)

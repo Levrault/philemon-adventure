@@ -16,6 +16,7 @@ enum Ability {
 
 const LAYER = {
 	"WORLD": 0,
+	"PLAYER": 1,
 	"MOVING_PLATFORM" : 3,
 	"DAMAGE_SOURCE_LAYER" : 4,
 	"LADDER_ONE_WAY_PLATFORM_LAYER" : 5

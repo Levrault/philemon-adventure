@@ -27,10 +27,12 @@ func assign_with_constant(value: String) -> void:
 
 	if InputManager.is_motion_event(value):
 		joy_string = Input.get_joy_axis_string(EngineSettings.keylist.gamepad[value])
-		InputManager.addJoyMotionEvent(owner.action, value)
+		print_debug("fix device index")
+		InputManager.addJoyMotionEvent(owner.action, value, 0)
 	else:
 		joy_string = Input.get_joy_button_string(EngineSettings.keylist.gamepad[value])
-		InputManager.addJoyButtonEvent(owner.action, value)
+		print_debug("fix device index")
+		InputManager.addJoyButtonEvent(owner.action, value, 0)
 
 	icon = InputManager.get_device_icon_texture_from_action(value, type)
 	owner.values[key] = {
@@ -42,7 +44,7 @@ func assign_with_constant(value: String) -> void:
 
 func clear() -> void:
 	if owner.values.has(key) and not assigned_to.empty():
-		InputManager.removeJoyButtonEvent(owner.action, assigned_to)
+		InputManager.removeJoyButtonEvent(owner.action, assigned_to, 0)
 	text = "_"
 	assigned_to = ""
 	joy_string = ""

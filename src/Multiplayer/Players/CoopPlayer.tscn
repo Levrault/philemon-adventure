@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Player/BasePlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Multiplayer/Players/CoopPlayer.gd" type="Script" id=2]
+[ext_resource path="res://src/Multiplayer/Players/States/Die.gd" type="Script" id=3]
+
+[node name="CoopPlayer" instance=ExtResource( 1 )]
+collision_layer = 1
+collision_mask = 512
+script = ExtResource( 2 )
+
+[node name="Stats" parent="." index="2"]
+max_health = 1.0
+
+[node name="Die" parent="StateMachine/Move" index="6"]
+script = ExtResource( 3 )
+delay = 10

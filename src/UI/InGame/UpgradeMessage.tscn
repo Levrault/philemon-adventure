@@ -310,7 +310,7 @@ margin_left = -56.0
 margin_top = 8.0
 margin_right = -24.0
 margin_bottom = 24.0
-action = "jump"
+action = "jump_0"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

@@ -5,10 +5,23 @@ var player: Player = null
 
 func _ready() -> void:
 	yield(owner, "ready")
-	player = owner.player
+	player = owner.get_node("Player") as Player
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("debug_spawn_coop_player_1"):
+		GameMode.coop_skins[1] = GameMode.PlayerSkin.BLUE
+		GameMode.add_local_coop_player(1)
+		return
+	if event.is_action_pressed("debug_spawn_coop_player_2"):
+		GameMode.coop_skins[2] = GameMode.PlayerSkin.PINK
+		GameMode.add_local_coop_player(2)
+		return
+	if event.is_action_pressed("debug_spawn_coop_player_3"):
+		GameMode.coop_skins[3] = GameMode.PlayerSkin.RED
+		GameMode.add_local_coop_player(3)
+		return
 	
 	if event.is_action_pressed("debug_die"):
 		var damage_source := DamageSource.new()

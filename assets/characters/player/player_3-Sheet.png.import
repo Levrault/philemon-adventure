@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ghost-fury.png-8b2ecd5f1e01a97174a33c26e7651c00.stex"
+path="res://.import/player_3-Sheet.png-9353c2a6ab430d8cc51719365cfb1c12.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/ghost-fury.png"
-dest_files=[ "res://.import/ghost-fury.png-8b2ecd5f1e01a97174a33c26e7651c00.stex" ]
+source_file="res://assets/characters/player/player_3-Sheet.png"
+dest_files=[ "res://.import/player_3-Sheet.png-9353c2a6ab430d8cc51719365cfb1c12.stex" ]
 
 [params]
 

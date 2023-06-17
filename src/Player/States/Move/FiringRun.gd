@@ -6,11 +6,11 @@ onready var transition_interval := $TransitionInterval
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("fire"):
+	if event.is_action_pressed(owner.actions.fire):
 		transition_interval.start()
 		return
 	
-	if event.is_action_released("fire"):
+	if event.is_action_released(owner.actions.fire):
 		transition_interval.start()
 		return
 
@@ -19,7 +19,7 @@ func physics_process(delta: float) -> void:
 	_parent.max_speed.x = _parent.max_speed_default.x
 	if owner.is_on_floor():
 		if _parent.velocity.length() < 1.0 and not owner.is_on_wall():
-			if Input.is_action_pressed("fire"):
+			if Input.is_action_pressed(owner.actions.fire):
 				_state_machine.transition_to("Move/FiringIdle")
 			else:
 				_state_machine.transition_to("Move/Idle")
@@ -50,6 +50,6 @@ func _on_Animation_finished(anim_name: String) -> void:
 
 
 func _on_Timeout() -> void:
-	if Input.is_action_pressed("fire"):
+	if Input.is_action_pressed(owner.actions.fire):
 		return
 	transition_enabled = true

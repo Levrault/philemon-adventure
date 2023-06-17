@@ -3,7 +3,7 @@ extends Node2D
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("fire_mode"):
+	if event.is_action_pressed(owner.actions.fire_mode):
 		next_beam_type()
 
 
