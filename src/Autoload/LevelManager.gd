@@ -7,6 +7,7 @@ enum Level {
 	DEBUG_LEVEL_1,
 	DEBUG_LEVEL_2,
 	DEBUG_LEVEL_3,
+	DEBUG_MULTIPLAYER,
 	DEBUG_NAVIGATION_AGENT,
 	SAVE_ROOM_1
 }
@@ -45,6 +46,8 @@ func get_level_path(level: int) -> String:
 			return "res://src/World/Debug/DebugLevel2.tscn"
 		Level.DEBUG_LEVEL_3:
 			return "res://src/World/Debug/DebugLevel3.tscn"
+		Level.DEBUG_MULTIPLAYER:
+			return "res://src/World/Debug/DebugMultiplayer.tscn"
 		Level.DEBUG_NAVIGATION_AGENT:
 			return "res://src/World/Debug/DebugNavigationAgent.tscn"
 		Level.SAVE_ROOM_1:
@@ -63,7 +66,6 @@ func update_level_state(new_data) -> void:
 
 
 func get_level_state(level_name) -> Dictionary:
-	print(states)
 	var data = states.get(level_name)
 	if data:
 		return data

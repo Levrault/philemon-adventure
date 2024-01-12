@@ -7,3 +7,4 @@ func _ready() -> void:
 		return
 	if not ProjectSettings.get_setting("game/show_fps"):
 		$"%FPSCounter".queue_free()
+

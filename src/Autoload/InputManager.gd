@@ -23,8 +23,7 @@ var all_gamepad_devices := [
 ]
 
 var atlas_map := {}
-#var default_gamepad: String = DEVICE_XBOX_CONTROLLER
-var default_gamepad: String = DEVICE_KEYBOARD
+var default_gamepad: String = DEVICE_XBOX_CONTROLLER
 var device: String = default_gamepad setget _set_device
 var device_index: int = -1
 var gamepad_button_regex := {"xbox": "_XBOX_", "nintendo": "_DS_", "dualshock": "_SONY_", "generic": "_BUTTON_"}
@@ -64,62 +63,6 @@ func _input(event: InputEvent) -> void:
 		self.device = next_device
 		device_index = next_device_index
 		emit_signal("device_changed", device, device_index)
-
-
-# Utils function to quickly add a motion event
-func addJoyMotionEvent(action: String, value: String) -> void:
-	if not InputMap.has_action(action):
-		InputMap.add_action(action)
-	var input_event_motion = InputEventJoypadMotion.new()
-	input_event_motion.axis = EngineSettings.keylist.gamepad[value]
-	InputMap.action_add_event(action, input_event_motion)
-
-
-# Utils function to quickly remove a motion event
-func removeJoyMotionEvent(action: String, value: String) -> void:
-	if not InputMap.has_action(action):
-		return
-	var input_event_motion = InputEventJoypadMotion.new()
-	input_event_motion.axis = EngineSettings.keylist.gamepad[value]
-	InputMap.action_erase_event(action, input_event_motion)
-
-
-# Utils function to quickly add a motion event with axis_value
-func addJoyStickMotionEvent(action: String, value: String, axis_value: float) -> void:
-	if not InputMap.has_action(action):
-		InputMap.add_action(action)
-	var input_event_motion = InputEventJoypadMotion.new()
-	input_event_motion.axis = EngineSettings.keylist.gamepad[value]
-	input_event_motion.axis_value = axis_value
-	InputMap.action_add_event(action, input_event_motion)
-
-
-# Utils function to quickly remove a motion event with axis_value
-func removeJoyStickMotionEvent(action: String, value: String, axis_value: float) -> void:
-	if not InputMap.has_action(action):
-		return
-	var input_event_motion = InputEventJoypadMotion.new()
-	input_event_motion.axis = EngineSettings.keylist.gamepad[value]
-	input_event_motion.axis_value = axis_value
-	InputMap.action_erase_event(action, input_event_motion)
-
-
-# Utils function to add a joy button event
-func addJoyButtonEvent(action: String, value: String) -> void:
-	if not InputMap.has_action(action):
-		InputMap.add_action(action)
-	var input_event_button = InputEventJoypadButton.new()
-	input_event_button.button_index = EngineSettings.keylist.gamepad[value]
-	InputMap.action_add_event(action, input_event_button)
-
-
-# Utils function to remove a joy button event
-func removeJoyButtonEvent(action: String, value: String) -> void:
-	if not InputMap.has_action(action):
-		return
-	var input_event_button = InputEventJoypadButton.new()
-	input_event_button.button_index = EngineSettings.keylist.gamepad[value]
-	InputMap.action_erase_event(action, input_event_button)
 
 
 # return a understable device name

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skeleton-walk.png-d57d700ed57797d63965ca721d45b788.stex"
+path="res://.import/player_0-Sheet.png-4ed3a934292ab4a356e3181becc6c711.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/skeleton-walk.png"
-dest_files=[ "res://.import/skeleton-walk.png-d57d700ed57797d63965ca721d45b788.stex" ]
+source_file="res://assets/characters/player/player_0-Sheet.png"
+dest_files=[ "res://.import/player_0-Sheet.png-4ed3a934292ab4a356e3181becc6c711.stex" ]
 
 [params]
 

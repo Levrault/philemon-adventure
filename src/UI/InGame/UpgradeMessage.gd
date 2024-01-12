@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed("interact"):
 		$AnimationPlayer.play_backwards("hide")
 		set_process_unhandled_input(false)
 

@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed(owner.actions.jump):
 		emit_signal("jumped")
 		if _jump_count < max_jump_count:
 			_impulse_sfx.play_sound()
@@ -40,7 +40,7 @@ func unhandled_input(event: InputEvent) -> void:
 	# set a minimal air jump if button is release to soon
 	if (
 		_is_controlled
-		and event.is_action_released("jump")
+		and event.is_action_released(owner.actions.jump)
 		and abs(_parent.velocity.y) > min_jump_impulse
 		and not _parent.velocity.y > 0
 	):
@@ -61,7 +61,7 @@ func physics_process(delta: float) -> void:
 	if not owner.is_on_floor():
 		return
 	owner.is_snapped_to_floor = true
-	var target_state := "Move/Idle" if _parent.get_horizontal_move_direction().x == 0 else "Move/Run"
+	var target_state := "Move/Idle" if _parent.get_horizontal_move_direction(owner.actions).x == 0 else "Move/Run"
 	_state_machine.transition_to(target_state, {contact = true})
 	Global.add_child_to_root(LandDust.instance(), owner.global_position)
 

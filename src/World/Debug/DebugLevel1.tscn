@@ -50,10 +50,10 @@ tiles_y_multiplier = 5
 [node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 4 )]
 position = Vector2( 337, -22 )
 
-[node name="Camera" parent="." index="8"]
+[node name="Player" parent="." index="8"]
+position = Vector2( 229, 0 )
+
+[node name="Camera" parent="." index="9"]
 limit_top = -176
 limit_right = 370
 limit_bottom = 131
-
-[node name="Player" parent="." index="9"]
-position = Vector2( 229, 0 )

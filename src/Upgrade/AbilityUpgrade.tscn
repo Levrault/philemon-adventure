@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Upgrade/BeamUpgrade.tscn" type="PackedScene" id=1]
-[ext_resource path="res://AbilityUpgrade.gd" type="Script" id=2]
+[ext_resource path="res://src/Upgrade/AbilityUpgrade.gd" type="Script" id=2]
 [ext_resource path="res://assets/upgrade/ability_upgrade.png" type="Texture" id=3]
 
 [node name="AbilityUpgrade" instance=ExtResource( 1 )]

@@ -1,362 +1,81 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=2]
-[ext_resource path="res://src/Player/States/Move.gd" type="Script" id=3]
-[ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
-[ext_resource path="res://src/Player/States/Move/Run.gd" type="Script" id=5]
-[ext_resource path="res://src/Player/States/Move/Hurt.gd" type="Script" id=6]
-[ext_resource path="res://src/Player/States/Move/Air.gd" type="Script" id=7]
-[ext_resource path="res://src/Player/States/Move/Idle.gd" type="Script" id=8]
-[ext_resource path="res://src/Commons/Combat/Hitbox.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/Player/States/Die.gd" type="Script" id=10]
-[ext_resource path="res://src/Commons/Actor/Stats.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/Commons/SFX/SFXPlayer.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/audio/jump/jump_01.wav" type="AudioStream" id=13]
-[ext_resource path="res://assets/audio/jump/bounce_01.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/audio/impact/sfx_sounds_impact1.wav" type="AudioStream" id=15]
-[ext_resource path="res://src/Player/Momentum.gd" type="Script" id=16]
-[ext_resource path="res://assets/audio/jingles/jingles_PIZZI07.ogg" type="AudioStream" id=17]
-[ext_resource path="res://assets/theme/debug.tres" type="Theme" id=18]
-[ext_resource path="res://src/Player/States/Spawn.gd" type="Script" id=19]
-[ext_resource path="res://src/Commons/Combat/Muzzle.gd" type="Script" id=20]
-[ext_resource path="res://src/Resources/Projectiles/Resources/beam.tres" type="Resource" id=21]
-[ext_resource path="res://src/Player/States/Climbing.gd" type="Script" id=22]
-[ext_resource path="res://src/Player/DebugPlayerInfo.gd" type="Script" id=23]
-[ext_resource path="res://assets/theme/player_hud.tres" type="Theme" id=24]
-[ext_resource path="res://src/Player/LadderOneWayPlatformDetector.gd" type="Script" id=25]
-[ext_resource path="res://src/Player/MovingPlatformDetector.gd" type="Script" id=26]
-[ext_resource path="res://assets/theme/minecraftia_8.tres" type="DynamicFont" id=27]
-[ext_resource path="res://src/Resources/Projectiles/Resources/hyperbeam.tres" type="Resource" id=28]
-[ext_resource path="res://assets/characters/player/hud/heart.png" type="Texture" id=29]
-[ext_resource path="res://assets/characters/player/hud/heart_progress.png" type="Texture" id=30]
-[ext_resource path="res://src/Player/HUD/HealthBar.gd" type="Script" id=31]
-[ext_resource path="res://src/Player/States/Move/FiringIdle.gd" type="Script" id=32]
-[ext_resource path="res://assets/upgrade/beam_upgrade.png" type="Texture" id=33]
-[ext_resource path="res://assets/upgrade/hyperbeam_upgrade.png" type="Texture" id=34]
-[ext_resource path="res://src/Resources/Projectiles/Resources/curvedbeam.tres" type="Resource" id=35]
-[ext_resource path="res://src/Player/SaveStationDetector.gd" type="Script" id=36]
-[ext_resource path="res://src/Player/HUD/BeamsSelectorBar.gd" type="Script" id=37]
-[ext_resource path="res://src/Player/HUD/BeamUIID.gd" type="Script" id=38]
-[ext_resource path="res://src/Player/BeamStates/Firing.gd" type="Script" id=39]
-[ext_resource path="res://src/Player/BeamStates/Charged.gd" type="Script" id=40]
-[ext_resource path="res://src/Player/BeamStates/Charging.gd" type="Script" id=41]
-[ext_resource path="res://src/Player/States/Move/FiringRun.gd" type="Script" id=42]
-[ext_resource path="res://src/Player/BeamFireMode.gd" type="Script" id=43]
+[ext_resource path="res://src/Player/BasePlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player/Detectors/SaveStationDetector.gd" type="Script" id=2]
+[ext_resource path="res://src/Player/Detectors/PortalDetector.gd" type="Script" id=3]
+[ext_resource path="res://src/Multiplayer/Spawn/CoopPlatformPlayerSpawnPoint.gd" type="Script" id=4]
+[ext_resource path="res://src/Multiplayer/Spawn/CoopPlayerPortalSpawnPoint.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 7, 14.5 )
-
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 8, 15 )
-
-[sub_resource type="RayShape2D" id=15]
-length = 1.0
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 6, 1.5 )
-
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.5, 1.5 )
 
-[node name="Player" type="KinematicBody2D"]
-collision_layer = 3
-collision_mask = 2
-script = ExtResource( 4 )
-beam_resource = ExtResource( 21 )
-hyper_beam_resource = ExtResource( 28 )
-curved_beam_resource = ExtResource( 35 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.5, 15 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -14.5 )
-shape = SubResource( 14 )
+[node name="Player" instance=ExtResource( 1 )]
 
-[node name="Skin" parent="." instance=ExtResource( 1 )]
+[node name="CoopPlayer1PortalSpawnLocation" type="Position2D" parent="Skin" index="3"]
+position = Vector2( -11, 0 )
+script = ExtResource( 5 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
 
-[node name="Muzzle" type="Position2D" parent="Skin"]
-position = Vector2( 19, -17 )
-script = ExtResource( 20 )
+[node name="CoopPlayer2PortalSpawnLocation" type="Position2D" parent="Skin" index="4"]
+position = Vector2( -16, 0 )
+script = ExtResource( 5 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+coop_player_index = 2
 
-[node name="Stats" parent="." instance=ExtResource( 11 )]
-max_health = 99.0
+[node name="CoopPlayer3PortalSpawnLocation" type="Position2D" parent="Skin" index="5"]
+position = Vector2( -21, 0 )
+script = ExtResource( 5 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+coop_player_index = 3
 
-[node name="Momentum" type="Node2D" parent="."]
-script = ExtResource( 16 )
-
-[node name="Hitbox" parent="." instance=ExtResource( 9 )]
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 0, -15 )
-shape = SubResource( 18 )
-
-[node name="MovingPlatformDetector" type="Area2D" parent="."]
-position = Vector2( 0, 1 )
-collision_layer = 0
-collision_mask = 8
-monitorable = false
-script = ExtResource( 26 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatformDetector"]
-shape = SubResource( 15 )
-
-[node name="LadderOneWayPlatformDetector" type="Area2D" parent="."]
-position = Vector2( 0, 1 )
-collision_layer = 0
-collision_mask = 32
-script = ExtResource( 25 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderOneWayPlatformDetector"]
-position = Vector2( 0, 1.5 )
-shape = SubResource( 17 )
-
-[node name="SaveStationDetector" type="Area2D" parent="."]
+[node name="SaveStationDetector" type="Area2D" parent="." index="7"]
 position = Vector2( 0, 1 )
 collision_layer = 0
 collision_mask = 256
-script = ExtResource( 36 )
+script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveStationDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveStationDetector" index="0"]
 position = Vector2( 1.5, 1.5 )
-shape = SubResource( 19 )
+shape = SubResource( 1 )
 
-[node name="WorldDetector" type="Area2D" parent="."]
-position = Vector2( 0, 1 )
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldDetector"]
-shape = SubResource( 15 )
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-update_rotation = false
-update_scale = false
-
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-
-[node name="BeamFireMode" type="Node2D" parent="."]
-script = ExtResource( 43 )
-
-[node name="BeamStateMachine" type="Node2D" parent="."]
-script = ExtResource( 2 )
-initial_state = NodePath("Firing")
-
-[node name="Firing" type="Node2D" parent="BeamStateMachine"]
-script = ExtResource( 39 )
-
-[node name="Timer" type="Timer" parent="BeamStateMachine/Firing"]
-wait_time = 0.25
-one_shot = true
-
-[node name="Charging" type="Node2D" parent="BeamStateMachine"]
-script = ExtResource( 41 )
-
-[node name="Timer" type="Timer" parent="BeamStateMachine/Charging"]
-wait_time = 0.5
-one_shot = true
-
-[node name="Charged" type="Node2D" parent="BeamStateMachine"]
-script = ExtResource( 40 )
-
-[node name="StateMachine" type="Node2D" parent="."]
-script = ExtResource( 2 )
-initial_state = NodePath("Move/Idle")
-
-[node name="Move" type="Node" parent="StateMachine"]
+[node name="PortalDetector" type="Area2D" parent="." index="8"]
+position = Vector2( -1, -14 )
+collision_layer = 1024
+collision_mask = 1024
 script = ExtResource( 3 )
 
-[node name="Idle" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 8 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalDetector" index="0"]
+position = Vector2( 1.5, -1 )
+shape = SubResource( 2 )
 
-[node name="JumpInputBuffering" type="Timer" parent="StateMachine/Move/Idle"]
-wait_time = 0.15
-one_shot = true
+[node name="CoopPlayer1SpawnLocation" type="Position2D" parent="." index="9"]
+position = Vector2( 0, -53 )
+script = ExtResource( 4 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
 
-[node name="FiringIdle" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 32 )
+[node name="CoopPlayer2SpawnLocation" type="Position2D" parent="." index="10"]
+position = Vector2( 32, -37 )
+script = ExtResource( 4 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+coop_player_index = 2
 
-[node name="Run" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 5 )
-
-[node name="FiringRun" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 42 )
-
-[node name="TransitionInterval" type="Timer" parent="StateMachine/Move/FiringRun"]
-wait_time = 0.75
-
-[node name="Air" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 7 )
-
-[node name="CoyoteTime" type="Timer" parent="StateMachine/Move/Air"]
-wait_time = 0.15
-one_shot = true
-
-[node name="Impulse" parent="StateMachine/Move/Air" instance=ExtResource( 12 )]
-stream = ExtResource( 13 )
-
-[node name="Bounce" parent="StateMachine/Move/Air" instance=ExtResource( 12 )]
-stream = ExtResource( 14 )
-
-[node name="Hurt" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 6 )
-
-[node name="Timer" type="Timer" parent="StateMachine/Move/Hurt"]
-
-[node name="Impact" parent="StateMachine/Move/Hurt" instance=ExtResource( 12 )]
-stream = ExtResource( 15 )
-max_pitch_scale = 1.1
-
-[node name="Die" type="Node2D" parent="StateMachine/Move"]
-script = ExtResource( 10 )
-
-[node name="Sfx" parent="StateMachine/Move/Die" instance=ExtResource( 12 )]
-stream = ExtResource( 17 )
-
-[node name="Climbing" type="Node2D" parent="StateMachine"]
-script = ExtResource( 22 )
-
-[node name="Spawn" type="Node2D" parent="StateMachine"]
-script = ExtResource( 19 )
-
-[node name="DebugCanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="DebugPlayerInfo" type="Control" parent="DebugCanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 18 )
-script = ExtResource( 23 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugCanvasLayer/DebugPlayerInfo"]
-margin_left = 5.0
-margin_top = 4.0
-margin_right = 152.0
-margin_bottom = 90.0
-
-[node name="State" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_right = 147.0
-margin_bottom = 11.0
-text = "State: Idle"
-
-[node name="Beam" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 15.0
-margin_right = 147.0
-margin_bottom = 26.0
-text = "State: Idle"
-
-[node name="FlagLadder" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 30.0
-margin_right = 147.0
-margin_bottom = 41.0
-text = "Moving Platform: False"
-
-[node name="LadderOneWayPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 45.0
-margin_right = 147.0
-margin_bottom = 56.0
-text = "Ladder OneWayPlatform: False"
-
-[node name="LadderPosition" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 60.0
-margin_right = 147.0
-margin_bottom = 71.0
-text = "Ladder Position: False"
-
-[node name="MovingPlatform" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 75.0
-margin_right = 147.0
-margin_bottom = 86.0
-text = "Ladder: False"
-
-[node name="VerticalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 90.0
-margin_right = 147.0
-margin_bottom = 101.0
-text = "Vertical"
-
-[node name="HorizontalMove" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 105.0
-margin_right = 147.0
-margin_bottom = 116.0
-text = "Horizontal"
-
-[node name="IsOnFloor" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 120.0
-margin_right = 147.0
-margin_bottom = 131.0
-text = "is on floor"
-
-[node name="LookDirection" type="Label" parent="DebugCanvasLayer/DebugPlayerInfo/VBoxContainer"]
-margin_top = 135.0
-margin_right = 147.0
-margin_bottom = 146.0
-text = "lookdirection"
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="HUD"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 24 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 60.0
-margin_bottom = 40.0
-custom_constants/separation = 0
-
-[node name="Energy" type="Label" parent="HUD/Control/VBoxContainer"]
-margin_right = 56.0
-margin_bottom = 11.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-custom_fonts/font = ExtResource( 27 )
-text = "Energy"
-uppercase = true
-
-[node name="HealthBar" type="HBoxContainer" parent="HUD/Control/VBoxContainer"]
-margin_top = 11.0
-margin_right = 56.0
-margin_bottom = 22.0
-script = ExtResource( 31 )
-
-[node name="TextureProgress" type="TextureProgress" parent="HUD/Control/VBoxContainer/HealthBar"]
-margin_right = 9.0
-margin_bottom = 11.0
-max_value = 99.0
-value = 99.0
-rounded = true
-texture_over = ExtResource( 29 )
-texture_progress = ExtResource( 30 )
-fill_mode = 3
-
-[node name="Health" type="Label" parent="HUD/Control/VBoxContainer/HealthBar"]
-margin_left = 13.0
-margin_right = 25.0
-margin_bottom = 11.0
-text = "99"
-
-[node name="BeamsSelectorBar" type="HBoxContainer" parent="HUD/Control"]
-margin_left = 4.0
-margin_top = 27.0
-margin_right = 60.0
-margin_bottom = 43.0
-rect_scale = Vector2( 0.7, 0.7 )
-script = ExtResource( 37 )
-
-[node name="Beam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar"]
-margin_right = 16.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0.8, 0.8 )
-texture = ExtResource( 33 )
-script = ExtResource( 38 )
-
-[node name="CurvedBeam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar"]
-margin_left = 20.0
-margin_right = 36.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0.8, 0.8 )
-texture = ExtResource( 34 )
-script = ExtResource( 38 )
-id = 2
+[node name="CoopPlayer3SpawnLocation" type="Position2D" parent="." index="11"]
+position = Vector2( -33, -36 )
+script = ExtResource( 4 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+coop_player_index = 3

@@ -5,7 +5,7 @@
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 176, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="Animation" id=6]
 length = 0.001

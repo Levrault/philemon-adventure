@@ -5,7 +5,7 @@ onready var timer := $Timer
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("fire"):
+	if event.is_action_pressed(owner.actions.fire):
 		owner.muzzle.shoot(owner.get_firing_beam_resource())
 		
 		if owner.has_charged_beam(owner.current_beam_type):
@@ -13,7 +13,7 @@ func unhandled_input(event: InputEvent) -> void:
 			if GameManager.is_beam_upgrade_status_unlocked(charged_resource.id):
 				timer.start()
 			return
-	if event.is_action_released("fire"):
+	if event.is_action_released(owner.actions.fire):
 		timer.stop()
 		return
 

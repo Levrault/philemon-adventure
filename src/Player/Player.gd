@@ -5,6 +5,7 @@ class_name Player
 const FLOOR_NORMAL := Vector2.UP
 const SNAP := Vector2(0, 10)
 
+export(int, 0, 3) var device_index := 0 setget set_device_index
 export(Resource) var beam_resource
 export(Resource) var hyper_beam_resource
 export(Resource) var curved_beam_resource
@@ -14,7 +15,6 @@ var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
 var is_on_moving_platform := false
 var initial_state_data := {}
-var life := 3
 var spawn_position := Vector2.ZERO
 var ladder_position := Vector2.ZERO
 var flag := {
@@ -23,6 +23,15 @@ var flag := {
 	"moving_platform": false
 }
 
+onready var actions := {
+	"move_up": "move_up_%s" % device_index,
+	"move_down": "move_down_%s" % device_index,
+	"move_right": "move_right_%s" % device_index,
+	"move_left": "move_left_%s" % device_index,
+	"jump": "jump_%s" % device_index,
+	"fire": "fire_%s" % device_index,
+	"fire_mode": "fire_mode_%s" % device_index
+}
 onready var collider: CollisionShape2D = $CollisionShape2D
 onready var momentum := $Momentum
 onready var hitbox: Hitbox = $Hitbox as Hitbox
@@ -56,12 +65,28 @@ func take_damage(source: Hit) -> void:
 	state_machine.transition_to("Move/Die")
 
 
+func set_device_index(p_device_index: int) -> void:
+	device_index = p_device_index
+	$PlayerIndicator.text = "P%s" % (device_index + 1)
+	actions = {
+		"move_up": "move_up_%s" % device_index,
+		"move_down": "move_down_%s" % device_index,
+		"move_right": "move_right_%s" % device_index,
+		"move_left": "move_left_%s" % device_index,
+		"jump": "jump_%s" % device_index,
+		"fire": "fire_%s" % device_index,
+		"fire_mode": "fire_mode_%s" % device_index
+	}
+
+
 func set_is_active(value: bool) -> void:
 	is_active = value
 	if not collider:
 		return
 	collider.set_deferred("disabled", not value)
 	hitbox.set_is_active(value)
+	set_physics_process(value)
+	state_machine.set_physics_process(value)
 
 
 func set_current_beam_type(value: int) -> void:

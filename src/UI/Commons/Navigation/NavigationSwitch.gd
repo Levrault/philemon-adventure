@@ -4,6 +4,8 @@ class_name NavigationSwitch
 extends Control
 
 signal navigation_finished
+signal page_open
+signal page_closed
 
 export var default_field_to_focus: NodePath
 
@@ -28,9 +30,11 @@ func _on_Menu_route_changed(id: String) -> void:
 	if id != get_name():
 		visible = false
 		is_current_route = false
+		emit_signal("page_closed")
 		return
 
 	is_current_route = true
+	emit_signal("page_open")
 	print_debug("%s route has been set" % [id])
 
 

@@ -13,5 +13,4 @@ func _ready() -> void:
 
 
 func _on_Renamed() -> void:
-	print("in")
 	$Label.text = get_name()

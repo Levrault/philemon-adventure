@@ -7,7 +7,7 @@ var tween : SceneTreeTween = null
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_released("fire"):
+	if event.is_action_released(owner.actions.fire):
 		_state_machine.transition_to("Firing")
 		return
 

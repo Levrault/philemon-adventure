@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UI/Commons/Button/AtlasIconButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Commons/Button/StaticAtlasIconButton.gd" type="Script" id=2]
+
+[node name="StaticAtlasIconButton" instance=ExtResource( 1 )]
+flat = true
+script = ExtResource( 2 )
+action = "jump"
+device = "xbox"

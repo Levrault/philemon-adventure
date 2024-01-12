@@ -17,7 +17,6 @@ func _ready():
 	
 	
 	var data = LevelManager.get_level_state(LevelManager.current_level_name)
-	print(data)
 	if data.has(get_name()):
 		active_targets()
 
