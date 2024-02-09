@@ -13,3 +13,5 @@
 [Kenney &bull; UI Pack: Space Expansion](https://www.kenney.nl/assets/ui-pack-space-expansion)
 
 [Kenney &bull; Digital Audio](https://www.kenney.nl/assets/digital-audio)
+
+[2D Pixel Art Cacodaemon Sprites](https://elthen.itch.io/2d-pixel-art-cacodaemon-sprites)
