@@ -11,6 +11,7 @@ enum BeamType {
 }
 
 enum Ability {
+	JUMP,
 	DOUBLE_JUMP
 }
 
@@ -29,6 +30,7 @@ var beam_upgrades_status = {
 }
 
 var ability_upgrades_status = {
+	Ability.keys()[Ability.JUMP]: false,
 	Ability.keys()[Ability.DOUBLE_JUMP]: false,
 }
 
@@ -45,6 +47,8 @@ func _ready() -> void:
 			unlock_beam(BeamType.HYPERBEAM)
 		if ProjectSettings.get_setting("game/curvedbeam_unlocked"):
 			unlock_beam(BeamType.CURVED_BEAM)
+		if ProjectSettings.get_setting("game/jump_unlocked"):
+			unlock_ability(Ability.DOUBLE_JUMP)
 		if ProjectSettings.get_setting("game/double_jump_unlocked"):
 			unlock_ability(Ability.DOUBLE_JUMP)
 

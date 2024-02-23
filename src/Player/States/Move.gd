@@ -50,9 +50,10 @@ static func calculate_velocity(
 
 func unhandled_input(event: InputEvent) -> void:
 	if owner.is_on_floor():
-		if event.is_action_pressed(owner.actions.jump):
-			_state_machine.transition_to("Move/Air", {impulse = true})
-			return
+		if GameManager.is_ability_upgrade_status_unlocked(GameManager.Ability.JUMP):
+			if event.is_action_pressed(owner.actions.jump):
+				_state_machine.transition_to("Move/Air", {impulse = true})
+				return
 
 	if owner.flag.ladder and not owner.flag.ladder_one_way_platform:
 		if event.is_action_pressed(owner.actions.move_up):

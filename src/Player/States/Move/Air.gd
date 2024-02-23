@@ -7,7 +7,7 @@ var LandDust := preload("res://src/VFX/LandDust.tscn")
 export var acceleration_x := 1000.0
 export var min_jump_impulse := 200.0
 export var jump_impulse := 275.0
-export var max_jump_count := 1
+export var max_jump_count := 0
 
 var _jump_count := 1
 var _is_controlled := true
@@ -19,23 +19,30 @@ onready var _bounce_sfx := $Bounce
 
 func _ready() -> void:
 	Events.connect("ability_unlocked", self, "_on_Ability_unlocked")
+	
+	if GameManager.is_ability_upgrade_status_unlocked(GameManager.Ability.JUMP):
+		max_jump_count = 1
+
+	
 	if GameManager.is_ability_upgrade_status_unlocked(GameManager.Ability.DOUBLE_JUMP):
 		max_jump_count = 2
 
 
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(owner.actions.jump):
-		emit_signal("jumped")
 		if _jump_count < max_jump_count:
+			emit_signal("jumped")
 			_impulse_sfx.play_sound()
 			jump(jump_impulse - 75.0)
 
 			if _jump_count > 1:
 				Global.add_child_to_root(LandDust.instance(), owner.global_position)
-		elif _coyote_time.time_left > 0.0:
-			_coyote_time.stop()
-			_impulse_sfx.play_sound()
-			jump(jump_impulse)
+		if _coyote_time.time_left > 0.0:
+			if _jump_count < max_jump_count:
+				emit_signal("jumped")
+				_coyote_time.stop()
+				_impulse_sfx.play_sound()
+				jump(jump_impulse)
 
 	# set a minimal air jump if button is release to soon
 	if (
@@ -83,7 +90,7 @@ func enter(msg: Dictionary = {}) -> void:
 			_impulse_sfx.play_sound()
 		Global.add_child_to_root(LandDust.instance(), owner.global_position)
 		jump(jump_impulse)
-	
+
 	if "bouncing_force" in msg:
 		if not "mute_sfx" in msg:
 			_bounce_sfx.play_sound()
@@ -116,6 +123,10 @@ func calculate_jump_velocity(impulse: float = 0.0) -> Vector2:
 
 
 func _on_Ability_unlocked(ability_type: int) -> void:
-	if ability_type != GameManager.Ability.DOUBLE_JUMP:
+	if ability_type == GameManager.Ability.JUMP:
+		max_jump_count = 1
 		return
-	max_jump_count = 2
+	
+	if ability_type != GameManager.Ability.DOUBLE_JUMP:
+		max_jump_count = 2
+		return

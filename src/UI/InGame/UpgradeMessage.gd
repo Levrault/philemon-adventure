@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("ui_accept"):
 		$AnimationPlayer.play_backwards("hide")
 		set_process_unhandled_input(false)
 
@@ -25,7 +25,7 @@ func _on_Ability_message_displayed(ability_type) -> void:
 	Global.pause_game()
 	show()
 	$AnimationPlayer.play("show")
-	$"%Message".text = "ingame.%s_unlocked" % GameManager.Ability.keys()[ability_type].to_lower()
+	$"%Message".text = "ingame%s_unlocked" % GameManager.Ability.keys()[ability_type].to_lower()
 
 
 func _on_Animation_finished(anim_name: String) -> void:

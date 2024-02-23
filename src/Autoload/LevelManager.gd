@@ -9,7 +9,28 @@ enum Level {
 	DEBUG_LEVEL_3,
 	DEBUG_MULTIPLAYER,
 	DEBUG_NAVIGATION_AGENT,
-	SAVE_ROOM_1
+	DEBUG_SAVE_ROOM_1,
+	ROOM_01,
+	ROOM_02,
+	ROOM_03,
+	ROOM_04,
+	ROOM_05,
+	ROOM_06,
+	ROOM_07,
+	ROOM_08,
+	ROOM_09,
+	ROOM_10,
+	ROOM_11,
+	ROOM_12,
+	ROOM_13,
+	ROOM_14,
+	ROOM_15,
+	ROOM_16,
+	ROOM_17,
+	ROOM_18,
+	ROOM_19,
+	ROOM_20,
+	ROOM_21,
 }
 
 var level_keys := Level.keys()
@@ -40,6 +61,10 @@ func get_level_path(level: int) -> String:
 	match level:
 		Level.MAIN_MENU:
 			return "res://src/UI/MainMenu.tscn"
+		Level.ROOM_01:
+			return "res://src/World/Room/Room01.tscn"
+		Level.ROOM_02:
+			return "res://src/World/Room/Room02.tscn"
 		Level.DEBUG_LEVEL_1:
 			return "res://src/World/Debug/DebugLevel1.tscn"
 		Level.DEBUG_LEVEL_2:
@@ -50,7 +75,7 @@ func get_level_path(level: int) -> String:
 			return "res://src/World/Debug/DebugMultiplayer.tscn"
 		Level.DEBUG_NAVIGATION_AGENT:
 			return "res://src/World/Debug/DebugNavigationAgent.tscn"
-		Level.SAVE_ROOM_1:
+		Level.DEBUG_SAVE_ROOM_1:
 			return "res://src/World/SaveRoom/SaveRoom1.tscn"
 		_:
 			printerr("Level %s doesn't exist" % level)

@@ -365,10 +365,11 @@ window/stretch/aspect="keep"
 beam_unlocked=true
 hyperbeam_unlocked=true
 curvedbeam_unlocked=true
-double_jump_unlocked=true
+double_jump_unlocked=false
 skip_boot_screen=true
 show_fps=true
 save_allowed=true
+jump_unlocked=false
 
 [input]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/back.png-1c34b10ae420b01680212e108cf35eaa.stex"
+path="res://.import/Cacodaemon Sprite Sheet.png-ba3be4f45019fc5017b3103341e65735.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/back.png"
-dest_files=[ "res://.import/back.png-1c34b10ae420b01680212e108cf35eaa.stex" ]
+source_file="res://assets/characters/boss/Cacodaemon Sprite Sheet.png"
+dest_files=[ "res://.import/Cacodaemon Sprite Sheet.png-ba3be4f45019fc5017b3103341e65735.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

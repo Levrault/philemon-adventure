@@ -7,9 +7,6 @@
 
 [node name="DebugMultiplayer" instance=ExtResource( 1 )]
 
-[node name="Backgrounds" parent="." index="1"]
-visible = true
-
 [node name="ColorBackground" parent="Backgrounds" index="0"]
 margin_right = 582.0
 

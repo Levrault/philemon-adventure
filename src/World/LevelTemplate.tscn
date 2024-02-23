@@ -14,7 +14,6 @@ script = ExtResource( 2 )
 [node name="DebugInputListener" parent="." instance=ExtResource( 7 )]
 
 [node name="Backgrounds" type="Node2D" parent="."]
-visible = false
 z_index = -2
 
 [node name="ColorBackground" type="ColorRect" parent="Backgrounds"]
@@ -26,9 +25,11 @@ color = Color( 0.0823529, 0.0666667, 0.137255, 1 )
 
 [node name="Back" parent="Backgrounds" instance=ExtResource( 4 )]
 position = Vector2( 266, -115 )
+region_rect = Rect2( 0, 0, 304, 240 )
 
 [node name="Far" parent="Backgrounds" instance=ExtResource( 5 )]
 position = Vector2( 75, 29 )
+region_rect = Rect2( 0, 0, 352, 240 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )

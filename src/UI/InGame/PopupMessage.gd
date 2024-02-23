@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action("ui_accept"):
+	if event.is_action_pressed("ui_accept"):
 		Global.unpause_game()
 		hide()
 		set_process_unhandled_input(false)
