@@ -8,7 +8,12 @@ func _ready() -> void:
 
 func _on_Body_entered(body: Node) -> void:
 	owner.flag.moving_platform = true
+	
+	if body is FallingPlatform:
+		body.active()
 
 
 func _on_Body_exited(body: Node) -> void:
 	owner.flag.moving_platform = false
+	if body is FallingPlatform:
+		body.inactive()

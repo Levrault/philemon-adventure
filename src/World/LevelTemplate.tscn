@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/World/Level.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://src/Backgrounds/Far.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Camera/Camera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Debug/DebugInputListener.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/environment/middle.png" type="Texture" id=8]
+[ext_resource path="res://assets/environment/middle_alt.png" type="Texture" id=9]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
@@ -24,10 +26,22 @@ margin_bottom = 137.0
 color = Color( 0.0823529, 0.0666667, 0.137255, 1 )
 
 [node name="Back" parent="Backgrounds" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 266, -115 )
 region_rect = Rect2( 0, 0, 304, 240 )
 
+[node name="Middle" type="Sprite" parent="Backgrounds"]
+visible = false
+position = Vector2( -72, 8 )
+texture = ExtResource( 8 )
+
+[node name="MiddleAlt" type="Sprite" parent="Backgrounds"]
+visible = false
+position = Vector2( -72, 8 )
+texture = ExtResource( 9 )
+
 [node name="Far" parent="Backgrounds" instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 75, 29 )
 region_rect = Rect2( 0, 0, 352, 240 )
 

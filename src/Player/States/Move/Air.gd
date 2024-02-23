@@ -22,7 +22,6 @@ func _ready() -> void:
 	
 	if GameManager.is_ability_upgrade_status_unlocked(GameManager.Ability.JUMP):
 		max_jump_count = 1
-
 	
 	if GameManager.is_ability_upgrade_status_unlocked(GameManager.Ability.DOUBLE_JUMP):
 		max_jump_count = 2

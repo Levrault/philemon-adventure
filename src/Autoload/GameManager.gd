@@ -48,7 +48,7 @@ func _ready() -> void:
 		if ProjectSettings.get_setting("game/curvedbeam_unlocked"):
 			unlock_beam(BeamType.CURVED_BEAM)
 		if ProjectSettings.get_setting("game/jump_unlocked"):
-			unlock_ability(Ability.DOUBLE_JUMP)
+			unlock_ability(Ability.JUMP)
 		if ProjectSettings.get_setting("game/double_jump_unlocked"):
 			unlock_ability(Ability.DOUBLE_JUMP)
 

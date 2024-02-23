@@ -94,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Resources/Enemies/EnemyResourceBase.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "FallingPlatform",
+"language": "GDScript",
+"path": "res://src/Platform/FallingPlatform.gd"
+}, {
 "base": "HBoxContainer",
 "class": "Field",
 "language": "GDScript",
@@ -287,6 +292,7 @@ _global_script_class_icons={
 "DropdownField": "",
 "Enemy": "",
 "EnemyResourceBase": "",
+"FallingPlatform": "",
 "Field": "res://editor/icons/field.svg",
 "FieldSet": "res://editor/icons/fieldset.svg",
 "FieldWithOptions": "res://editor/icons/field.svg",
@@ -369,7 +375,7 @@ double_jump_unlocked=false
 skip_boot_screen=true
 show_fps=true
 save_allowed=true
-jump_unlocked=false
+jump_unlocked=true
 
 [input]
 
