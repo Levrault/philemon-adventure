@@ -9,6 +9,7 @@ export var min_jump_impulse := 200.0
 export var jump_impulse := 275.0
 export var max_jump_count := 0
 
+var _is_shooting := false
 var _jump_count := 1
 var _is_controlled := true
 

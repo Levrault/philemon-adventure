@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Props/Barrier.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Props/SwitchBarrier.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Platform/FallingPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Upgrade/BeamUpgrade.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Enemies/Crab/Crab.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Enemies/Lizard/Lizard.tscn" type="PackedScene" id=10]
 
 [node name="Room03" instance=ExtResource( 1 )]
 
@@ -12,7 +17,6 @@
 margin_top = -272.0
 margin_right = 552.0
 margin_bottom = 232.0
-color = Color( 0.0823529, 0.0666667, 0.137255, 1 )
 
 [node name="Back" parent="Backgrounds" index="1"]
 visible = true
@@ -35,7 +39,7 @@ color = Color( 0.0823529, 0.0666667, 0.137255, 1 )
 position = Vector2( 24, 24 )
 
 [node name="TileMap" parent="." index="2"]
-tile_data = PoolIntArray( -786437, 38, 0, -786436, 38, 0, -786435, 38, 0, -786434, 38, 0, -786433, 38, 0, -851968, 38, 0, -720902, 39, 0, -786431, 37, 0, -655366, 39, 0, -720895, 37, 0, -589830, 39, 0, -655359, 37, 0, -524294, 39, 0, -589823, 37, 0, -589822, 38, 0, -589821, 38, 0, -589820, 38, 0, -589819, 38, 0, -589818, 38, 0, -589817, 38, 0, -589816, 38, 0, -589815, 38, 0, -589814, 38, 0, -589813, 38, 0, -589812, 38, 0, -589811, 38, 0, -589810, 38, 0, -589809, 38, 0, -589808, 38, 0, -589807, 38, 0, -589806, 38, 0, -589805, 38, 0, -589804, 38, 0, -589803, 38, 0, -589802, 38, 0, -589801, 38, 0, -589800, 38, 0, -458763, 38, 0, -458762, 38, 0, -458761, 38, 0, -458760, 38, 0, -458759, 38, 0, -458758, 38, 0, -393228, 39, 0, -327692, 39, 0, -262156, 39, 0, -262148, 42, 0, -262147, 31, 0, -196620, 39, 0, -196612, 42, 0, -131084, 39, 0, -131076, 42, 0, -65548, 39, 0, -12, 39, 0, 65523, 38, 0, 65524, 38, 0, 65541, 42, 0, 65542, 35, 0, 65543, 35, 0, 65544, 35, 0, 65545, 35, 0, 65546, 35, 0, 65547, 35, 0, 65548, 35, 0, 65549, 35, 0, 65553, 35, 0, 65554, 35, 0, 65555, 35, 0, 65556, 35, 0, 65557, 35, 0, 65558, 35, 0, 65559, 35, 0, 65560, 35, 0, 131077, 42, 0, 131078, 37, 0, 131085, 39, 0, 131089, 37, 0, 262131, 35, 0, 262132, 35, 0, 262133, 35, 0, 262134, 35, 0, 262135, 35, 0, 262136, 35, 0, 262137, 35, 0, 262138, 35, 0, 196613, 42, 0, 196614, 37, 0, 196621, 39, 0, 196625, 37, 0, 327674, 39, 0, 262149, 42, 0, 262150, 37, 0, 262157, 39, 0, 262161, 37, 0, 393210, 39, 0, 327685, 42, 0, 327686, 37, 0, 327693, 39, 0, 327697, 37, 0, 458741, 38, 0, 458742, 38, 0, 458743, 38, 0, 458744, 38, 0, 458745, 38, 0, 458746, 38, 0, 393221, 42, 0, 393222, 37, 0, 393229, 39, 0, 393233, 37, 0, 524276, 39, 0, 458757, 42, 0, 458758, 37, 0, 458765, 39, 0, 458769, 37, 0, 589812, 39, 0, 524293, 42, 0, 524294, 37, 0, 524301, 39, 0, 524302, 15, 0, 524303, 15, 0, 524304, 15, 0, 524305, 37, 0, 655349, 35, 0, 655350, 35, 0, 655351, 35, 0, 655352, 35, 0, 655353, 35, 0, 655354, 35, 0, 655355, 35, 0, 655356, 35, 0, 655357, 35, 0, 655358, 35, 0, 655359, 35, 0, 589824, 35, 0, 589825, 35, 0, 589826, 35, 0, 589827, 35, 0, 589828, 35, 0, 589829, 35, 0, 589837, 39, 0, 589841, 37, 0, 655373, 39, 0, 655377, 37, 0 )
+tile_data = PoolIntArray( -524294, 38, 0, -524293, 38, 0, -524292, 38, 0, -524291, 38, 0, -524290, 38, 0, -524289, 38, 0, -589824, 38, 0, -589823, 38, 0, -589822, 38, 0, -589821, 38, 0, -589820, 38, 0, -589819, 38, 0, -589818, 38, 0, -589817, 38, 0, -589816, 38, 0, -589815, 38, 0, -589814, 38, 0, -589813, 38, 0, -589812, 38, 0, -589811, 38, 0, -589810, 38, 0, -589809, 38, 0, -589808, 38, 0, -589807, 38, 0, -589806, 24, 0, -458763, 38, 0, -458762, 38, 0, -458761, 38, 0, -458760, 38, 0, -458759, 38, 0, -524270, 22, 0, -524269, 23, 0, -524268, 23, 0, -524267, 23, 0, -524266, 23, 0, -524265, 24, 0, -524264, 23, 0, -524263, 24, 0, -524262, 24, 0, -524261, 24, 0, -524260, 24, 0, -524259, 24, 0, -524258, 24, 0, -524257, 24, 0, -524256, 24, 0, -524255, 24, 0, -393228, 39, 0, -327692, 39, 0, -262156, 39, 0, -196620, 39, 0, -131084, 39, 0, -131083, 33, 0, -131082, 33, 0, -65548, 39, 0, -131044, 33, 0, -131043, 33, 0, -131042, 33, 0, -131041, 33, 0, -13, 38, 0, -12, 39, 0, -65509, 33, 0, -65508, 33, 0, -65507, 33, 0, -65506, 33, 0, -65505, 33, 0, 25, 33, 0, 26, 33, 0, 27, 33, 0, 28, 33, 0, 29, 33, 0, 30, 33, 0, 31, 33, 0, 65541, 42, 0, 65542, 35, 0, 65543, 35, 0, 65544, 35, 0, 65545, 35, 0, 65546, 35, 0, 65547, 35, 0, 65548, 35, 0, 65549, 35, 0, 65553, 35, 0, 65554, 35, 0, 65555, 35, 0, 65556, 35, 0, 65557, 35, 0, 65558, 35, 0, 65559, 35, 0, 65560, 35, 0, 65561, 35, 0, 65562, 35, 0, 65563, 35, 0, 65564, 35, 0, 65565, 35, 0, 65566, 35, 0, 65567, 33, 0, 131077, 42, 0, 131078, 37, 0, 131085, 39, 0, 131089, 37, 0, 262131, 35, 0, 262132, 35, 0, 262133, 35, 0, 262134, 35, 0, 262135, 35, 0, 262136, 35, 0, 262137, 35, 0, 262138, 35, 0, 196613, 42, 0, 196614, 37, 0, 196621, 39, 0, 196625, 37, 0, 327674, 39, 0, 262149, 42, 0, 262150, 37, 0, 262157, 39, 0, 262161, 37, 0, 393210, 39, 0, 327685, 42, 0, 327686, 37, 0, 327693, 39, 0, 327697, 37, 0, 458741, 38, 0, 458742, 38, 0, 458743, 38, 0, 458744, 38, 0, 458745, 38, 0, 458746, 38, 0, 393221, 42, 0, 393222, 37, 0, 393229, 39, 0, 393233, 37, 0, 524276, 39, 0, 458757, 42, 0, 458758, 37, 0, 458765, 39, 0, 458769, 37, 0, 589812, 39, 0, 524293, 42, 0, 524294, 37, 0, 524301, 39, 0, 524302, 15, 0, 524303, 15, 0, 524304, 15, 0, 524305, 37, 0, 655349, 35, 0, 655350, 35, 0, 655351, 35, 0, 655352, 35, 0, 655353, 35, 0, 655354, 35, 0, 655355, 35, 0, 655356, 35, 0, 655357, 35, 0, 655358, 35, 0, 655359, 35, 0, 589824, 35, 0, 589825, 35, 0, 589826, 35, 0, 589827, 35, 0, 589828, 35, 0, 589829, 35, 0, 589837, 39, 0, 589841, 37, 0, 655373, 39, 0, 655377, 37, 0 )
 
 [node name="Ladder" parent="Props" index="0" instance=ExtResource( 2 )]
 position = Vector2( 88, 80 )
@@ -45,29 +49,67 @@ tiles_y_multiplier = 8
 position = Vector2( -88, 144 )
 
 [node name="SwitchButton" parent="Props" index="2" instance=ExtResource( 4 )]
-position = Vector2( -32, -80 )
+position = Vector2( -160, -48 )
 targetObjectPath = [ NodePath("../Barrier") ]
 
 [node name="FallingPlatform" parent="Props" index="3" instance=ExtResource( 5 )]
-position = Vector2( 24, 16 )
+position = Vector2( 40, -8 )
 
 [node name="FallingPlatform2" parent="Props" index="4" instance=ExtResource( 5 )]
-position = Vector2( 40, 16 )
+position = Vector2( 56, -8 )
 
 [node name="FallingPlatform3" parent="Props" index="5" instance=ExtResource( 5 )]
-position = Vector2( -8, 16 )
+position = Vector2( -8, -32 )
 
-[node name="FallingPlatform4" parent="Props" index="6" instance=ExtResource( 5 )]
-position = Vector2( 8, 16 )
+[node name="FallingPlatform9" parent="Props" index="6" instance=ExtResource( 5 )]
+position = Vector2( -24, -32 )
 
-[node name="Ladder2" parent="Props" index="7" instance=ExtResource( 2 )]
-position = Vector2( -56, -56 )
-tiles_y_multiplier = 3
+[node name="FallingPlatform4" parent="Props" index="7" instance=ExtResource( 5 )]
+position = Vector2( 8, -32 )
+
+[node name="FallingPlatform5" parent="Props" index="8" instance=ExtResource( 5 )]
+position = Vector2( -104, -32 )
+
+[node name="FallingPlatform6" parent="Props" index="9" instance=ExtResource( 5 )]
+position = Vector2( -88, -32 )
+
+[node name="FallingPlatform7" parent="Props" index="10" instance=ExtResource( 5 )]
+position = Vector2( -136, -32 )
+
+[node name="FallingPlatform8" parent="Props" index="11" instance=ExtResource( 5 )]
+position = Vector2( -120, -32 )
+
+[node name="Lizard" parent="Enemies" index="0" instance=ExtResource( 10 )]
+position = Vector2( 304, 16 )
+look_direction = -1
+
+[node name="Crab" parent="Enemies" index="1" instance=ExtResource( 9 )]
+position = Vector2( 136, 16 )
+
+[node name="BeamUpgrade" parent="Upgrades" index="0" instance=ExtResource( 8 )]
+position = Vector2( -160, 128 )
+
+[node name="Portal" parent="Portals" index="0" instance=ExtResource( 7 )]
+position = Vector2( -216, 24 )
+go_to = 8
+spawn_point = "SpawnPoint2"
+
+[node name="Portal2" parent="Portals" index="1" instance=ExtResource( 7 )]
+position = Vector2( 520, -56 )
+scale = Vector2( 1, 3 )
+go_to = 10
+spawn_point = "SpawnPoint1"
+
+[node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 6 )]
+position = Vector2( -184, 24 )
+
+[node name="SpawnPoint2" parent="Spawns" index="1" instance=ExtResource( 6 )]
+position = Vector2( 488, -40 )
 
 [node name="Player" parent="." index="8"]
-position = Vector2( -120, 40 )
+position = Vector2( -136, 48 )
 
 [node name="Camera" parent="." index="9"]
-limit_top = -129
-limit_right = 399
+limit_top = -140
+limit_right = 510
 limit_bottom = 158

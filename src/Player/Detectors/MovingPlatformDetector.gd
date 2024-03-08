@@ -15,5 +15,4 @@ func _on_Body_entered(body: Node) -> void:
 
 func _on_Body_exited(body: Node) -> void:
 	owner.flag.moving_platform = false
-	if body is FallingPlatform:
-		body.inactive()
+

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/World/SaveRoom/SaveStation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=4]
+
+[node name="Room05" instance=ExtResource( 1 )]
+
+[node name="Middle" parent="Backgrounds" index="2"]
+visible = true
+position = Vector2( 48, -88 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 524, 100 )
+
+[node name="Far" parent="Backgrounds" index="4"]
+visible = true
+
+[node name="TileMap" parent="." index="2"]
+tile_data = PoolIntArray( -524301, 26, 0, -524300, 23, 0, -524299, 23, 0, -524298, 24, 0, -524297, 23, 0, -524296, 24, 0, -524295, 24, 0, -524294, 24, 0, -524293, 23, 0, -524292, 23, 0, -524291, 24, 0, -524290, 24, 0, -524289, 24, 0, -589824, 23, 0, -589823, 23, 0, -589822, 23, 0, -589821, 24, 0, -589820, 23, 0, -589819, 23, 0, -589818, 23, 0, -589817, 24, 0, -589816, 23, 0, -589815, 23, 0, -589814, 23, 0, -589813, 23, 0, -589812, 23, 0, -589811, 23, 0, -589810, 24, 0, -589809, 24, 0, -589808, 25, 0, -458766, 17, 0, -524272, 18, 0, -393230, 17, 0, -458736, 18, 0, -327694, 17, 0, -393200, 18, 0, -262158, 17, 0, -327664, 18, 0, -196622, 17, 0, -262128, 18, 0, -131086, 17, 0, -196592, 18, 0, -131056, 18, 0, -14, 17, 0, -65520, 18, 0, 65522, 17, 0, 16, 18, 0, 131058, 17, 0, 65552, 18, 0, 196594, 17, 0, 262130, 17, 0, 196624, 32, 0, 196625, 32, 0, 327666, 17, 0, 393202, 17, 0, 458738, 17, 0, 458748, 33, 0, 458749, 33, 0, 458750, 33, 0, 458751, 33, 0, 393216, 33, 0, 393217, 33, 0, 393218, 33, 0, 393219, 33, 0, 393220, 33, 0, 393221, 33, 0, 524276, 4, 0, 524277, 4, 0, 524278, 4, 0, 524279, 4, 0, 524280, 4, 0, 524281, 4, 0, 524282, 4, 0, 524283, 4, 0, 524284, 4, 0, 524285, 4, 0, 524286, 4, 0, 524287, 4, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 33, 0, 458766, 33, 0, 458767, 33, 0, 458768, 33, 0, 458769, 32, 0 )
+
+[node name="SaveStation" parent="Props" index="0" instance=ExtResource( 2 )]
+position = Vector2( 16, 96 )
+
+[node name="Portal" parent="Portals" index="0" instance=ExtResource( 4 )]
+position = Vector2( 280, 88 )
+go_to = 10
+spawn_point = "SpawnPoint3"
+
+[node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 3 )]
+position = Vector2( 248, 96 )
+
+[node name="Player" parent="." index="8"]
+position = Vector2( 216, 112 )
+
+[node name="Camera" parent="." index="9"]
+limit_right = 274
+limit_bottom = 123

@@ -164,6 +164,7 @@ wait_time = 0.75
 
 [node name="Air" type="Node2D" parent="StateMachine/Move"]
 script = ExtResource( 7 )
+jump_impulse = 325.0
 
 [node name="CoyoteTime" type="Timer" parent="StateMachine/Move/Air"]
 wait_time = 0.15

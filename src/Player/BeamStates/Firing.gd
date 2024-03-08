@@ -5,6 +5,9 @@ onready var timer := $Timer
 
 
 func unhandled_input(event: InputEvent) -> void:
+	if not owner.is_on_floor():
+		return
+	
 	if event.is_action_pressed(owner.actions.fire):
 		owner.muzzle.shoot(owner.get_firing_beam_resource())
 		

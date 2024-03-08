@@ -368,9 +368,9 @@ window/stretch/aspect="keep"
 
 [game]
 
-beam_unlocked=true
-hyperbeam_unlocked=true
-curvedbeam_unlocked=true
+beam_unlocked=false
+hyperbeam_unlocked=false
+curvedbeam_unlocked=false
 double_jump_unlocked=false
 skip_boot_screen=true
 show_fps=true

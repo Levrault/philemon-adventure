@@ -65,6 +65,3 @@ func _on_Tween_all_completed() -> void:
 	_timer.start()
 
 
-func _on_Player_entered(player: Player) -> void:
-	owner.target = player
-	_state_machine.transition_to("Alert")

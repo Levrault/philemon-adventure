@@ -13,6 +13,10 @@ func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released(owner.actions.fire):
 		transition_interval.start()
 		return
+		
+	if event.is_action_pressed(owner.actions.jump):
+		_state_machine.transition_to("Move/Air", {impulse = true})
+		return
 
 
 func physics_process(delta: float) -> void:

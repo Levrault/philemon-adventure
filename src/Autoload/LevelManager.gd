@@ -65,6 +65,12 @@ func get_level_path(level: int) -> String:
 			return "res://src/World/Room/Room01.tscn"
 		Level.ROOM_02:
 			return "res://src/World/Room/Room02.tscn"
+		Level.ROOM_03:
+			return "res://src/World/Room/Room03.tscn"
+		Level.ROOM_04:
+			return "res://src/World/Room/Room04.tscn"
+		Level.ROOM_05:
+			return "res://src/World/Room/Room05.tscn"
 		Level.DEBUG_LEVEL_1:
 			return "res://src/World/Debug/DebugLevel1.tscn"
 		Level.DEBUG_LEVEL_2:
