@@ -4,6 +4,7 @@ extends Control
 func _ready() -> void:
 	Events.connect("beam_unlocked", self, "_on_Beam_message_displayed")
 	Events.connect("ability_unlocked", self, "_on_Ability_message_displayed")
+	Events.connect("card_unlocked", self, "_on_Card_message_displayed")
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
 	set_process_unhandled_input(false)
 
@@ -25,7 +26,14 @@ func _on_Ability_message_displayed(ability_type) -> void:
 	Global.pause_game()
 	show()
 	$AnimationPlayer.play("show")
-	$"%Message".text = "ingame%s_unlocked" % GameManager.Ability.keys()[ability_type].to_lower()
+	$"%Message".text = "ingame.%s_unlocked" % GameManager.Ability.keys()[ability_type].to_lower()
+
+
+func _on_Card_message_displayed(card_type) -> void:
+	Global.pause_game()
+	show()
+	$AnimationPlayer.play("show")
+	$"%Message".text = "ingame.%s_unlocked" % GameManager.Card.keys()[card_type].to_lower()
 
 
 func _on_Animation_finished(anim_name: String) -> void:

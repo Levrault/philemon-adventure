@@ -15,6 +15,13 @@ enum Ability {
 	DOUBLE_JUMP
 }
 
+enum Card {
+	LVL_1,
+	LVL_2,
+	LVL_3,
+	LVL_4
+}
+
 const LAYER = {
 	"WORLD": 0,
 	"PLAYER": 1,
@@ -34,8 +41,16 @@ var ability_upgrades_status = {
 	Ability.keys()[Ability.DOUBLE_JUMP]: false,
 }
 
+var card_upgrades_status = {
+	Card.keys()[Card.LVL_1]: false,
+	Card.keys()[Card.LVL_2]: false,
+	Card.keys()[Card.LVL_3]: false,
+	Card.keys()[Card.LVL_4]: false,
+}
+
 var beam_keys := BeamType.keys()
 var ability_keys := Ability.keys()
+var card_keys := Card.keys()
 var player_status: int = PlayerStatus.alive
 
 
@@ -51,6 +66,14 @@ func _ready() -> void:
 			unlock_ability(Ability.JUMP)
 		if ProjectSettings.get_setting("game/double_jump_unlocked"):
 			unlock_ability(Ability.DOUBLE_JUMP)
+		if ProjectSettings.get_setting("game/card_lvl_1_unlocked"):
+			unlock_card(Card.LVL_1)
+		if ProjectSettings.get_setting("game/card_lvl_2_unlocked"):
+			unlock_card(Card.LVL_2)
+		if ProjectSettings.get_setting("game/card_lvl_3_unlocked"):
+			unlock_card(Card.LVL_3)
+		if ProjectSettings.get_setting("game/card_lvl_4_unlocked"):
+			unlock_card(Card.LVL_4)
 
 
 func is_beam_upgrade_status_unlocked(beam_type: int) -> bool:
@@ -59,6 +82,10 @@ func is_beam_upgrade_status_unlocked(beam_type: int) -> bool:
 
 func is_ability_upgrade_status_unlocked(ability_type: int) -> bool:
 	return ability_upgrades_status[ability_keys[ability_type]]
+
+
+func is_card_upgrade_status_unlocked(card_type: int) -> bool:
+	return card_upgrades_status[card_keys[card_type]]
 
 
 func unlock_beam(beam_type: int) -> void:
@@ -71,6 +98,12 @@ func unlock_ability(ability_type: int) -> void:
 	print_debug("Ability %s has been unlocked" % ability_keys[ability_type])
 	ability_upgrades_status[ability_keys[ability_type]] = true
 	Events.emit_signal("ability_unlocked", ability_type)
+
+
+func unlock_card(card_type: int) -> void:
+	print_debug("Card %s has been unlocked" % card_keys[card_type])
+	card_upgrades_status[card_keys[card_type]] = true
+	Events.emit_signal("card_unlocked", card_type)
 
 
 func player_died() -> void:

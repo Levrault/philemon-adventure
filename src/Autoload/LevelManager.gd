@@ -71,6 +71,38 @@ func get_level_path(level: int) -> String:
 			return "res://src/World/Room/Room04.tscn"
 		Level.ROOM_05:
 			return "res://src/World/Room/Room05.tscn"
+		Level.ROOM_06:
+			return "res://src/World/Room/Room06.tscn"
+		Level.ROOM_07:
+			return "res://src/World/Room/Room07.tscn"
+		Level.ROOM_08:
+			return "res://src/World/Room/Room08.tscn"
+		Level.ROOM_09:
+			return "res://src/World/Room/Room09.tscn"
+		Level.ROOM_10:
+			return "res://src/World/Room/Room10.tscn"
+		Level.ROOM_11:
+			return "res://src/World/Room/Room11.tscn"
+		Level.ROOM_12:
+			return "res://src/World/Room/Room12.tscn"
+		Level.ROOM_13:
+			return "res://src/World/Room/Room13.tscn"
+		Level.ROOM_14:
+			return "res://src/World/Room/Room14.tscn"
+		Level.ROOM_15:
+			return "res://src/World/Room/Room15.tscn"
+		Level.ROOM_16:
+			return "res://src/World/Room/Room16.tscn"
+		Level.ROOM_17:
+			return "res://src/World/Room/Room17.tscn"
+		Level.ROOM_18:
+			return "res://src/World/Room/Room18.tscn"
+		Level.ROOM_19:
+			return "res://src/World/Room/Room19.tscn"
+		Level.ROOM_20:
+			return "res://src/World/Room/Room20.tscn"
+		Level.ROOM_21:
+			return "res://src/World/Room/Room21.tscn"
 		Level.DEBUG_LEVEL_1:
 			return "res://src/World/Debug/DebugLevel1.tscn"
 		Level.DEBUG_LEVEL_2:

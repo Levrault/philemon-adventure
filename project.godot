@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Upgrade/BeamUpgrade.gd"
 }, {
+"base": "Area2D",
+"class": "CardUpgrade",
+"language": "GDScript",
+"path": "res://src/Upgrade/CardUpgrade.gd"
+}, {
 "base": "Field",
 "class": "CheckboxField",
 "language": "GDScript",
@@ -283,6 +288,7 @@ _global_script_class_icons={
 "BeamFireMode": "res://editor/icons/attack_factory.svg",
 "BeamResource": "",
 "BeamUpgrade": "",
+"CardUpgrade": "",
 "CheckboxField": "res://editor/icons/check-square.svg",
 "CoopPlayer": "",
 "CoopPlayereSpawnPointSafeZone": "",
@@ -376,6 +382,10 @@ skip_boot_screen=true
 show_fps=true
 save_allowed=true
 jump_unlocked=true
+card_lvl_1_unlocked=false
+card_lvl_2_unlocked=false
+card_lvl_3_unlocked=false
+card_lvl_4_unlocked=false
 
 [input]
 

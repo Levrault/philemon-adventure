@@ -78,6 +78,9 @@ signal ability_unlocked(ability_type)
 signal beam_selected(beam_type)
 signal beam_unlocked(beam_type)
 
+# card
+signal card_unlocked(card_type)
+
 # co-op
 signal coop_player_removed(device_index)
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/force-field3.png-8506d652a125d96e6ce184cb6083ecc4.stex"
+path="res://.import/force-field-Sheet.png-59e07f6e611c18436dda6eee3f860170.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/force-field3.png"
-dest_files=[ "res://.import/force-field3.png-8506d652a125d96e6ce184cb6083ecc4.stex" ]
+source_file="res://assets/environment/force-field-Sheet.png"
+dest_files=[ "res://.import/force-field-Sheet.png-59e07f6e611c18436dda6eee3f860170.stex" ]
 
 [params]
 

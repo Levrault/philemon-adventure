@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/force-field1.png-d11aeea99bca80ca3d8d8122dd83677e.stex"
+path="res://.import/cards.png-328a569fded1f197523aaf3c99ef6f34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/force-field1.png"
-dest_files=[ "res://.import/force-field1.png-d11aeea99bca80ca3d8d8122dd83677e.stex" ]
+source_file="res://assets/upgrade/cards.png"
+dest_files=[ "res://.import/cards.png-328a569fded1f197523aaf3c99ef6f34.stex" ]
 
 [params]
 

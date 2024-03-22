@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Enemies/Crab/Crab.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Props/ForceField.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Upgrade/CardUpgrade.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Platform/Platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Waypoints/Waypoints.tscn" type="PackedScene" id=8]
+
+[node name="Room06" instance=ExtResource( 1 )]
+
+[node name="Back" parent="Backgrounds" index="1"]
+visible = true
+position = Vector2( 128, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 912, 240 )
+
+[node name="TileMap" parent="." index="2"]
+tile_data = PoolIntArray( -589838, 34, 0, -589837, 33, 0, -589836, 33, 0, -589835, 33, 0, -589834, 33, 0, -589833, 33, 0, -589832, 33, 0, -589831, 33, 0, -589830, 33, 0, -589829, 33, 0, -589828, 33, 0, -589827, 33, 0, -589826, 33, 0, -589825, 33, 0, -655360, 33, 0, -655359, 33, 0, -655358, 33, 0, -655357, 33, 0, -655356, 33, 0, -655355, 33, 0, -655354, 33, 0, -655353, 33, 0, -655352, 33, 0, -655351, 33, 0, -655350, 33, 0, -655349, 33, 0, -655348, 33, 0, -655347, 33, 0, -655346, 33, 0, -655345, 33, 0, -655344, 33, 0, -655343, 33, 0, -655342, 33, 0, -655341, 33, 0, -655340, 33, 0, -655339, 33, 0, -655338, 33, 0, -655337, 33, 0, -655336, 33, 0, -655335, 33, 0, -655334, 33, 0, -655333, 33, 0, -655332, 33, 0, -655331, 33, 0, -524302, 34, 0, -524301, 33, 0, -589823, 33, 0, -589822, 33, 0, -589821, 33, 0, -589820, 33, 0, -589819, 33, 0, -589818, 33, 0, -589817, 33, 0, -589816, 33, 0, -589815, 33, 0, -589814, 33, 0, -589813, 33, 0, -589812, 33, 0, -589796, 34, 0, -589795, 34, 0, -458765, 33, 0, -393230, 34, 0, -393229, 32, 0, -458724, 34, 0, -458723, 34, 0, -327693, 34, 0, -262158, 34, 0, -327652, 31, 0, -196621, 34, 0, -196620, 31, 0, -196618, 31, 0, -262116, 31, 0, -131086, 34, 0, -65549, 32, 0, -14, 34, 0, -13, 34, 0, 65532, 35, 0, 65533, 35, 0, 65534, 35, 0, 65535, 35, 0, 0, 35, 0, 1, 35, 0, 2, 35, 0, 3, 35, 0, 8, 35, 0, 9, 35, 0, 10, 35, 0, 11, 35, 0, 12, 35, 0, 18, 35, 0, 19, 35, 0, 20, 35, 0, 21, 35, 0, 27, 33, 0, 28, 33, 0, 29, 33, 0, 65563, 32, 0, 65564, 33, 0, 65565, 33, 0, 131099, 33, 0, 131100, 33, 0, 131101, 33, 0, 262130, 34, 0, 262131, 34, 0, 262132, 34, 0, 262133, 34, 0, 262134, 34, 0, 196635, 33, 0, 196636, 33, 0, 196637, 33, 0, 262171, 33, 0, 262172, 32, 0, 262173, 33, 0, 393202, 34, 0, 393203, 34, 0, 393204, 34, 0, 393205, 34, 0, 393206, 34, 0, 393207, 34, 0, 393208, 34, 0, 327707, 32, 0, 327708, 33, 0, 327709, 33, 0, 393219, 32, 0, 393220, 32, 0, 393228, 32, 0, 393229, 32, 0, 393243, 33, 0, 393244, 33, 0, 393245, 33, 0, 524274, 33, 0, 524275, 33, 0, 524276, 33, 0, 524277, 33, 0, 524278, 33, 0, 524279, 33, 0, 524280, 33, 0, 524281, 33, 0, 524282, 33, 0, 524283, 33, 0, 524284, 32, 0, 524285, 33, 0, 524286, 33, 0, 524287, 33, 0, 458752, 33, 0, 458753, 33, 0, 458754, 31, 0, 458756, 33, 0, 458757, 33, 0, 458758, 32, 0, 458759, 33, 0, 458760, 33, 0, 458761, 33, 0, 458762, 33, 0, 458763, 33, 0, 458764, 33, 0, 458765, 33, 0, 458766, 33, 0, 458767, 33, 0, 458768, 33, 0, 458769, 33, 0, 458770, 32, 0, 458771, 33, 0, 458772, 33, 0, 458773, 31, 0, 458774, 33, 0, 458775, 33, 0, 458776, 33, 0, 458777, 33, 0, 458778, 33, 0, 458779, 33, 0, 458780, 33, 0, 458781, 33, 0, 589810, 33, 0, 589811, 33, 0, 589812, 33, 0, 589813, 33, 0, 589814, 33, 0, 589815, 33, 0, 589816, 33, 0, 589817, 33, 0, 589818, 33, 0, 589819, 33, 0, 589820, 33, 0, 589821, 33, 0, 589822, 33, 0, 589823, 33, 0, 524288, 33, 0, 524289, 33, 0, 524290, 33, 0, 524291, 33, 0, 524292, 33, 0, 524293, 33, 0, 524294, 33, 0, 524295, 33, 0, 524296, 33, 0, 524297, 33, 0, 524298, 33, 0, 524299, 33, 0, 524300, 33, 0, 524301, 33, 0, 524302, 33, 0, 524303, 33, 0, 524304, 33, 0, 524305, 33, 0, 524306, 33, 0, 524307, 33, 0, 524308, 33, 0, 524309, 33, 0, 524310, 33, 0, 524311, 33, 0, 524312, 33, 0, 524313, 33, 0, 524314, 33, 0, 524315, 33, 0, 524316, 33, 0, 524317, 33, 0 )
+
+[node name="CardUpgrade" parent="Props" index="0" instance=ExtResource( 6 )]
+position = Vector2( -168, -80 )
+
+[node name="ForceField" parent="Props" index="1" instance=ExtResource( 5 )]
+position = Vector2( -200, 32 )
+
+[node name="Waypoints" parent="Props" index="2" instance=ExtResource( 8 )]
+position = Vector2( -104, 32 )
+points = PoolVector2Array( 0, 0, 0, -100 )
+
+[node name="Platform" parent="Props/Waypoints" index="0" instance=ExtResource( 7 )]
+
+[node name="Crab" parent="Enemies" index="0" instance=ExtResource( 4 )]
+position = Vector2( -32, 112 )
+
+[node name="Crab2" parent="Enemies" index="1" instance=ExtResource( 4 )]
+position = Vector2( 136, 112 )
+
+[node name="Crab3" parent="Enemies" index="2" instance=ExtResource( 4 )]
+position = Vector2( 328, 112 )
+
+[node name="Portal" parent="Portals" index="0" instance=ExtResource( 2 )]
+position = Vector2( 480, -24 )
+go_to = 10
+spawn_point = "SpawnPoint5"
+
+[node name="Portal2" parent="Portals" index="1" instance=ExtResource( 2 )]
+position = Vector2( -216, 32 )
+go_to = 13
+spawn_point = "SpawnPoint1"
+
+[node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 3 )]
+position = Vector2( 448, -16 )
+
+[node name="SpawnPoint2" parent="Spawns" index="1" instance=ExtResource( 3 )]
+position = Vector2( -184, 32 )
+
+[node name="Camera" parent="." index="9"]
+limit_top = -162
+limit_right = 477

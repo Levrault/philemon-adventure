@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="CardUpgrade02"]
+type = 1
+
+[node name="Sprite" parent="." index="1"]
+frame = 3
