@@ -12,6 +12,8 @@ func _ready() -> void:
 	area.connect("body_entered", self, "_on_Body_entered")
 	area.connect("body_exited", self, "_on_Body_exited")
 	set_type(type)
+	if GameManager.is_card_upgrade_status_unlocked(type):
+		is_active = false
 
 
 func set_type(p_type: int) -> void:
