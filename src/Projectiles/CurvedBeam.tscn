@@ -4,6 +4,7 @@
 [ext_resource path="res://assets/projectiles/fireball.png" type="Texture" id=2]
 
 [node name="CurvedBeam" instance=ExtResource( 1 )]
+type = 2
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 2 )

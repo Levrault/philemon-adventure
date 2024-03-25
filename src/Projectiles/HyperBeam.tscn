@@ -4,6 +4,7 @@
 [ext_resource path="res://assets/projectiles/hyperbeam.png" type="Texture" id=2]
 
 [node name="HyperBeam" instance=ExtResource( 1 )]
+type = 1
 
 [node name="Sprite" parent="." index="1"]
 scale = Vector2( 2, 2 )

@@ -2,6 +2,8 @@ extends Node2D
 
 const Feedback:PackedScene = preload("res://src/Projectiles/BeamFeedback.tscn")
 
+export(GameManager.BeamType) var type := GameManager.BeamType.BEAM
+
 var speed := 300.0
 var direction := 1
 
@@ -29,9 +31,13 @@ func _process(delta: float) -> void:
 		sprite.flip_h = true
 
 
-func _on_Body_entered(body: Node) -> void:
+func destroy(body: Node) -> void:
 	var feedback := Feedback.instance()
 	Global.add_child_to_root(feedback, global_position)
 	print_debug("%s has hit %s" % [get_name(), body.get_name()])
 	feedback.play_impact_sfx(body)
 	call_deferred("queue_free")
+
+
+func _on_Body_entered(body: Node) -> void:
+	destroy(body)

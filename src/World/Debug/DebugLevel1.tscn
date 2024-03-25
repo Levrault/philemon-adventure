@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Enemies/Slime/Slime.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Props/Barrier.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Props/SwitchBarrier.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Enemies/Shield.tscn" type="PackedScene" id=8]
 
 [node name="DebugLevel1" instance=ExtResource( 1 )]
 
@@ -40,6 +41,9 @@ position = Vector2( -101, -112 )
 [node name="Slime3" parent="Enemies" index="2" instance=ExtResource( 5 )]
 position = Vector2( 138, -112 )
 
+[node name="Shield" parent="Enemies" index="3" instance=ExtResource( 8 )]
+position = Vector2( 210, -17 )
+
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 3 )]
 position = Vector2( 387, -30 )
 go_to = 5
@@ -51,7 +55,7 @@ tiles_y_multiplier = 5
 position = Vector2( 337, -22 )
 
 [node name="Player" parent="." index="8"]
-position = Vector2( 229, 0 )
+position = Vector2( 118, 0 )
 
 [node name="Camera" parent="." index="9"]
 limit_top = -176
