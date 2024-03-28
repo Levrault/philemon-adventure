@@ -91,6 +91,7 @@ signal data_saved
 signal player_input_disabled
 signal player_input_enabled
 signal player_max_health_changed(value)
+signal player_health_changed(value)
 signal player_moved(player)
 signal player_teleported_to(global_position)
 signal player_state_changed_to(state, msg)

@@ -60,7 +60,7 @@ func take_damage(source: Hit) -> void:
 	.take_damage(source)
 	skin.hit_flash()
 	if stats.health > 0 and not source.is_instakill:
-		state_machine.transition_to("Move/Hurt", {impulse = true})
+		state_machine.transition_to("Move/Hurt", {impulse = source.impulse})
 		return
 	state_machine.transition_to("Move/Die")
 

@@ -5,7 +5,7 @@ class_name Ladder
 const TILES_Y_BASE_SIZE := 8
 const BORDER_SIZE := 2
 
-export(int, 1, 10) var tiles_y_multiplier := 1 setget set_tiles_y_multiplier
+export(int, 1, 20) var tiles_y_multiplier := 1 setget set_tiles_y_multiplier
 
 
 func _ready() -> void:

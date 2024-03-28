@@ -1,10 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Player/BasePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player/Detectors/SaveStationDetector.gd" type="Script" id=2]
 [ext_resource path="res://src/Player/Detectors/PortalDetector.gd" type="Script" id=3]
 [ext_resource path="res://src/Multiplayer/Spawn/CoopPlatformPlayerSpawnPoint.gd" type="Script" id=4]
 [ext_resource path="res://src/Multiplayer/Spawn/CoopPlayerPortalSpawnPoint.gd" type="Script" id=5]
+[ext_resource path="res://assets/theme/minecraftia_8.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/theme/player_hud.tres" type="Theme" id=7]
+[ext_resource path="res://assets/upgrade/beam_upgrade.png" type="Texture" id=8]
+[ext_resource path="res://assets/characters/player/hud/heart_progress.png" type="Texture" id=9]
+[ext_resource path="res://assets/characters/player/hud/heart.png" type="Texture" id=10]
+[ext_resource path="res://assets/upgrade/hyperbeam_upgrade.png" type="Texture" id=11]
+[ext_resource path="res://src/Player/HUD/HealthBar.gd" type="Script" id=12]
+[ext_resource path="res://src/Player/HUD/BeamUIID.gd" type="Script" id=13]
+[ext_resource path="res://src/Player/HUD/BeamsSelectorBar.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.5, 1.5 )
@@ -86,3 +95,73 @@ __meta__ = {
 "_gizmo_extents_": 5.0
 }
 coop_player_index = 3
+
+[node name="HUD" type="CanvasLayer" parent="." index="20"]
+
+[node name="Control" type="Control" parent="HUD" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 7 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" index="0"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 60.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="Energy" type="Label" parent="HUD/Control/VBoxContainer" index="0"]
+margin_right = 56.0
+margin_bottom = 11.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 6 )
+text = "Energy"
+uppercase = true
+
+[node name="HealthBar" type="HBoxContainer" parent="HUD/Control/VBoxContainer" index="1"]
+margin_top = 11.0
+margin_right = 56.0
+margin_bottom = 22.0
+script = ExtResource( 12 )
+
+[node name="TextureProgress" type="TextureProgress" parent="HUD/Control/VBoxContainer/HealthBar" index="0"]
+margin_right = 9.0
+margin_bottom = 11.0
+max_value = 99.0
+value = 99.0
+rounded = true
+texture_over = ExtResource( 10 )
+texture_progress = ExtResource( 9 )
+fill_mode = 3
+
+[node name="Health" type="Label" parent="HUD/Control/VBoxContainer/HealthBar" index="1"]
+margin_left = 13.0
+margin_right = 25.0
+margin_bottom = 11.0
+text = "99"
+
+[node name="BeamsSelectorBar" type="HBoxContainer" parent="HUD/Control" index="1"]
+margin_left = 4.0
+margin_top = 27.0
+margin_right = 60.0
+margin_bottom = 43.0
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 14 )
+
+[node name="Beam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar" index="0"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0.8, 0.8 )
+texture = ExtResource( 8 )
+script = ExtResource( 13 )
+
+[node name="CurvedBeam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar" index="1"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+script = ExtResource( 13 )
+id = 2

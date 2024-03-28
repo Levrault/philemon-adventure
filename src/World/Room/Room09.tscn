@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 180, 12.5 )
+
+[node name="Room09" instance=ExtResource( 1 )]
+
+[node name="ColorBackground" parent="Backgrounds" index="0"]
+margin_left = -296.0
+margin_top = -256.0
+margin_right = 432.0
+margin_bottom = 208.0
+
+[node name="MiddleAlt" parent="Backgrounds" index="3"]
+position = Vector2( 13, 75 )
+
+[node name="Far" parent="Backgrounds" index="4"]
+visible = true
+
+[node name="TileMap" parent="." index="2"]
+tile_data = PoolIntArray( -917517, 5, 0, -917515, 5, 0, -917513, 5, 0, -917511, 5, 0, -917509, 5, 0, -917507, 5, 0, -917505, 5, 0, -983039, 5, 0, -983037, 5, 0, -983035, 5, 0, -983033, 5, 0, -983031, 5, 0, -983029, 5, 0, -983027, 5, 0, -983025, 5, 0, -983023, 5, 0, -851982, 1, 0, -786446, 1, 0, -786445, 1, 0, -786444, 1, 0, -851951, 1, 0, -851950, 1, 0, -720910, 1, 0, -720909, 1, 0, -786414, 1, 0, -720878, 1, 0, -393229, 35, 0, -393228, 35, 0, -327693, 38, 0, -327692, 38, 0, -327681, 33, 0, -393216, 33, 0, -393215, 33, 0, -393214, 42, 0, -393213, 33, 0, -393212, 33, 0, -393211, 33, 0, -393210, 33, 0, -393200, 42, 0, -393199, 5, 0, -262157, 34, 0, -262156, 34, 0, -327678, 42, 0, -327664, 42, 0, -262142, 42, 0, -262128, 42, 0, -262127, 5, 0, -196606, 42, 0, -196592, 42, 0, -131070, 42, 0, -131056, 42, 0, -131055, 5, 0, -65534, 42, 0, -65520, 42, 0, 2, 42, 0, 16, 42, 0, 17, 5, 0, 131059, 34, 0, 131060, 34, 0, 131061, 33, 0, 131062, 33, 0, 131065, 31, 0, 131067, 33, 0, 131071, 31, 0, 65537, 31, 0, 65552, 42, 0, 196597, 33, 0, 196601, 32, 0, 196602, 33, 0, 196603, 32, 0, 196607, 33, 0, 131072, 33, 0, 131073, 33, 0, 131074, 33, 0, 131088, 42, 0, 131089, 5, 0, 262131, 34, 0, 262132, 34, 0, 262137, 33, 0, 262138, 33, 0, 262139, 33, 0, 262143, 33, 0, 196608, 33, 0, 196609, 32, 0, 196610, 33, 0, 196624, 42, 0, 327673, 40, 0, 327674, 40, 0, 327675, 40, 0, 327679, 40, 0, 262144, 40, 0, 262145, 40, 0, 262146, 40, 0, 262160, 42, 0, 262161, 5, 0, 393203, 34, 0, 393204, 34, 0, 327696, 42, 0, 524275, 34, 0, 524276, 34, 0, 589811, 40, 0, 589812, 40, 0, 589813, 47, 0, 589814, 47, 0, 589815, 47, 0, 589816, 47, 0, 589817, 47, 0, 589818, 47, 0, 589819, 47, 0, 589820, 47, 0, 589821, 47, 0, 589822, 47, 0, 589823, 47, 0, 524288, 47, 0, 524289, 47, 0, 524290, 47, 0, 524291, 47, 0, 524292, 47, 0, 524293, 47, 0, 524294, 47, 0, 524295, 47, 0, 524296, 47, 0, 524297, 47, 0, 524298, 47, 0, 524299, 40, 0, 524300, 40, 0, 524301, 40, 0, 524302, 40, 0, 524303, 40, 0, 524304, 40, 0, 524305, 40, 0, 524306, 40, 0, 655347, 46, 0, 655348, 46, 0, 655349, 46, 0, 655350, 46, 0, 655351, 46, 0, 655352, 46, 0, 655353, 46, 0, 655354, 46, 0, 655355, 46, 0, 655356, 46, 0, 655357, 46, 0, 655358, 46, 0, 655359, 46, 0, 589824, 46, 0, 589825, 46, 0, 589826, 46, 0, 589827, 46, 0, 589828, 46, 0, 589829, 46, 0, 589830, 46, 0, 589831, 46, 0, 589832, 46, 0, 589833, 46, 0, 589834, 46, 0, 589835, 46, 0, 589836, 46, 0, 589837, 46, 0, 589838, 46, 0, 589839, 46, 0, 589840, 46, 0, 589841, 46, 0, 589842, 46, 0 )
+
+[node name="DamageSource" parent="TileMap" index="0" instance=ExtResource( 2 )]
+position = Vector2( -168, 144 )
+damage = 10
+has_throwback_force = false
+looping_damage = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DamageSource" index="0"]
+position = Vector2( 164, -2.5 )
+shape = SubResource( 1 )
+
+[node name="Ladder" parent="Props" index="0" instance=ExtResource( 5 )]
+position = Vector2( 40, -40 )
+tiles_y_multiplier = 7
+
+[node name="Ladder2" parent="Props" index="1" instance=ExtResource( 5 )]
+position = Vector2( 264, 0 )
+tiles_y_multiplier = 12
+
+[node name="Portal1" parent="Portals" index="0" instance=ExtResource( 4 )]
+position = Vector2( -214, -16 )
+go_to = 14
+spawn_point = "SpawnPoint2"
+
+[node name="Portal2" parent="Portals" index="1" instance=ExtResource( 4 )]
+position = Vector2( -214, -144 )
+go_to = 16
+spawn_point = "SpawnPoint1"
+
+[node name="Portal3" parent="Portals" index="2" instance=ExtResource( 4 )]
+position = Vector2( 304, -128 )
+go_to = 17
+tiles_y_multiplier = 7
+
+[node name="Portal4" parent="Portals" index="3" instance=ExtResource( 4 )]
+position = Vector2( 307, 109 )
+go_to = 16
+
+[node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 3 )]
+position = Vector2( -193, 0 )
+
+[node name="SpawnPoint2" parent="Spawns" index="1" instance=ExtResource( 3 )]
+position = Vector2( 285, 120 )
+
+[node name="SpawnPoint3" parent="Spawns" index="2" instance=ExtResource( 3 )]
+position = Vector2( 285, -108 )
+
+[node name="SpawnPoint4" parent="Spawns" index="3" instance=ExtResource( 3 )]
+position = Vector2( -192, -128 )
+
+[node name="Player" parent="." index="8"]
+position = Vector2( -185, 10 )
+
+[node name="Camera" parent="." index="9"]
+limit_top = -236
+limit_right = 301
+limit_bottom = 158

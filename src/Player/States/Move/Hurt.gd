@@ -38,7 +38,7 @@ func enter(msg: Dictionary = {}) -> void:
 		print_debug("code joy vibration")
 		#Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .3)
 
-	if "impulse" in msg:
+	if "impulse" in msg and msg.impulse:
 		_parent.throwback(throwback_force)
 
 

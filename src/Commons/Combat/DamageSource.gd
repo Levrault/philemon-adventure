@@ -7,6 +7,9 @@ extends Area2D
 
 export var damage := 1
 export var is_instakill := false
+export var has_throwback_force := true
+export var looping_damage := false
+
 
 var is_active := true setget set_active
 
