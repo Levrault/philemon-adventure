@@ -57,6 +57,7 @@ spawn_point = "SpawnPoint1"
 [node name="Portal3" parent="Portals" index="2" instance=ExtResource( 4 )]
 position = Vector2( 304, -128 )
 go_to = 17
+spawn_point = "SpawnPoint1"
 tiles_y_multiplier = 7
 
 [node name="Portal4" parent="Portals" index="3" instance=ExtResource( 4 )]
