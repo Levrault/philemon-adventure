@@ -23,27 +23,27 @@ radius = 91.0494
 script = ExtResource( 7 )
 resource = ExtResource( 6 )
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="0"]
+path_desired_distance = 16.0
+target_desired_distance = 8.0
+avoidance_enabled = true
+max_neighbors = 16
+max_speed = 75.0
+
+[node name="Skin" parent="." index="1" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( 0, 0 )
 shape = SubResource( 5 )
 
-[node name="Stats" parent="." index="1"]
+[node name="Stats" parent="." index="3"]
 max_health = 60
-
-[node name="Skin" parent="." index="2" instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="DamageSource" index="0"]
 shape = SubResource( 3 )
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="5"]
-path_desired_distance = 16.0
-target_desired_distance = 8.0
-avoidance_enabled = true
-max_neighbors = 16
-max_speed = 75.0
 
 [node name="StateMachine" parent="." index="6"]
 initial_state = NodePath("Idle")
