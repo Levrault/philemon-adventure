@@ -36,7 +36,7 @@ func _on_Area_entered(damage_source: Area2D) -> void:
 		damage_source.owner.destroy(owner)
 		if damage_source.owner.type != GameManager.BeamType.HYPERBEAM:
 			return
-	if "hit_direction":
+	if "hit_direction" in owner:
 		var direction = -1 if damage_source.global_position.x > global_position.x else 1
 		owner.hit_direction = direction
 	if damage_source.looping_damage:
