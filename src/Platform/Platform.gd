@@ -22,7 +22,9 @@ func _ready() -> void:
 
 	timer.connect("timeout", self, "_on_Timeout")
 	tween.connect("tween_all_completed", self, "_on_Tween_all_completed")
-	timer.start()
+	
+	if waypoints.mode != waypoints.Mode.SCRIPTED:
+		timer.start()
 
 
 func set_wait_time(value: float) -> void:

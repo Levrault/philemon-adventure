@@ -2,7 +2,7 @@ tool
 extends Line2D
 class_name Waypoints
 
-enum Mode { CYCLE, PING_PONG }
+enum Mode { CYCLE, PING_PONG, SCRIPTED }
 
 export (Mode) var mode := Mode.CYCLE setget set_mode
 export var triangle_color := Color(1, 1, 1)
@@ -72,6 +72,11 @@ func get_next_point_position():
 		Mode.CYCLE:
 			_active_point_index = (_active_point_index + 1) % points.size()
 		Mode.PING_PONG:
+			var index := _active_point_index + _direction
+			if index < 0 or index > points.size() - 1:
+				_direction *= -1
+			_active_point_index += _direction
+		Mode.SCRIPTED:
 			var index := _active_point_index + _direction
 			if index < 0 or index > points.size() - 1:
 				_direction *= -1
