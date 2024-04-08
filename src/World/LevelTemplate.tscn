@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/environment/middle.png" type="Texture" id=8]
 [ext_resource path="res://assets/environment/middle_alt.png" type="Texture" id=9]
 
-[node name="World" type="Node2D"]
+[node name="Room14" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="DebugInputListener" parent="." instance=ExtResource( 7 )]

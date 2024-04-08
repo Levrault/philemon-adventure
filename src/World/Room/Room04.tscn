@@ -111,6 +111,26 @@ tiles_y_multiplier = 8
 [node name="ForceField" parent="Props" index="19" instance=ExtResource( 12 )]
 position = Vector2( 234, -648 )
 
+[node name="ForceField2" parent="Props" index="20" instance=ExtResource( 12 )]
+position = Vector2( 160, 88 )
+type = 1
+
+[node name="ForceField3" parent="Props" index="21" instance=ExtResource( 12 )]
+position = Vector2( 184, 88 )
+type = 1
+
+[node name="ForceField4" parent="Props" index="22" instance=ExtResource( 12 )]
+position = Vector2( 208, 88 )
+type = 1
+
+[node name="ForceField5" parent="Props" index="23" instance=ExtResource( 12 )]
+position = Vector2( 176, -424 )
+type = 2
+
+[node name="ForceField7" parent="Props" index="24" instance=ExtResource( 12 )]
+position = Vector2( 152, -424 )
+type = 2
+
 [node name="Waypoints" parent="Enemies" index="0" instance=ExtResource( 9 )]
 position = Vector2( -128, -528 )
 points = PoolVector2Array( 0, 0, 240, 0 )
@@ -157,9 +177,13 @@ spawn_point = "SpawnPoint1"
 [node name="Portal5" parent="Portals" index="4" instance=ExtResource( 11 )]
 position = Vector2( 256, -424 )
 scale = Vector2( 1, 2 )
+go_to = 22
+spawn_point = "SpawnPoint1"
 
 [node name="Portal6" parent="Portals" index="5" instance=ExtResource( 11 )]
 position = Vector2( 256, 88 )
+go_to = 20
+spawn_point = "SpawnPoint1"
 
 [node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 4 )]
 position = Vector2( -216, 72 )
