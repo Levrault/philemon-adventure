@@ -7,6 +7,11 @@ extends Node
 #### UI ####
 ############
 
+# cinematic
+signal cinematic_transition_started
+signal cinematic_animation_finished
+signal cinematic_transition_ended
+
 # config
 signal config_file_saved
 signal config_file_loaded

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -7,7 +7,11 @@
 [ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Scripts/Room17_Ascensor.gd" type="Script" id=6]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 233.5, 164 )
+
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1, 20 )
 
 [node name="Room17" instance=ExtResource( 1 )]
 
@@ -15,75 +19,124 @@
 margin_left = -280.0
 margin_top = -160.0
 margin_right = 467.0
-margin_bottom = 808.0
+margin_bottom = 1093.0
 
 [node name="TileMap" parent="." index="2"]
-tile_data = PoolIntArray( -524301, 39, 0, -524300, 38, 0, -524299, 38, 0, -524298, 38, 0, -524297, 38, 0, -524296, 38, 0, -524295, 38, 0, -524294, 38, 0, -524293, 38, 0, -524292, 38, 0, -524291, 38, 0, -524290, 38, 0, -524289, 38, 0, -589824, 38, 0, -589823, 38, 0, -589822, 38, 0, -589821, 38, 0, -589820, 38, 0, -589819, 38, 0, -589818, 38, 0, -589817, 38, 0, -589816, 38, 0, -589815, 38, 0, -589814, 38, 0, -589813, 38, 0, -589812, 38, 0, -589811, 38, 0, -589810, 38, 0, -589809, 38, 0, -589808, 38, 0, -458765, 39, 0, -524272, 37, 0, -393229, 39, 0, -458736, 37, 0, -327693, 39, 0, -393200, 37, 0, -262157, 39, 0, -327664, 37, 0, -196621, 39, 0, -262128, 37, 0, -131085, 39, 0, -196592, 37, 0, -65549, 39, 0, -131056, 37, 0, -13, 39, 0, -65520, 37, 0, 65523, 39, 0, 16, 37, 0, 131059, 39, 0, 65552, 37, 0, 196595, 39, 0, 131088, 37, 0, 262131, 39, 0, 196624, 37, 0, 327667, 39, 0, 262160, 37, 0, 327696, 37, 0, 393232, 37, 0, 458768, 37, 0, 589811, 35, 0, 589812, 35, 0, 589813, 35, 0, 589814, 35, 0, 589815, 35, 0, 589816, 35, 0, 589817, 35, 0, 589818, 35, 0, 589819, 35, 0, 589820, 35, 0, 589821, 35, 0, 589822, 35, 0, 524293, 35, 0, 524294, 35, 0, 524295, 35, 0, 524296, 35, 0, 524297, 35, 0, 524298, 35, 0, 524299, 35, 0, 524300, 35, 0, 524301, 35, 0, 524302, 35, 0, 524303, 35, 0, 524304, 35, 0, 655358, 39, 0, 589829, 37, 0, 720894, 39, 0, 655365, 37, 0, 786430, 39, 0, 720901, 37, 0, 851966, 39, 0, 786437, 37, 0, 917502, 39, 0, 851973, 37, 0, 983038, 39, 0, 917509, 37, 0, 1048574, 39, 0, 983045, 37, 0, 1114110, 39, 0, 1048581, 37, 0, 1179646, 39, 0, 1114117, 37, 0, 1245182, 39, 0, 1179653, 37, 0, 1310718, 39, 0, 1245189, 37, 0, 1376254, 39, 0, 1310725, 37, 0, 1441790, 39, 0, 1376261, 37, 0, 1507326, 39, 0, 1441797, 37, 0, 1572862, 39, 0, 1507333, 37, 0, 1638398, 39, 0, 1572869, 37, 0, 1703934, 39, 0, 1638405, 37, 0, 1769470, 39, 0, 1703941, 37, 0, 1835006, 39, 0, 1769477, 37, 0, 1900542, 39, 0, 1835013, 37, 0, 1966078, 39, 0, 1900549, 37, 0, 2031614, 39, 0, 1966085, 37, 0, 2097150, 39, 0, 2031621, 37, 0, 2162686, 39, 0, 2097157, 37, 0, 2228222, 39, 0, 2162693, 37, 0, 2293758, 39, 0, 2228229, 37, 0, 2359294, 39, 0, 2293765, 37, 0, 2424830, 39, 0, 2359301, 37, 0, 2490366, 39, 0, 2424837, 37, 0, 2555902, 39, 0, 2490373, 37, 0, 2621438, 39, 0, 2555909, 37, 0, 2686974, 39, 0, 2621445, 37, 0, 2752510, 39, 0, 2686981, 37, 0, 2818046, 39, 0, 2752517, 37, 0, 2883582, 39, 0, 2949118, 39, 0, 3014654, 39, 0, 3080190, 39, 0, 3145726, 39, 0, 3211262, 0, 0, 3145728, 0, 0, 3145730, 0, 0, 3145732, 0, 0, 3145734, 0, 0, 3145736, 0, 0, 3145738, 0, 0 )
+tile_data = PoolIntArray( -524301, 39, 0, -524300, 38, 0, -524299, 38, 0, -524298, 38, 0, -524297, 38, 0, -524296, 38, 0, -524295, 38, 0, -524294, 38, 0, -524293, 38, 0, -524292, 38, 0, -524291, 38, 0, -524290, 38, 0, -524289, 38, 0, -589824, 38, 0, -589823, 38, 0, -589822, 38, 0, -589821, 38, 0, -589820, 38, 0, -589819, 38, 0, -589818, 38, 0, -589817, 38, 0, -589816, 38, 0, -589815, 38, 0, -589814, 38, 0, -589813, 38, 0, -589812, 38, 0, -589811, 38, 0, -589810, 38, 0, -589809, 38, 0, -589808, 38, 0, -458765, 39, 0, -524272, 37, 0, -393229, 39, 0, -458736, 37, 0, -327693, 39, 0, -393200, 37, 0, -262157, 39, 0, -327664, 37, 0, -196621, 39, 0, -262128, 37, 0, -131085, 39, 0, -196592, 37, 0, -65549, 39, 0, -131056, 37, 0, -13, 39, 0, -65520, 37, 0, 65523, 39, 0, 16, 37, 0, 131059, 39, 0, 65552, 37, 0, 196595, 39, 0, 131088, 37, 0, 262131, 39, 0, 196624, 37, 0, 327667, 39, 0, 262160, 37, 0, 327696, 37, 0, 393232, 37, 0, 458768, 37, 0, 589811, 35, 0, 589812, 35, 0, 589813, 35, 0, 589814, 35, 0, 589815, 35, 0, 589816, 35, 0, 589817, 35, 0, 589818, 35, 0, 589819, 35, 0, 589820, 35, 0, 589821, 35, 0, 589822, 35, 0, 524293, 35, 0, 524294, 35, 0, 524295, 35, 0, 524296, 35, 0, 524297, 35, 0, 524298, 35, 0, 524299, 35, 0, 524300, 35, 0, 524301, 35, 0, 524302, 35, 0, 524303, 35, 0, 524304, 35, 0, 655358, 39, 0, 589829, 37, 0, 720894, 39, 0, 655365, 37, 0, 786430, 39, 0, 720901, 37, 0, 851966, 39, 0, 786437, 37, 0, 917502, 39, 0, 851973, 37, 0, 983038, 39, 0, 917509, 37, 0, 1048574, 39, 0, 983045, 37, 0, 1114110, 39, 0, 1048581, 37, 0, 1179646, 39, 0, 1114117, 37, 0, 1245182, 39, 0, 1179653, 37, 0, 1310718, 39, 0, 1245189, 37, 0, 1376254, 39, 0, 1310725, 37, 0, 1441790, 39, 0, 1376261, 37, 0, 1507326, 39, 0, 1441797, 37, 0, 1572862, 39, 0, 1507333, 37, 0, 1638398, 39, 0, 1572869, 37, 0, 1703934, 39, 0, 1638405, 37, 0, 1769470, 39, 0, 1703941, 37, 0, 1835006, 39, 0, 1769477, 37, 0, 1900542, 39, 0, 1835013, 37, 0, 1966078, 39, 0, 1900549, 37, 0, 2031614, 39, 0, 1966085, 37, 0, 2097150, 39, 0, 2031621, 37, 0, 2162686, 39, 0, 2097157, 37, 0, 2228222, 39, 0, 2162693, 37, 0, 2293758, 39, 0, 2228229, 37, 0, 2359294, 39, 0, 2293765, 37, 0, 2424830, 39, 0, 2359301, 37, 0, 2490366, 39, 0, 2424837, 37, 0, 2555902, 39, 0, 2490373, 37, 0, 2621438, 39, 0, 2555909, 37, 0, 2686974, 39, 0, 2621445, 37, 0, 2752510, 39, 0, 2686981, 37, 0, 2818046, 39, 0, 2752517, 37, 0, 2883582, 39, 0, 2818054, 38, 0, 2818055, 38, 0, 2818056, 38, 0, 2818057, 38, 0, 2818058, 38, 0, 2818059, 38, 0, 2818060, 38, 0, 2818061, 38, 0, 2818062, 38, 0, 2818063, 38, 0, 2818064, 38, 0, 2949118, 39, 0, 3014654, 39, 0, 3080190, 39, 0, 3145726, 39, 0, 3211261, 0, 0, 3145733, 0, 0, 3145735, 0, 0, 3145737, 0, 0, 3145739, 0, 0, 3145741, 4, 0, 3145743, 4, 0 )
 
 [node name="Ascensor" type="Node2D" parent="Props" index="0"]
 script = ExtResource( 6 )
-waypoints = [ NodePath("Waypoints"), NodePath("Waypoints2"), NodePath("Waypoints3"), NodePath("Waypoints4"), NodePath("Waypoints5"), NodePath("Waypoints6") ]
+platforms = [ NodePath("Waypoints/Platform"), NodePath("Waypoints2/Platform"), NodePath("Waypoints3/Platform"), NodePath("Waypoints4/Platform"), NodePath("Waypoints5/Platform"), NodePath("Waypoints6/Platform") ]
 
-[node name="Area2D" type="Area2D" parent="Props/Ascensor" index="0"]
-position = Vector2( 32, 112 )
+[node name="AreaSpawnTop" type="Area2D" parent="Props/Ascensor" index="0"]
+position = Vector2( -151, 82 )
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Ascensor/Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Ascensor/AreaSpawnTop" index="0"]
+position = Vector2( 183.5, -50 )
+shape = SubResource( 4 )
+
+[node name="AreaSpawnBottom" type="Area2D" parent="Props/Ascensor" index="1"]
+position = Vector2( 143, 732 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Ascensor/AreaSpawnBottom" index="0"]
+shape = SubResource( 4 )
+
+[node name="AreaTop" type="Area2D" parent="Props/Ascensor" index="2"]
+position = Vector2( 32, 120 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Ascensor/AreaTop" index="0"]
+position = Vector2( 0, -10 )
 shape = SubResource( 1 )
 
-[node name="Waypoints" parent="Props/Ascensor" index="1" instance=ExtResource( 3 )]
-position = Vector2( -8, 136 )
-points = PoolVector2Array( 0, 0, 0, 632 )
+[node name="AreaBottom" type="Area2D" parent="Props/Ascensor" index="3"]
+position = Vector2( 32, 759 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Ascensor/AreaBottom" index="0"]
+position = Vector2( 0, -10 )
+shape = SubResource( 1 )
+
+[node name="Waypoints" parent="Props/Ascensor" index="4" instance=ExtResource( 3 )]
+position = Vector2( -8, 140 )
+points = PoolVector2Array( 0, 0, 0, 640 )
 mode = 2
 
 [node name="Platform" parent="Props/Ascensor/Waypoints" index="0" instance=ExtResource( 2 )]
+speed = 100.0
+wait_time = 0.5
 
-[node name="Waypoints2" parent="Props/Ascensor" index="2" instance=ExtResource( 3 )]
-position = Vector2( 8, 136 )
-points = PoolVector2Array( 0, 0, 0, 632 )
+[node name="Waypoints2" parent="Props/Ascensor" index="5" instance=ExtResource( 3 )]
+position = Vector2( 8, 140 )
+points = PoolVector2Array( 0, 0, 0, 640 )
 mode = 2
 
 [node name="Platform" parent="Props/Ascensor/Waypoints2" index="0" instance=ExtResource( 2 )]
+speed = 100.0
+wait_time = 0.5
 
-[node name="Waypoints3" parent="Props/Ascensor" index="3" instance=ExtResource( 3 )]
-position = Vector2( 24, 136 )
-points = PoolVector2Array( 0, 0, 0, 632 )
+[node name="Waypoints3" parent="Props/Ascensor" index="6" instance=ExtResource( 3 )]
+position = Vector2( 24, 140 )
+points = PoolVector2Array( 0, 0, 0, 640 )
 mode = 2
 
 [node name="Platform" parent="Props/Ascensor/Waypoints3" index="0" instance=ExtResource( 2 )]
+speed = 100.0
+wait_time = 0.5
 
-[node name="Waypoints4" parent="Props/Ascensor" index="4" instance=ExtResource( 3 )]
-position = Vector2( 40, 136 )
-points = PoolVector2Array( 0, 0, 0, 632 )
+[node name="Waypoints4" parent="Props/Ascensor" index="7" instance=ExtResource( 3 )]
+position = Vector2( 40, 140 )
+points = PoolVector2Array( 0, 0, 0, 640 )
 mode = 2
 
 [node name="Platform" parent="Props/Ascensor/Waypoints4" index="0" instance=ExtResource( 2 )]
+speed = 100.0
+wait_time = 0.5
 
-[node name="Waypoints5" parent="Props/Ascensor" index="5" instance=ExtResource( 3 )]
-position = Vector2( 56, 136 )
-points = PoolVector2Array( 0, 0, 0, 632 )
+[node name="Waypoints5" parent="Props/Ascensor" index="8" instance=ExtResource( 3 )]
+position = Vector2( 56, 140 )
+points = PoolVector2Array( 0, 0, 0, 640 )
 mode = 2
 
 [node name="Platform" parent="Props/Ascensor/Waypoints5" index="0" instance=ExtResource( 2 )]
+speed = 100.0
+wait_time = 0.5
 
-[node name="Waypoints6" parent="Props/Ascensor" index="6" instance=ExtResource( 3 )]
-position = Vector2( 72, 136 )
-points = PoolVector2Array( 0, 0, 0, 632 )
+[node name="Waypoints6" parent="Props/Ascensor" index="9" instance=ExtResource( 3 )]
+position = Vector2( 72, 140 )
+points = PoolVector2Array( 0, 0, 0, 640 )
 mode = 2
 
 [node name="Platform" parent="Props/Ascensor/Waypoints6" index="0" instance=ExtResource( 2 )]
+speed = 100.0
+wait_time = 0.5
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 4 )]
 position = Vector2( -208, 104 )
 go_to = 22
 spawn_point = "SpawnPoint2"
 
+[node name="Portal2" parent="Portals" index="1" instance=ExtResource( 4 )]
+position = Vector2( 278, 736 )
+go_to = 23
+spawn_point = "SpawnPoint1"
+
 [node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 5 )]
 position = Vector2( -176, 112 )
 
 [node name="SpawnPoint2" parent="Spawns" index="1" instance=ExtResource( 5 )]
-position = Vector2( 168, 744 )
+position = Vector2( 245, 749 )
+
+[node name="Player" parent="." index="8"]
+position = Vector2( 168, 759 )
 
 [node name="Camera" parent="." index="9"]
 limit_top = -123
 limit_right = 271
-limit_bottom = 145
+limit_bottom = 990

@@ -99,6 +99,7 @@ func set_current_beam_type(value: int) -> void:
 
 func set_is_handling_input(value: bool) -> void:
 	state_machine.set_process_unhandled_input(value)
+	beam_state_machine.set_process_unhandled_input(value)
 	is_handling_input = value
 
 
