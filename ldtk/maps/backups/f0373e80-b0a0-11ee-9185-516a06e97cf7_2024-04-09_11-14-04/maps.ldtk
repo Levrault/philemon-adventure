@@ -1977,7 +1977,7 @@
 			"__neighbours": [ { "levelIid": "a30990f0-b0a0-11ee-9185-15ee7f6d5200", "dir": "e" }, { "levelIid": "a9047b00-b0a0-11ee-9185-3dca28c65db8", "dir": "n" } ]
 		},
 		{
-			"identifier": "Level_4",
+			"identifier": "Room10",
 			"iid": "d13f0df0-b0a0-11ee-9185-91e0c2853d1d",
 			"uid": 30,
 			"worldX": 2800,
@@ -1987,7 +1987,7 @@
 			"pxHei": 208,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -3603,7 +3603,7 @@
 			"__neighbours": [ { "levelIid": "305ce0a0-b0a0-11ee-9185-d58e73feb6fa", "dir": "s" }, { "levelIid": "a30990f0-b0a0-11ee-9185-15ee7f6d5200", "dir": "e" }, { "levelIid": "94b56870-b0a0-11ee-898e-117100a493fa", "dir": "w" } ]
 		},
 		{
-			"identifier": "Level_8",
+			"identifier": "Room8",
 			"iid": "ae6c73e0-b0a0-11ee-9185-f59ce1a66be3",
 			"uid": 19,
 			"worldX": 1376,
@@ -3613,7 +3613,7 @@
 			"pxHei": 256,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -4189,7 +4189,7 @@
 			"__neighbours": [ { "levelIid": "a30990f0-b0a0-11ee-9185-15ee7f6d5200", "dir": "w" }, { "levelIid": "b5eec140-b0a0-11ee-9185-b30396556899", "dir": "e" } ]
 		},
 		{
-			"identifier": "Level_9",
+			"identifier": "Room9",
 			"iid": "b5eec140-b0a0-11ee-9185-b30396556899",
 			"uid": 20,
 			"worldX": 2352,
@@ -4199,7 +4199,7 @@
 			"pxHei": 416,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -4649,7 +4649,7 @@
 			"__neighbours": [ { "levelIid": "d13f0df0-b0a0-11ee-9185-91e0c2853d1d", "dir": "e" }, { "levelIid": "ae6c73e0-b0a0-11ee-9185-f59ce1a66be3", "dir": "w" }, { "levelIid": "2d11a2b0-b0a0-11ee-9185-7f050c0877fa", "dir": "e" }, { "levelIid": "32f66cb0-b0a0-11ee-9185-29c9eec421bb", "dir": "w" } ]
 		},
 		{
-			"identifier": "Level_10",
+			"identifier": "Room14",
 			"iid": "b98afad0-b0a0-11ee-9185-c78ad440d184",
 			"uid": 21,
 			"worldX": 1376,
@@ -4659,7 +4659,7 @@
 			"pxHei": 256,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -4889,7 +4889,7 @@
 			"__neighbours": [ { "levelIid": "a30990f0-b0a0-11ee-9185-15ee7f6d5200", "dir": "w" }, { "levelIid": "bc1946d0-b0a0-11ee-9185-3972d0a04e3b", "dir": "e" } ]
 		},
 		{
-			"identifier": "Level_11",
+			"identifier": "Room15",
 			"iid": "bc1946d0-b0a0-11ee-9185-3972d0a04e3b",
 			"uid": 22,
 			"worldX": 1632,
@@ -4899,7 +4899,7 @@
 			"pxHei": 416,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -5336,7 +5336,7 @@
 			"__neighbours": [{ "levelIid": "b98afad0-b0a0-11ee-9185-c78ad440d184", "dir": "w" }]
 		},
 		{
-			"identifier": "Level_12",
+			"identifier": "Room11",
 			"iid": "2d11a2b0-b0a0-11ee-9185-7f050c0877fa",
 			"uid": 25,
 			"worldX": 2800,
@@ -5346,7 +5346,7 @@
 			"pxHei": 272,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -5640,7 +5640,7 @@
 			"__neighbours": [ { "levelIid": "b5eec140-b0a0-11ee-9185-b30396556899", "dir": "w" }, { "levelIid": "37e6eba0-b0a0-11ee-9185-313cff30fdd8", "dir": "w" } ]
 		},
 		{
-			"identifier": "Level_13",
+			"identifier": "Room13",
 			"iid": "32f66cb0-b0a0-11ee-9185-29c9eec421bb",
 			"uid": 26,
 			"worldX": 2080,
@@ -5650,7 +5650,7 @@
 			"pxHei": 224,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -5811,7 +5811,7 @@
 			"__neighbours": [ { "levelIid": "b5eec140-b0a0-11ee-9185-b30396556899", "dir": "e" }, { "levelIid": "37e6eba0-b0a0-11ee-9185-313cff30fdd8", "dir": "e" } ]
 		},
 		{
-			"identifier": "Level_14",
+			"identifier": "Room12",
 			"iid": "37e6eba0-b0a0-11ee-9185-313cff30fdd8",
 			"uid": 27,
 			"worldX": 2352,
@@ -5821,7 +5821,7 @@
 			"pxHei": 256,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -6710,7 +6710,7 @@
 			"__neighbours": [ { "levelIid": "a30990f0-b0a0-11ee-9185-15ee7f6d5200", "dir": "w" }, { "levelIid": "e19e56b0-b0a0-11ee-9185-4de8d06f71ca", "dir": "e" } ]
 		},
 		{
-			"identifier": "Level_16",
+			"identifier": "Room17",
 			"iid": "e19e56b0-b0a0-11ee-9185-4de8d06f71ca",
 			"uid": 31,
 			"worldX": 2288,
@@ -6720,7 +6720,7 @@
 			"pxHei": 256,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -8027,7 +8027,7 @@
 			"__neighbours": [ { "levelIid": "0ea967d0-b0a0-11ee-9185-99128a22773b", "dir": "w" }, { "levelIid": "5a077d30-b0a0-11ee-898e-67c7893baf3a", "dir": "e" } ]
 		},
 		{
-			"identifier": "Level_20",
+			"identifier": "Room7",
 			"iid": "94b56870-b0a0-11ee-898e-117100a493fa",
 			"uid": 44,
 			"worldX": 288,
@@ -8037,7 +8037,7 @@
 			"pxHei": 256,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,

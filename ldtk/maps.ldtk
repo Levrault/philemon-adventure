@@ -1469,7 +1469,7 @@
 			"__neighbours": [ { "levelIid": "f0376591-b0a0-11ee-9185-adf30849e5cf", "dir": "w" }, { "levelIid": "9c0ca030-b0a0-11ee-9185-27616affd798", "dir": "e" } ]
 		},
 		{
-			"identifier": "Level_2",
+			"identifier": "Room18",
 			"iid": "f52560d0-b0a0-11ee-898e-3d1cba0bd14f",
 			"uid": 46,
 			"worldX": 2560,
@@ -1479,7 +1479,7 @@
 			"pxHei": 208,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
