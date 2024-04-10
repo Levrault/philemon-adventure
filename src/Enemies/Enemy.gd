@@ -18,3 +18,5 @@ func take_damage(source: Hit) -> void:
 		
 	Global.add_child_to_root(resource.explosion.instance(), global_position)
 	call_deferred("queue_free")
+
+
