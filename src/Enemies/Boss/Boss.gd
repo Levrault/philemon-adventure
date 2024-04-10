@@ -2,6 +2,7 @@ tool
 extends KinematicBody2D
 
 export (int, -1, 1, 2) var look_direction := 1 setget set_look_direction
+export(Resource) var resource
 
 var is_snapped_to_floor := false
 var stop_on_slope := true
