@@ -27,6 +27,14 @@ func physics_process(delta: float) -> void:
 
 func enter(msg: Dictionary = {}) -> void:
 	timer.connect("timeout", self, "_on_Timeout")
+	
+	if "firing" in msg:
+		owner.muzzle.shoot(owner.get_firing_beam_resource())
+		if owner.has_charged_beam(owner.current_beam_type):
+			var charged_resource = owner.get_charged_beam_resource()
+			if GameManager.is_beam_upgrade_status_unlocked(charged_resource.id):
+				timer.start()
+			return
 
 
 func exit() -> void:

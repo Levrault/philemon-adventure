@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://src/Resources/Projectiles/Resources/beam.tres" type="Resource" id=21]
 [ext_resource path="res://src/Player/States/Climbing.gd" type="Script" id=22]
 [ext_resource path="res://src/Player/DebugPlayerInfo.gd" type="Script" id=23]
+[ext_resource path="res://src/Player/BeamStates/Cancel.gd" type="Script" id=24]
 [ext_resource path="res://src/Player/Detectors/LadderOneWayPlatformDetector.gd" type="Script" id=25]
 [ext_resource path="res://src/Player/Detectors/MovingPlatformDetector.gd" type="Script" id=26]
 [ext_resource path="res://src/Resources/Projectiles/Resources/hyperbeam.tres" type="Resource" id=28]
@@ -135,6 +136,9 @@ one_shot = true
 
 [node name="Charged" type="Node2D" parent="BeamStateMachine"]
 script = ExtResource( 40 )
+
+[node name="Cancel" type="Node" parent="BeamStateMachine"]
+script = ExtResource( 24 )
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource( 2 )

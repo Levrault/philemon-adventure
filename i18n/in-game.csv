@@ -9,3 +9,4 @@ ingame.lvl_3_unlocked,"Red Card has been taken. You can pass through all the red
 ingame.lvl_4_unlocked,"Black Card has been taken. You can pass through all the black force field","Tu as récupéré la carte noire. Tu peux maintenant traverser tous les champs de force noir"
 ingame.save_data,"Save data?","tbt:ingame.save_station_message"
 ingame.save_data_completed,"Save completed","tbt:ingame.save_station_message"
+ingame.boss,"Defeat the Cacodeamon","Bat le Cacodeamon"

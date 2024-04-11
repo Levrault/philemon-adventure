@@ -8,7 +8,10 @@ func unhandled_input(event: InputEvent) -> void:
 		owner.skin.seek(0)
 		owner.skin.unfreeze()
 		return
-
+	if GameManager.is_ability_upgrade_status_unlocked(GameManager.Ability.JUMP):
+		if event.is_action_pressed(owner.actions.jump):
+			_state_machine.transition_to("Move/Air", {impulse = true})
+			return
 
 func physics_process(delta: float) -> void:
 	if owner.is_handling_input and owner.is_on_floor() and _parent.get_horizontal_move_direction(owner.actions).x != 0.0:

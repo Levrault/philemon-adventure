@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Commons/Actor/ActorSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/boss/Cacodaemon Sprite Sheet.png" type="Texture" id=2]
@@ -40,6 +40,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 6, 7, 8, 9, 10, 11 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "die"
@@ -73,6 +85,45 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 5 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "loading_attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9, 10, 11, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.439216, 0.439216, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.439216, 0.439216, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.439216, 0.439216, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.439216, 0.439216, 1 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "take_damage"
@@ -94,6 +145,7 @@ tracks/0/keys = {
 scale = Vector2( 2, 2 )
 
 [node name="Sprite" parent="." index="0"]
+modulate = Color( 1, 0.439216, 0.439216, 1 )
 material = SubResource( 3 )
 texture = ExtResource( 2 )
 hframes = 24
@@ -103,4 +155,5 @@ frame = 6
 anims/attack = SubResource( 4 )
 anims/die = SubResource( 6 )
 anims/idle = SubResource( 1 )
+anims/loading_attack = SubResource( 7 )
 anims/take_damage = SubResource( 5 )
