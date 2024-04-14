@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Boss/Boss.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Scripts/Room20_BossOutro.gd" type="Script" id=7]
 [ext_resource path="res://src/Scripts/Room20_DebugBoss.gd" type="Script" id=8]
+[ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 312, 12.5 )
@@ -292,6 +294,22 @@ position = Vector2( 32, 118 )
 
 [node name="Explosion7" type="Node2D" parent="Enemies/Right/Explosions" index="6"]
 position = Vector2( -64, 118 )
+
+[node name="Portal" parent="Portals" index="0" instance=ExtResource( 9 )]
+position = Vector2( -213, 82 )
+go_to = 25
+spawn_point = "SpawnPoint2"
+
+[node name="Portal2" parent="Portals" index="1" instance=ExtResource( 9 )]
+position = Vector2( 420, 79 )
+go_to = 27
+spawn_point = "SpawnPoint1"
+
+[node name="SpawnPoint1" parent="Spawns" index="0" instance=ExtResource( 10 )]
+position = Vector2( -173, 82 )
+
+[node name="SpawnPoint2" parent="Spawns" index="1" instance=ExtResource( 10 )]
+position = Vector2( 385, 82 )
 
 [node name="Player" parent="." index="8"]
 position = Vector2( 72, 96 )
