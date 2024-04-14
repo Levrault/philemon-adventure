@@ -44,9 +44,7 @@ func take_damage(source: Hit) -> void:
 	if stats.health > 0 and not source.is_instakill:
 		skin.hit_flash()
 		return
-		
-	Global.add_child_to_root(resource.explosion.instance(), global_position)
-	call_deferred("queue_free")
+	state_machine.transition_to("Die")
 
 
 func set_look_direction(value: int) -> void:

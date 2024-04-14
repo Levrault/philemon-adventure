@@ -3,8 +3,7 @@ extends Node2D
 onready var boss = $"../../Enemies/Boss"
 onready var animation_player = $AnimationPlayer
 onready var trigger_zone = $TriggerZone
-onready var force_field = $ForceField
-
+onready var force_field: Node2D = $"../ForceField"
 
 func _ready() -> void:
 	yield(owner, "ready")
@@ -18,7 +17,6 @@ func _ready() -> void:
 	force_field.disabled = true
 	animation_player.play("sequence_00")
 	animation_player.connect("animation_finished", self, "_on_Animation_finished")
-
 
 
 func display_text() -> void:
@@ -42,6 +40,7 @@ func _on_Cinematic_animation_finished() -> void:
 func _on_Cinematic_ended() -> void:
 	Events.emit_signal("player_input_enabled")
 	boss.active()
+	queue_free()
 
 
 func _on_Animation_finished(anim_name: String) -> void:

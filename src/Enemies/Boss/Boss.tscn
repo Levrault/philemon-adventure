@@ -6,7 +6,7 @@
 [ext_resource path="res://src/Enemies/Boss/States/Idle.gd" type="Script" id=4]
 [ext_resource path="res://src/Enemies/Boss/States/Attack.gd" type="Script" id=5]
 [ext_resource path="res://src/Enemies/Boss/States/Die.gd" type="Script" id=6]
-[ext_resource path="res://src/Enemies/Boss/States/Hit.gd" type="Script" id=7]
+[ext_resource path="res://src/Enemies/Boss/Explosions.gd" type="Script" id=7]
 [ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Commons/Combat/Hitbox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=10]
@@ -54,6 +54,52 @@ shape = SubResource( 4 )
 position = Vector2( 0, -8 )
 cast_to = Vector2( 0, 25 )
 
+[node name="Explosions" type="Node2D" parent="Skin"]
+script = ExtResource( 7 )
+
+[node name="Explosion1" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( 9, -5.5 )
+
+[node name="Explosion2" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( -11.5, -8.5 )
+
+[node name="Explosion3" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( 6, 8.5 )
+
+[node name="Explosion8" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( -17, 5 )
+
+[node name="Explosion9" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( -24, -12.5 )
+
+[node name="Explosion10" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( -24, 0 )
+
+[node name="Explosion11" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( -24, 15 )
+
+[node name="Explosion12" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( 0, 15 )
+
+[node name="Explosion13" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( 18, 15 )
+
+[node name="Explosion14" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( 18, 0 )
+
+[node name="Explosion15" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( 18, -14.5 )
+
+[node name="Explosion16" type="Position2D" parent="Skin/Explosions"]
+position = Vector2( 0, -15 )
+
+[node name="Timer" type="Timer" parent="Skin/Explosions"]
+wait_time = 0.35
+
+[node name="AnimationLength" type="Timer" parent="Skin/Explosions"]
+wait_time = 2.0
+one_shot = true
+
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource( 10 )
 initial_state = NodePath("Idle")
@@ -75,9 +121,6 @@ script = ExtResource( 15 )
 
 [node name="Timer" type="Timer" parent="StateMachine/RecoverAttack"]
 one_shot = true
-
-[node name="Hit" type="Node" parent="StateMachine"]
-script = ExtResource( 7 )
 
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )

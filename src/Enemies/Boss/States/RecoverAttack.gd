@@ -19,7 +19,6 @@ func physics_process(delta: float) -> void:
 	if not can_recover:
 		return
 	if owner.target.global_position.distance_to(owner.global_position) < 1:
-		owner.change_target()
 		_state_machine.transition_to("Move")
 		return
 	
@@ -39,6 +38,7 @@ func enter(msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
+	timer.stop()
 	timer.disconnect("timeout", self, "_on_Timeout")
 	can_recover = false
 

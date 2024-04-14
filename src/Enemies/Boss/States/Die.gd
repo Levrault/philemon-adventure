@@ -10,7 +10,8 @@ func physics_process(delta: float) -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
-	return
+	owner.skin.play("take_damage")
+	Events.emit_signal("boss_defeated")
 
 
 func exit() -> void:

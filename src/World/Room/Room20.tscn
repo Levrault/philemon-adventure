@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Boss/Boss.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://src/Scripts/Room20_BossIntro.gd" type="Script" id=4]
 [ext_resource path="res://src/Enemies/Boss/TriggerExplosion.gd" type="Script" id=5]
 [ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Scripts/Room20_BossOutro.gd" type="Script" id=7]
+[ext_resource path="res://src/Scripts/Room20_DebugBoss.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 312, 12.5 )
@@ -102,7 +104,15 @@ looping_damage = true
 position = Vector2( 272, -16 )
 shape = SubResource( 7 )
 
-[node name="BossIntro" type="Node2D" parent="Props" index="0"]
+[node name="ForceField" parent="Props" index="0" instance=ExtResource( 3 )]
+position = Vector2( -200, 80 )
+type = 3
+
+[node name="ForceField2" parent="Props" index="1" instance=ExtResource( 3 )]
+position = Vector2( 408, 80 )
+type = 3
+
+[node name="BossIntro" type="Node2D" parent="Props" index="2"]
 script = ExtResource( 4 )
 
 [node name="TriggerZone" type="Area2D" parent="Props/BossIntro" index="0"]
@@ -114,18 +124,23 @@ collision_mask = 2
 position = Vector2( -16, 0 )
 shape = SubResource( 1 )
 
-[node name="ForceField" parent="Props/BossIntro" index="1" instance=ExtResource( 3 )]
-position = Vector2( -200, 80 )
-type = 3
-
-[node name="ForceField2" parent="Props/BossIntro" index="2" instance=ExtResource( 3 )]
-position = Vector2( 408, 80 )
-type = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Props/BossIntro" index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Props/BossIntro" index="1"]
 anims/RESET = SubResource( 2 )
 anims/sequence_00 = SubResource( 4 )
 anims/sequence_01 = SubResource( 3 )
+
+[node name="BossOutro" type="Node2D" parent="Props" index="3"]
+script = ExtResource( 7 )
+
+[node name="Position2D" type="Position2D" parent="Props/BossOutro" index="0"]
+position = Vector2( 104, 85 )
+
+[node name="DebugBoss" type="Node2D" parent="Props" index="4"]
+script = ExtResource( 8 )
+
+[node name="Timer" type="Timer" parent="Props/DebugBoss" index="0"]
+wait_time = 0.5
+one_shot = true
 
 [node name="Boss" parent="Enemies" index="0" instance=ExtResource( 2 )]
 position = Vector2( 248, -40 )

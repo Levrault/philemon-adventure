@@ -84,6 +84,10 @@ signal ability_unlocked(ability_type)
 signal beam_selected(beam_type)
 signal beam_unlocked(beam_type)
 
+# boss
+signal boss_defeated
+signal boss_explosed
+
 # card
 signal card_unlocked(card_type)
 

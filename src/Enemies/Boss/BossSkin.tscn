@@ -127,7 +127,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "take_damage"
-length = 0.4
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -135,21 +135,20 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 13, 14, 15, 16 ]
+"values": [ 13, 14, 15 ]
 }
 
 [node name="BossSkin" instance=ExtResource( 1 )]
 scale = Vector2( 2, 2 )
 
 [node name="Sprite" parent="." index="0"]
-modulate = Color( 1, 0.439216, 0.439216, 1 )
 material = SubResource( 3 )
 texture = ExtResource( 2 )
 hframes = 24
-frame = 6
+frame = 13
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/attack = SubResource( 4 )

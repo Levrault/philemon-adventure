@@ -399,6 +399,7 @@ card_lvl_2_unlocked=false
 card_lvl_3_unlocked=false
 card_lvl_4_unlocked=false
 skip_boss_cinematic=false
+kill_boss=false
 
 [input]
 
