@@ -80,6 +80,7 @@ position = Vector2( -192, -128 )
 position = Vector2( -185, 10 )
 
 [node name="Camera" parent="." index="9"]
+offset = Vector2( 0, 0 )
 limit_top = -236
 limit_right = 301
 limit_bottom = 158

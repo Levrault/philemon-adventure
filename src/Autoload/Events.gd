@@ -11,6 +11,7 @@ extends Node
 signal cinematic_transition_started
 signal cinematic_animation_finished
 signal cinematic_transition_ended
+signal cinematic_text_displayed(text)
 
 # config
 signal config_file_saved
@@ -85,6 +86,9 @@ signal beam_unlocked(beam_type)
 
 # card
 signal card_unlocked(card_type)
+
+# camera
+signal camera_shake
 
 # co-op
 signal coop_player_removed(device_index)

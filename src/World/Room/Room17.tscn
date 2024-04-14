@@ -134,7 +134,7 @@ position = Vector2( -176, 112 )
 position = Vector2( 245, 749 )
 
 [node name="Player" parent="." index="8"]
-position = Vector2( 168, 759 )
+position = Vector2( -117, 124 )
 
 [node name="Camera" parent="." index="9"]
 limit_top = -123

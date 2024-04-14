@@ -4,8 +4,7 @@ tool
 class_name Actor
 extends KinematicBody2D
 
-export (int, -2, 2, 4) var look_direction := 1 setget set_look_direction
-export(Resource) var resource
+export (int, -1, 1, 2) var look_direction := 1 setget set_look_direction
 
 
 var is_snapped_to_floor := false
@@ -20,18 +19,10 @@ onready var skin: Node2D = $Skin
 
 func _ready() -> void:
 	flip(look_direction)
-	stats.max_health = resource.health
-	stats.health = resource.health
 
 
 func take_damage(source: Hit) -> void:
-	.take_damage(source)
-	if stats.health > 0 and not source.is_instakill:
-		skin.hit_flash()
-		return
-		
-	Global.add_child_to_root(resource.explosion.instance(), global_position)
-	call_deferred("queue_free")
+	stats.take_damage(source)
 
 
 func set_look_direction(value: int) -> void:

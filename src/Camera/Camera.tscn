@@ -7,7 +7,6 @@ current = true
 smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource( 1 )
-amplitude = 8.0
 duration = 0.8
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/UI/InGame/Cinematic.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme/joystick_18.tres" type="DynamicFont" id=2]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -29,12 +30,24 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 270 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ColorRect3:modulate")
+tracks/2/path = NodePath("Label:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -54,7 +67,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.5, 0.7 ),
 "transitions": PoolRealArray( 2, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -40 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, -40 ), Vector2( 0, -20 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("ColorRect2:rect_position")
@@ -66,16 +79,83 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.5, 0.7 ),
 "transitions": PoolRealArray( 2, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 270 ), Vector2( 0, 230 ) ]
+"values": [ Vector2( 0, 270 ), Vector2( 0, 250 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 270 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ColorRect3:modulate")
+tracks/2/path = NodePath("Label:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4, 0.5 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "text"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -91,10 +171,14 @@ script = ExtResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/show = SubResource( 1 )
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/text = SubResource( 6 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 margin_top = -40.0
-margin_right = 960.0
+margin_right = 5280.0
 rect_min_size = Vector2( 0, 40 )
 color = Color( 0, 0, 0, 1 )
 
@@ -103,14 +187,21 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 270.0
-margin_right = 960.0
+margin_right = 5280.0
 margin_bottom = 310.0
 rect_min_size = Vector2( 0, 40 )
 color = Color( 0, 0, 0, 1 )
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="Label" type="Label" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 0, 40 )
-color = Color( 0, 0, 0, 1 )
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 2 )
+text = "placeholder"
+align = 1
+valign = 1
+uppercase = true

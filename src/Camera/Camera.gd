@@ -14,6 +14,7 @@ onready var timer = $Timer
 
 
 func _ready() -> void:
+	Events.connect("camera_shake", self, "_on_Camera_shake")
 	timer.connect('timeout', self, '_on_ShakeTimer_timeout')
 
 	self.duration = duration
@@ -58,3 +59,8 @@ func _change_state(new_state: int) -> void:
 
 func _on_ShakeTimer_timeout() -> void:
 	self.is_shaking = false
+
+
+func _on_Camera_shake() -> void:
+	self.is_shaking = true
+	timer.start()
