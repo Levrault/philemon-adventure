@@ -6,6 +6,11 @@
 [node name="SettingsListPage" instance=ExtResource( 1 )]
 default_field_to_focus = NodePath("Wrapper/Page/Contents/Display")
 
+[node name="Wrapper" parent="." index="0"]
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="Title" parent="Wrapper/Page" index="0"]
 text = "commons.settings"
 
@@ -19,7 +24,6 @@ margin_top = 28.0
 margin_right = 121.0
 margin_bottom = 48.0
 text = "display.title"
-flat = true
 align = 1
 navigate_to = "DisplaySettingsPage"
 is_default_focused = true
@@ -29,7 +33,6 @@ margin_top = 58.0
 margin_right = 121.0
 margin_bottom = 78.0
 text = "audio.title"
-flat = true
 align = 1
 navigate_to = "AudioSettingsPage"
 
@@ -38,7 +41,6 @@ margin_top = 88.0
 margin_right = 121.0
 margin_bottom = 108.0
 text = "gamepad.title"
-flat = true
 align = 1
 navigate_to = "GamepadLayoutSettingsPage"
 
@@ -47,7 +49,6 @@ margin_top = 118.0
 margin_right = 121.0
 margin_bottom = 138.0
 text = "keyboard.title"
-flat = true
 align = 1
 navigate_to = "KeyboardRebindPage"
 
@@ -56,7 +57,6 @@ margin_top = 148.0
 margin_right = 121.0
 margin_bottom = 168.0
 text = "accessibility.title"
-flat = true
 align = 1
 navigate_to = "AccessibilitySettingsPage"
 

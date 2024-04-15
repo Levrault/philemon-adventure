@@ -35,6 +35,7 @@ func is_invalid() -> bool:
 func save() -> void:
 	profile_data.profile.name = profile_name
 	profile_data.profile.created_at = OS.get_unix_time()
+	profile_data.progression.last_saveroom = "INTRO"
 	Serialize.save_profile(profile, profile_data)
 
 

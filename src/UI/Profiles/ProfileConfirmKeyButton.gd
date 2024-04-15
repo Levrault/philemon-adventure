@@ -4,9 +4,6 @@
 extends NavigationButton
 
 
-# Only navigate to Worldmap, doesn't update
-# history since the player shouldn't be able
-# to go back to create profile back when clicking PreviousPage button
 func _on_Pressed() -> void:
 	owner.form.save()
 	Events.emit_signal("new_profile_created", owner.form.profile)
