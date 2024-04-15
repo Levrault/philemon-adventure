@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/UI/Settings/Page/SettingsListPage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/TitleScreen/TitleScreen.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/props/vent-pipes.png" type="Texture" id=19]
 [ext_resource path="res://assets/props/terminal.png" type="Texture" id=20]
 [ext_resource path="res://assets/props/console.png" type="Texture" id=21]
+[ext_resource path="res://src/Music/MusicController.tscn" type="PackedScene" id=22]
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
@@ -28,6 +29,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 12 )
 script = ExtResource( 3 )
+
+[node name="MusicController" parent="." instance=ExtResource( 22 )]
+delay = 0.5
 
 [node name="ColorBackground" type="ColorRect" parent="."]
 anchor_right = 1.0

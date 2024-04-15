@@ -49,6 +49,7 @@ signal menu_route_changed(route)
 signal menu_transition_started(anim_name)
 signal menu_transition_mid_animated
 signal menu_transition_finished
+signal menu_splashcreen_finished
 
 # navigation
 signal navigation_disabled

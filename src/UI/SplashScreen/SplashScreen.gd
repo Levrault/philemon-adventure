@@ -28,4 +28,5 @@ func finished() -> void:
 	Menu.navigate_to("TitleScreen")
 	Menu.current_route = "TitleScreen"
 	Menu.is_splash_screen_viewed = true
+	Events.emit_signal("menu_splashcreen_finished")
 	queue_free()

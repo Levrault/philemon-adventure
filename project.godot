@@ -365,6 +365,7 @@ Serialize="*res://src/Autoload/Serialize.gd"
 GameManager="*res://src/Autoload/GameManager.gd"
 LevelManager="*res://src/Autoload/LevelManager.gd"
 GameMode="*res://src/Autoload/GameMode.gd"
+MusicPlayer="*res://src/Autoload/MusicPlayer.tscn"
 Global="*res://src/Autoload/Global.gd"
 
 [debug]
@@ -390,7 +391,7 @@ beam_unlocked=true
 hyperbeam_unlocked=true
 curvedbeam_unlocked=false
 double_jump_unlocked=false
-skip_boot_screen=true
+skip_boot_screen=false
 show_fps=true
 save_allowed=true
 jump_unlocked=true
