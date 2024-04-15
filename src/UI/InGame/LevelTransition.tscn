@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/shaders/pixel.png" type="Texture" id=1]
 [ext_resource path="res://src/UI/InGame/LevelTransition.gd" type="Script" id=2]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
 uniform int type = 9;
 uniform float r = 1.0;
@@ -35,7 +35,7 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+shader = SubResource( 6 )
 shader_param/type = 5
 shader_param/r = 1.0
 

@@ -4,12 +4,13 @@ onready var in_game_screen_page := owner.get_node("InGameScreenPage")
 
 
 func _ready() -> void:
+	yield(owner, "ready")
 	Events.connect("in_game_menu_hidden", self, "unpause")
 	owner.visible = false
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("pause_0") and not get_tree().paused:
+	if event.is_action_pressed("pause_0") and not get_tree().paused and LevelManager.current_level_id != LevelManager.Level.MAIN_MENU:
 		pause()
 
 

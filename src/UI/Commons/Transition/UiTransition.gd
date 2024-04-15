@@ -3,11 +3,16 @@
 # @category: Transition
 extends Control
 
+var rng = RandomNumberGenerator.new()
+
 onready var anim := $AnimationPlayer
+onready var sprite_material := $Sprite.material as Material
+onready var timer := $Timer
 
 
 func _ready() -> void:
 	Events.connect("menu_transition_started", self, "_on_Transition_started")
+	rng.randomize()
 
 
 func emit_animation_finished() -> void:
@@ -19,6 +24,7 @@ func _on_Transition_started(anim_name: String) -> void:
 		anim.stop()
 		anim.play(anim_name)
 		return
+	sprite_material.set_shader_param("type", rng.randi_range(0, 4))
 	anim.queue(anim_name)
 
 

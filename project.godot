@@ -387,15 +387,15 @@ window/stretch/aspect="keep"
 
 [game]
 
-beam_unlocked=true
-hyperbeam_unlocked=true
+beam_unlocked=false
+hyperbeam_unlocked=false
 curvedbeam_unlocked=false
 double_jump_unlocked=false
 skip_boot_screen=false
-show_fps=true
+show_fps=false
 save_allowed=true
-jump_unlocked=true
-card_lvl_1_unlocked=true
+jump_unlocked=false
+card_lvl_1_unlocked=false
 card_lvl_2_unlocked=false
 card_lvl_3_unlocked=false
 card_lvl_4_unlocked=false

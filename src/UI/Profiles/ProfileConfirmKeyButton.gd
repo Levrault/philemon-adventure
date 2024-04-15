@@ -15,4 +15,5 @@ func _on_Pressed() -> void:
 	
 	Events.emit_signal("scene_fadeout_transition_displayed", LevelTransition.Transition.WINDOW_BLIND_DIAGONAL)
 	LevelManager.current_level_id = LevelManager.Level.keys().find(Serialize.get_current_profile().progression.last_saveroom)
+	LevelManager.change_for_next_scene()
 	print_debug("%s - %s has been set has current profile" % [Serialize.current_profile, owner.form.profile_name])
