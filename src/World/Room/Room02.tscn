@@ -20,7 +20,7 @@ position = Vector2( 32, 80 )
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 2 )]
 position = Vector2( -219, 79 )
 go_to = 7
-spawn_point = "SpawnPoint1"
+spawn_point = "SpawnPoint2"
 
 [node name="Portal2" parent="Portals" index="1" instance=ExtResource( 2 )]
 position = Vector2( 280, 80 )

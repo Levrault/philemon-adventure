@@ -10,6 +10,7 @@ enum Level {
 	DEBUG_MULTIPLAYER,
 	DEBUG_NAVIGATION_AGENT,
 	DEBUG_SAVE_ROOM_1,
+	INTRO,
 	ROOM_01,
 	ROOM_02,
 	ROOM_03,
@@ -61,6 +62,8 @@ func get_level_path(level: int) -> String:
 	match level:
 		Level.MAIN_MENU:
 			return "res://src/UI/MainMenu.tscn"
+		Level.INTRO:
+			return "res://src/World/Room/Intro.tscn"
 		Level.ROOM_01:
 			return "res://src/World/Room/Room01.tscn"
 		Level.ROOM_02:
