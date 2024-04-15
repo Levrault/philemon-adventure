@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Upgrade/CardUpgrade.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Enemies/Skeleton/Skeleton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/props/vent-pipes.png" type="Texture" id=12]
+[ext_resource path="res://assets/props/pipes.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 12.5 )
@@ -124,3 +126,29 @@ position = Vector2( -184, 64 )
 limit_top = -143
 limit_right = 557
 limit_bottom = 172
+
+[node name="Vent-pipes" type="Sprite" parent="Foreground" index="0"]
+position = Vector2( 328, -136 )
+texture = ExtResource( 12 )
+
+[node name="Pipes2" type="Sprite" parent="Foreground/Vent-pipes" index="0"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Pipes" type="Sprite" parent="Foreground/Vent-pipes" index="1"]
+position = Vector2( -64, 0 )
+texture = ExtResource( 13 )
+
+[node name="Vent-pipes2" type="Sprite" parent="Foreground" index="1"]
+position = Vector2( -72, -136 )
+texture = ExtResource( 12 )
+
+[node name="Pipes2" type="Sprite" parent="Foreground/Vent-pipes2" index="0"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Pipes" type="Sprite" parent="Foreground/Vent-pipes2" index="1"]
+position = Vector2( -64, 0 )
+texture = ExtResource( 13 )

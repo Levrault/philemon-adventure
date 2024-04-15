@@ -21,6 +21,11 @@ margin_top = -224.0
 margin_right = 888.0
 margin_bottom = 216.0
 
+[node name="Back" parent="Backgrounds" index="1"]
+visible = true
+region_enabled = true
+region_rect = Rect2( 0, 0, 1216, 240 )
+
 [node name="MiddleAlt" parent="Backgrounds" index="3"]
 visible = true
 position = Vector2( 528, -18 )

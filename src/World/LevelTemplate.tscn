@@ -68,3 +68,5 @@ limit_left = -208
 limit_top = -134
 limit_right = 448
 limit_bottom = 138
+
+[node name="Foreground" type="Node2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://src/Enemies/Crab/Crab.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Enemies/Lizard/Lizard.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/props/vent-pipes.png" type="Texture" id=12]
+[ext_resource path="res://assets/props/console.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 12.5 )
@@ -30,7 +32,7 @@ region_rect = Rect2( 0, 0, 912, 240 )
 
 [node name="Middle" parent="Backgrounds" index="2"]
 visible = true
-position = Vector2( 256, -88 )
+position = Vector2( 234, -89 )
 
 [node name="ColorRect" type="ColorRect" parent="Backgrounds" index="3"]
 margin_left = -232.0
@@ -55,42 +57,47 @@ looping_damage = true
 position = Vector2( -1.5, 0 )
 shape = SubResource( 1 )
 
-[node name="Ladder" parent="Props" index="0" instance=ExtResource( 2 )]
+[node name="Console" type="Sprite" parent="Props" index="0"]
+position = Vector2( -157, 126 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Ladder" parent="Props" index="1" instance=ExtResource( 2 )]
 position = Vector2( 88, 80 )
 tiles_y_multiplier = 8
 
-[node name="Barrier" parent="Props" index="1" instance=ExtResource( 3 )]
+[node name="Barrier" parent="Props" index="2" instance=ExtResource( 3 )]
 position = Vector2( -88, 144 )
 
-[node name="SwitchButton" parent="Props" index="2" instance=ExtResource( 4 )]
+[node name="SwitchButton" parent="Props" index="3" instance=ExtResource( 4 )]
 position = Vector2( -160, -48 )
 targetObjectPath = [ NodePath("../Barrier") ]
 
-[node name="FallingPlatform" parent="Props" index="3" instance=ExtResource( 5 )]
+[node name="FallingPlatform" parent="Props" index="4" instance=ExtResource( 5 )]
 position = Vector2( 40, -8 )
 
-[node name="FallingPlatform2" parent="Props" index="4" instance=ExtResource( 5 )]
+[node name="FallingPlatform2" parent="Props" index="5" instance=ExtResource( 5 )]
 position = Vector2( 56, -8 )
 
-[node name="FallingPlatform3" parent="Props" index="5" instance=ExtResource( 5 )]
+[node name="FallingPlatform3" parent="Props" index="6" instance=ExtResource( 5 )]
 position = Vector2( -8, -32 )
 
-[node name="FallingPlatform9" parent="Props" index="6" instance=ExtResource( 5 )]
+[node name="FallingPlatform9" parent="Props" index="7" instance=ExtResource( 5 )]
 position = Vector2( -24, -32 )
 
-[node name="FallingPlatform4" parent="Props" index="7" instance=ExtResource( 5 )]
+[node name="FallingPlatform4" parent="Props" index="8" instance=ExtResource( 5 )]
 position = Vector2( 8, -32 )
 
-[node name="FallingPlatform5" parent="Props" index="8" instance=ExtResource( 5 )]
+[node name="FallingPlatform5" parent="Props" index="9" instance=ExtResource( 5 )]
 position = Vector2( -104, -32 )
 
-[node name="FallingPlatform6" parent="Props" index="9" instance=ExtResource( 5 )]
+[node name="FallingPlatform6" parent="Props" index="10" instance=ExtResource( 5 )]
 position = Vector2( -88, -32 )
 
-[node name="FallingPlatform7" parent="Props" index="10" instance=ExtResource( 5 )]
+[node name="FallingPlatform7" parent="Props" index="11" instance=ExtResource( 5 )]
 position = Vector2( -136, -32 )
 
-[node name="FallingPlatform8" parent="Props" index="11" instance=ExtResource( 5 )]
+[node name="FallingPlatform8" parent="Props" index="12" instance=ExtResource( 5 )]
 position = Vector2( -120, -32 )
 
 [node name="Lizard" parent="Enemies" index="0" instance=ExtResource( 10 )]
@@ -101,7 +108,7 @@ look_direction = -1
 position = Vector2( 136, 16 )
 
 [node name="BeamUpgrade" parent="Upgrades" index="0" instance=ExtResource( 8 )]
-position = Vector2( -160, 128 )
+position = Vector2( -123, 128 )
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 7 )]
 position = Vector2( -216, 24 )
@@ -127,3 +134,7 @@ position = Vector2( -136, 48 )
 limit_top = -140
 limit_right = 510
 limit_bottom = 158
+
+[node name="Vent-pipes" type="Sprite" parent="Foreground" index="0"]
+position = Vector2( -137, 98 )
+texture = ExtResource( 12 )
