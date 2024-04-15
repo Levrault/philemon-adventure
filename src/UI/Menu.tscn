@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/UI/Settings/Page/SettingsListPage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/TitleScreen/TitleScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationRouter.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Credits/CreditsPage.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/tilesets/tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://src/UI/Settings/Page/AudioSettingsPage.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UI/Settings/Page/DisplaySettingsPage.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/Commons/Transition/UiTransition.tscn" type="PackedScene" id=8]
@@ -15,6 +16,11 @@
 [ext_resource path="res://src/UI/SplashScreen/SplashScreen.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/UI/Profiles/ProfilesPage.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/UI/Profiles/NewProfilePage.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Backgrounds/Back.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/props/plant-big.png" type="Texture" id=18]
+[ext_resource path="res://assets/props/vent-pipes.png" type="Texture" id=19]
+[ext_resource path="res://assets/props/terminal.png" type="Texture" id=20]
+[ext_resource path="res://assets/props/console.png" type="Texture" id=21]
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
@@ -23,10 +29,52 @@ anchor_bottom = 1.0
 theme = ExtResource( 12 )
 script = ExtResource( 3 )
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="ColorBackground" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.247059, 0.247059, 0.454902, 0.611765 )
+color = Color( 0.0823529, 0.0666667, 0.137255, 1 )
+
+[node name="Back" parent="." instance=ExtResource( 17 )]
+position = Vector2( 463, 97 )
+offset = Vector2( 119.134, -23.2822 )
+region_rect = Rect2( 0, 0, 304, 240 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Background"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393215, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 4, 0, 327691, 4, 0, 327692, 4, 0, 327693, 4, 0, 327694, 4, 0, 524287, 41, 0, 458752, 41, 0, 458753, 41, 0, 458754, 41, 0, 458755, 41, 0, 458756, 41, 0, 458757, 41, 0, 458758, 41, 0, 458759, 41, 0, 458760, 41, 0, 458761, 41, 0, 458762, 41, 0, 458763, 41, 0, 458764, 41, 0, 458765, 41, 0, 458766, 41, 0, 589847, 41, 0 )
+
+[node name="Console" type="Sprite" parent="Background/TileMap"]
+position = Vector2( 141, 62 )
+texture = ExtResource( 21 )
+
+[node name="Plant-big" type="Sprite" parent="Background/TileMap"]
+position = Vector2( 232, 72.5 )
+texture = ExtResource( 18 )
+
+[node name="Terminal" type="Sprite" parent="Background/TileMap"]
+position = Vector2( 162.5, 70.5 )
+texture = ExtResource( 20 )
+
+[node name="Vent-pipes" type="Sprite" parent="Background/TileMap"]
+position = Vector2( 11, 23.5 )
+texture = ExtResource( 19 )
+
+[node name="Vent-pipes2" type="Sprite" parent="Background/TileMap"]
+position = Vector2( 87, 23.5 )
+texture = ExtResource( 19 )
+
+[node name="Vent-pipes3" type="Sprite" parent="Background/TileMap"]
+position = Vector2( 163, 23.5 )
+texture = ExtResource( 19 )
+
+[node name="Vent-pipes4" type="Sprite" parent="Background/TileMap"]
+position = Vector2( 239, 23.5 )
+texture = ExtResource( 19 )
 
 [node name="TitleScreen" parent="." instance=ExtResource( 2 )]
 

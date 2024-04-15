@@ -178,7 +178,7 @@ anims/text = SubResource( 6 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 margin_top = -40.0
-margin_right = 5280.0
+margin_right = 6240.0
 rect_min_size = Vector2( 0, 40 )
 color = Color( 0, 0, 0, 1 )
 
@@ -187,7 +187,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 270.0
-margin_right = 5280.0
+margin_right = 6240.0
 margin_bottom = 310.0
 rect_min_size = Vector2( 0, 40 )
 color = Color( 0, 0, 0, 1 )
