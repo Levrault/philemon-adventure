@@ -10,7 +10,6 @@ enum Level {
 	DEBUG_MULTIPLAYER,
 	DEBUG_NAVIGATION_AGENT,
 	DEBUG_SAVE_ROOM_1,
-	INTRO,
 	ROOM_01,
 	ROOM_02,
 	ROOM_03,
@@ -32,6 +31,7 @@ enum Level {
 	ROOM_19,
 	ROOM_20,
 	ROOM_21,
+	INTRO,
 }
 
 var level_keys := Level.keys()

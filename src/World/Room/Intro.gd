@@ -1,6 +1,6 @@
 extends Node
 
-onready var h_box_container = $CanvasLayer/HBoxContainer
+onready var h_box_container = $"%HBoxContainer"
 
 
 func _ready() -> void:
