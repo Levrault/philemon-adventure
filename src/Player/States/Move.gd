@@ -96,7 +96,8 @@ func enter(msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
-	$Air.disconnect("jumped", $Idle.jump_input_buffering, "start")
+	if $Air.is_connected("jumped", $Idle.jump_input_buffering, "start"):
+		$Air.disconnect("jumped", $Idle.jump_input_buffering, "start")
 
 
 func throwback(throwback_force: Vector2) -> void:

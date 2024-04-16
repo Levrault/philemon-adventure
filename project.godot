@@ -387,7 +387,7 @@ window/stretch/aspect="keep"
 
 [game]
 
-beam_unlocked=false
+beam_unlocked=true
 hyperbeam_unlocked=false
 curvedbeam_unlocked=false
 double_jump_unlocked=false

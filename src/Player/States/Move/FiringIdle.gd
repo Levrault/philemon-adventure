@@ -23,6 +23,9 @@ func physics_process(delta: float) -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
+	if not GameManager.is_beam_upgrade_status_unlocked(owner.get_firing_beam_resource().id):
+		_state_machine.transition_to("Move/Idle")
+		return
 	_parent.enter(msg)
 	_parent.velocity = Vector2.ZERO
 	owner.skin.play("shoot")
@@ -37,7 +40,8 @@ func enter(msg: Dictionary = {}) -> void:
 func exit() -> void:
 	_parent.exit()
 	owner.skin.unfreeze()
-	owner.skin.disconnect("animation_finished", self, "_on_Animation_finished")
+	if owner.skin.is_connected("animation_finished", self, "_on_Animation_finished"):
+		owner.skin.disconnect("animation_finished", self, "_on_Animation_finished")
 
 
 func _on_Animation_finished(anim_name: String) -> void:

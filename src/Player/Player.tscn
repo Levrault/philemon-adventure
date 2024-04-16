@@ -96,6 +96,9 @@ __meta__ = {
 }
 coop_player_index = 3
 
+[node name="DebugCanvasLayer" parent="." index="18"]
+visible = true
+
 [node name="HUD" type="CanvasLayer" parent="." index="20"]
 
 [node name="Control" type="Control" parent="HUD" index="0"]
