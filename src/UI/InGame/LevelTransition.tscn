@@ -129,7 +129,7 @@ layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.00784314, 0.0901961, 0.129412, 1 )
+modulate = Color( 0.0823529, 0.0666667, 0.137255, 1 )
 material = SubResource( 2 )
 position = Vector2( 480, 270 )
 scale = Vector2( 480, 270 )

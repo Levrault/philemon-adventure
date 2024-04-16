@@ -8,7 +8,7 @@ func _ready() -> void:
 	h_box_container.hide()
 	yield(get_tree().create_timer(3.0), "timeout")
 	set_process_unhandled_input(true)
-	h_box_container.show()
+	$CanvasLayer/Control/AnimationPlayer.play("show")
 
 
 func _unhandled_input(event):
