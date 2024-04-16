@@ -15,7 +15,10 @@ func set_data(data: Dictionary) -> void:
 
 func _on_Pressed() -> void:
 	Events.emit_signal("scene_fadeout_transition_displayed", LevelTransition.Transition.WINDOW_BLIND_DIAGONAL)
-	GameManager.player_status = GameManager.PlayerStatus.spawing
 	Serialize.current_profile = Serialize.PROFILE_SLOTS[owner.get_index()]
+	if Serialize.get_current_profile().progression.last_saveroom == "INTRO":
+		GameManager.player_status = GameManager.PlayerStatus.alive
+	else:
+		GameManager.player_status = GameManager.PlayerStatus.spawing
 	LevelManager.current_level_id = LevelManager.Level.keys().find(Serialize.get_current_profile().progression.last_saveroom)
 	print_debug("%s - %s has been set has current profile" % [Serialize.current_profile, profile_name.text])
