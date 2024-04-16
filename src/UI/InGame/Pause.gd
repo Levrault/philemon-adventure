@@ -21,6 +21,7 @@ func pause() -> void:
 	set_process_input(false)
 	Global.pause_game()
 	Engine.time_scale = 1.0
+	Events.emit_signal("menu_transition_started", "fade")
 
 
 func unpause() -> void:
@@ -29,3 +30,4 @@ func unpause() -> void:
 	set_process_input(true)
 	Global.unpause_game()
 	Engine.time_scale = Config.values.accessibility.time_scale
+	$"../InGameScreenPage".last_clicked_button = $"../InGameScreenPage".default_field_to_focus
