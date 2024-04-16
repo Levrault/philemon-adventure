@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("pause_0") and not get_tree().paused and LevelManager.current_level_id != LevelManager.Level.MAIN_MENU:
+	if event.is_action_pressed("pause_0") and not get_tree().paused and LevelManager.current_level_id != LevelManager.Level.MAIN_MENU and LevelManager.current_level_id != LevelManager.Level.INTRO:
 		pause()
 
 
