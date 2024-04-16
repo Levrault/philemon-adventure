@@ -49,6 +49,9 @@ func _ready() -> void:
 	Events.connect("player_input_enabled", self, "set_is_handling_input", [true])
 	Events.connect("save_data_started", self, "_on_Save_data_started")
 	Events.connect("player_state_changed_to", self, "_on_Player_state_changed_to")
+	Events.connect("coop_player_added", self, "_on_Coop_player_added")
+	Events.connect("coop_player_removed", self, "_on_Coop_player_removed")
+	$PlayerIndicator.hide()
 	spawn_position = global_position
 
 
@@ -151,3 +154,12 @@ func _on_Save_data_started() -> void:
 
 func _on_Player_state_changed_to(state: String, msg := {}) -> void:
 	state_machine.transition_to(state, msg)
+
+
+func _on_Coop_player_added(device_index: int) -> void:
+	$PlayerIndicator.show()
+
+
+func _on_Coop_player_removed(device_index: int) -> void:
+	if GameMode.coop_players.empty():
+		$PlayerIndicator.hide()

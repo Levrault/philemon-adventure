@@ -35,6 +35,7 @@ func add_local_coop_player(device_index: int, active_delay := false) -> void:
 		
 	coop_player_spawn_point.target = spawn_location
 	Global.add_child_to_root(coop_player_spawn_point, spawn_location.global_position)
+	Events.emit_signal("coop_player_added", device_index)
 
 
 func persistant_local_player(device_index: int, active_delay := false) -> void:
@@ -51,7 +52,8 @@ func persistant_local_player(device_index: int, active_delay := false) -> void:
 	Global.add_child_to_root(coop_player, spawn_location.global_position)
 	coop_player.device_index = device_index
 	coop_player.flip(LevelManager.last_look_direction_of_player)
-	
+	Events.emit_signal("coop_player_added", device_index)
+
 
 func remove_local_coop_player(device_index: int) -> void:
 	coop_players.erase(device_index)

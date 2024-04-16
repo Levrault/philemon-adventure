@@ -96,6 +96,7 @@ signal card_unlocked(card_type)
 signal camera_shake
 
 # co-op
+signal coop_player_added(device_index)
 signal coop_player_removed(device_index)
 
 # data
