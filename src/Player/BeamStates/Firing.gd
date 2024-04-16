@@ -27,6 +27,9 @@ func physics_process(delta: float) -> void:
 
 func enter(msg: Dictionary = {}) -> void:
 	timer.connect("timeout", self, "_on_Timeout")
+	if not GameManager.is_beam_upgrade_status_unlocked(owner.get_firing_beam_resource().id):
+		_state_machine.transition_to("Cancel")
+		return
 	
 	if "firing" in msg:
 		owner.muzzle.shoot(owner.get_firing_beam_resource())
