@@ -16,6 +16,7 @@ func set_data(data: Dictionary) -> void:
 func _on_Pressed() -> void:
 	Events.emit_signal("scene_fadeout_transition_displayed", LevelTransition.Transition.WINDOW_BLIND_DIAGONAL)
 	Serialize.current_profile = Serialize.PROFILE_SLOTS[owner.get_index()]
+	LevelManager.states = Serialize.get_current_profile().progression.level_state
 	if Serialize.get_current_profile().progression.last_saveroom == "INTRO":
 		GameManager.player_status = GameManager.PlayerStatus.alive
 	else:

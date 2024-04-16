@@ -17,6 +17,8 @@ func _unhandled_input(event):
 func pause() -> void:
 	owner.visible = true
 	get_tree().paused = true
+	$"../InGameScreenPage".last_clicked_button = $"../InGameScreenPage".default_field_to_focus
+	$"../InGameScreenPage".show()
 	in_game_screen_page.focus_default_field()
 	set_process_input(false)
 	Global.pause_game()
@@ -30,4 +32,3 @@ func unpause() -> void:
 	set_process_input(true)
 	Global.unpause_game()
 	Engine.time_scale = Config.values.accessibility.time_scale
-	$"../InGameScreenPage".last_clicked_button = $"../InGameScreenPage".default_field_to_focus
