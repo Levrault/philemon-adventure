@@ -31,10 +31,6 @@ func enter(msg: Dictionary = {}) -> void:
 	
 	for layer in GameManager.LAYER.values():
 		owner.set_collision_layer_bit(layer, false)
-	
-	if InputManager.is_using_gamepad():
-		print_debug("start_joy_vibration")
-		Input.start_joy_vibration(owner.device_index, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .450)
 
 
 func exit() -> void:
