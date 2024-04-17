@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource( 1 )
-damage = 50
+damage = 60
 is_instakill = false
-speed = 100.0
+speed = 225.0
 cooldown = 2.0
 scene = ExtResource( 2 )
 id = 1
