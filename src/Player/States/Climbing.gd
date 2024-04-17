@@ -24,6 +24,7 @@ func physics_process(delta: float) -> void:
 		frame += 1
 	
 	var direction := Move.get_vertical_move_direction(owner.actions)
+	print(direction)
 	owner.move_and_collide(velocity * direction * delta)
 	if direction.y == 0:
 		owner.skin.freeze()

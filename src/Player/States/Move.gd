@@ -13,14 +13,12 @@ var velocity := Vector2.ZERO
 
 
 static func get_vertical_move_direction(actions: Dictionary) -> Vector2:
-	return Vector2(
-		1.0, Input.get_action_strength(actions.move_down) - Input.get_action_strength(actions.move_up)
-	)
+	return Vector2(1.0, sign(Input.get_action_strength(actions.move_down) - Input.get_action_strength(actions.move_up)))
 
 
 static func get_horizontal_move_direction(actions: Dictionary) -> Vector2:
 	return Vector2(
-		Input.get_action_strength(actions.move_right) - Input.get_action_strength(actions.move_left), 1.0
+		sign(Input.get_action_strength(actions.move_right) - Input.get_action_strength(actions.move_left)), 1.0
 	)
 
 

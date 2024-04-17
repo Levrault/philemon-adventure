@@ -1,6 +1,6 @@
 extends Node2D
 
-const PICK_FEEDBACK = preload("res://src/VFX/PickFeedbackCircle.tscn")
+const PICK_FEEDBACK = preload("res://src/VFX/PickFeedbackCircleWithAudio.tscn")
 
 onready var area = $Area2D
 
