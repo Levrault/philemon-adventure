@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource( 1 )
-health = 60
+health = 10
 explosion = ExtResource( 2 )

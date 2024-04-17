@@ -16,15 +16,14 @@ extents = Vector2( 9, 13.5 )
 [node name="Skeleton" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 resource = ExtResource( 6 )
-is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -13 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
-
+is_patrolling = true
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 0, -13 )
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." index="1"]
-max_health = 100
+max_health = 60.0
 
 [node name="Skin" parent="." index="2" instance=ExtResource( 1 )]
 position = Vector2( 0, -16 )

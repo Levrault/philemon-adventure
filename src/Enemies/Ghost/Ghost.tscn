@@ -37,7 +37,7 @@ position = Vector2( 0, 0 )
 shape = SubResource( 5 )
 
 [node name="Stats" parent="." index="3"]
-max_health = 60
+max_health = 10.0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 2 )

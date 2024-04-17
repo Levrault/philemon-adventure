@@ -9,8 +9,3 @@ type = 1
 [node name="Sprite" parent="." index="1"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-
-[node name="Label" parent="." index="6"]
-margin_left = -27.0
-margin_right = 27.0
-text = "hyperbeam"
