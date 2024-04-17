@@ -30,6 +30,8 @@ max_health = 2.0
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
+[node name="BatterySpawn" type="Position2D" parent="."]
+
 [node name="Debug" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0

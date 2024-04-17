@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/503520__matrixxx__powerup-04.wav-6fd3dadd191f267d324fc23fa3c00318.sample"
+
+[deps]
+
+source_file="res://assets/audio/health/503520__matrixxx__powerup-04.wav"
+dest_files=[ "res://.import/503520__matrixxx__powerup-04.wav-6fd3dadd191f267d324fc23fa3c00318.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

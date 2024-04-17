@@ -15,7 +15,8 @@ extents = Vector2( 9, 11 )
 [node name="Slime" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
 resource = ExtResource( 4 )
-is_patrolling = true
+is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -11 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
+
 rotation_direction = 0
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -23,7 +24,7 @@ position = Vector2( 0, -10.5 )
 shape = SubResource( 1 )
 
 [node name="Stats" parent="." index="1"]
-max_health = 10
+max_health = 100
 
 [node name="Skin" parent="." index="2" instance=ExtResource( 3 )]
 position = Vector2( 0, -16 )
@@ -56,3 +57,6 @@ initial_state = NodePath("Sliming")
 
 [node name="Sliming" type="Node" parent="StateMachine" index="0"]
 script = ExtResource( 2 )
+
+[node name="BatterySpawn" parent="." index="6"]
+position = Vector2( 0, -11 )
