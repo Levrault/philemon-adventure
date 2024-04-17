@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Upgrade/BeamUpgrade.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Enemies/Crab/Crab.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Enemies/Skeleton/Skeleton.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Commons/Combat/DamageSource.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/props/vent-pipes.png" type="Texture" id=12]
 [ext_resource path="res://assets/props/console.png" type="Texture" id=13]
@@ -101,9 +102,13 @@ position = Vector2( -120, -32 )
 
 [node name="Crab" parent="Enemies" index="0" instance=ExtResource( 9 )]
 position = Vector2( 136, 16 )
+is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -16 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
 
-[node name="Crab2" parent="Enemies" index="1" instance=ExtResource( 9 )]
-position = Vector2( 356, 16 )
+
+[node name="Skeleton" parent="Enemies" index="1" instance=ExtResource( 10 )]
+position = Vector2( 290, 16 )
+is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -13 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
+
 
 [node name="BeamUpgrade" parent="Upgrades" index="0" instance=ExtResource( 8 )]
 position = Vector2( -123, 128 )

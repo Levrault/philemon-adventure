@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Upgrade/CardUpgrade.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/Enemies/Skeleton/Skeleton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/props/vent-pipes.png" type="Texture" id=12]
 [ext_resource path="res://assets/props/pipes.png" type="Texture" id=13]
+[ext_resource path="res://src/Enemies/Shield.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 12.5 )
@@ -94,18 +95,28 @@ position = Vector2( 168, -72 )
 
 [node name="Slime" parent="Enemies" index="1" instance=ExtResource( 6 )]
 position = Vector2( 120, -48 )
+is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -11 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
+
 
 [node name="Crab" parent="Enemies" index="2" instance=ExtResource( 7 )]
 position = Vector2( -80, 144 )
+is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -16 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
+
 
 [node name="Skeleton" parent="Enemies" index="3" instance=ExtResource( 11 )]
 position = Vector2( 384, 144 )
 look_direction = -1
+is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -13 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
+
+
+[node name="Shield" parent="Enemies/Skeleton" index="8" instance=ExtResource( 14 )]
+position = Vector2( 0, -16 )
 
 [node name="Skeleton2" parent="Enemies" index="4" instance=ExtResource( 11 )]
 position = Vector2( 504, 0 )
 look_direction = -1
-is_patrolling = false
+is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -13 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
+
 
 [node name="CardUpgrade" parent="Upgrades" index="0" instance=ExtResource( 2 )]
 position = Vector2( 520, -16 )
