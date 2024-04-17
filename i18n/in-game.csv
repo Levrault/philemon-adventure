@@ -15,4 +15,7 @@ ingame.intro_title, "Emergency order", "Ordre prioritaire"
 ingame.intro_description, "Bounty hunter Philémon, we need your help to Defeat the Cacodeamon. Help us!", "Chasseur de prime Philémon, nous avons besoin de votre aide pour battre le Cacodeamon. Aidez-nous!"
 ingame.intro_author, "Galaxy Federal Police", "Police Fédéral Galaxique"
 ingame.begin_mission, "Begin Mission","Commencer la Mission"
+ingame.ending_title, "Mission accomplished!", "Mission accomplie!"
+ingame.ending_description, "Bounty hunter Philémon, you defeated the Cacodeamon! You saved us all! And also, your uncle wish you a happy birthday!", "Chasseur de prime Philémon, vous avez battu le Cacodeamon. Vous nous avez tous sauvé! Et aussi, votre oncle vous souhaite un joyeux anniversaire!"
+ingame.ending_mission, "Ending Mission","Terminer la Mission"
 

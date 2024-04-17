@@ -25,6 +25,7 @@ func update_collision_shape() -> void:
 	$CollisionShape2D.shape.extents = Vector2(TILES_BASE_SIZE * tiles_x_multiplier, TILES_BASE_SIZE * tiles_y_multiplier) 
 	$StaticBody2D/CollisionShape2D.shape.extents = Vector2(TILES_BASE_SIZE * tiles_x_multiplier - (TILES_BASE_SIZE/2), TILES_BASE_SIZE * tiles_y_multiplier - (TILES_BASE_SIZE/2)) 
 
+
 func teleport(player: Player) -> void:
 	player.is_handling_input = false
 	LevelManager.spawn_point = spawn_point

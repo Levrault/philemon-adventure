@@ -32,6 +32,7 @@ enum Level {
 	ROOM_20,
 	ROOM_21,
 	INTRO,
+	ENDING,
 }
 
 var level_keys := Level.keys()
@@ -106,6 +107,8 @@ func get_level_path(level: int) -> String:
 			return "res://src/World/Room/Room20.tscn"
 		Level.ROOM_21:
 			return "res://src/World/Room/Room21.tscn"
+		Level.ENDING:
+			return "res://src/World/Room/Ending.tscn"
 		Level.DEBUG_LEVEL_1:
 			return "res://src/World/Debug/DebugLevel1.tscn"
 		Level.DEBUG_LEVEL_2:

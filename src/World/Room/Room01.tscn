@@ -22,6 +22,7 @@ extents = Vector2( 112, 12.5 )
 margin_left = -352.0
 margin_right = 760.0
 margin_bottom = 168.0
+color = Color( 0.0823529, 0.0666667, 0.137255, 1 )
 
 [node name="Sprite" type="Sprite" parent="Backgrounds" index="1"]
 position = Vector2( 368, 144 )

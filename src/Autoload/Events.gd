@@ -9,6 +9,7 @@ extends Node
 
 # cinematic
 signal cinematic_transition_started
+signal cinematic_ending_transition_started
 signal cinematic_animation_finished
 signal cinematic_transition_ended
 signal cinematic_text_displayed(text)
