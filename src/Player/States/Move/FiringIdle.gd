@@ -13,6 +13,7 @@ func unhandled_input(event: InputEvent) -> void:
 			_state_machine.transition_to("Move/Air", {impulse = true})
 			return
 
+
 func physics_process(delta: float) -> void:
 	if owner.is_handling_input and owner.is_on_floor() and _parent.get_horizontal_move_direction(owner.actions).x != 0.0:
 		_state_machine.transition_to("Move/FiringRun")

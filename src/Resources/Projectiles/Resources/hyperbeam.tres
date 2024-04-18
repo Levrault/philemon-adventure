@@ -11,4 +11,4 @@ speed = 225.0
 cooldown = 2.0
 scene = ExtResource( 2 )
 id = 1
-charged_wait_time = 0.25
+charged_wait_time = 0.5

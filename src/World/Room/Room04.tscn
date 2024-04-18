@@ -98,38 +98,44 @@ position = Vector2( 40, -576 )
 [node name="FallingPlatform18" parent="Props" index="15" instance=ExtResource( 2 )]
 position = Vector2( 56, -576 )
 
-[node name="Ladder" parent="Props" index="16" instance=ExtResource( 5 )]
+[node name="FallingPlatform19" parent="Props" index="16" instance=ExtResource( 2 )]
+position = Vector2( 72, -620 )
+
+[node name="FallingPlatform20" parent="Props" index="17" instance=ExtResource( 2 )]
+position = Vector2( 88, -620 )
+
+[node name="Ladder" parent="Props" index="18" instance=ExtResource( 5 )]
 position = Vector2( -104, 32 )
 tiles_y_multiplier = 10
 
-[node name="Ladder2" parent="Props" index="17" instance=ExtResource( 5 )]
+[node name="Ladder2" parent="Props" index="19" instance=ExtResource( 5 )]
 position = Vector2( -40, -88 )
 tiles_y_multiplier = 5
 
-[node name="Ladder3" parent="Props" index="18" instance=ExtResource( 5 )]
+[node name="Ladder3" parent="Props" index="20" instance=ExtResource( 5 )]
 position = Vector2( -40, -336 )
 tiles_y_multiplier = 8
 
-[node name="ForceField" parent="Props" index="19" instance=ExtResource( 12 )]
+[node name="ForceField" parent="Props" index="21" instance=ExtResource( 12 )]
 position = Vector2( 234, -648 )
 
-[node name="ForceField2" parent="Props" index="20" instance=ExtResource( 12 )]
+[node name="ForceField2" parent="Props" index="22" instance=ExtResource( 12 )]
 position = Vector2( 160, 88 )
 type = 1
 
-[node name="ForceField3" parent="Props" index="21" instance=ExtResource( 12 )]
+[node name="ForceField3" parent="Props" index="23" instance=ExtResource( 12 )]
 position = Vector2( 184, 88 )
 type = 1
 
-[node name="ForceField4" parent="Props" index="22" instance=ExtResource( 12 )]
+[node name="ForceField4" parent="Props" index="24" instance=ExtResource( 12 )]
 position = Vector2( 208, 88 )
 type = 1
 
-[node name="ForceField5" parent="Props" index="23" instance=ExtResource( 12 )]
+[node name="ForceField5" parent="Props" index="25" instance=ExtResource( 12 )]
 position = Vector2( 176, -424 )
 type = 2
 
-[node name="ForceField7" parent="Props" index="24" instance=ExtResource( 12 )]
+[node name="ForceField7" parent="Props" index="26" instance=ExtResource( 12 )]
 position = Vector2( 152, -424 )
 type = 2
 

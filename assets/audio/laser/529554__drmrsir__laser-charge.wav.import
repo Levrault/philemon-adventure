@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/529554__drmrsir__laser-charge.wav-effb39459ea1ddd85f2ec732c98c3b32.sample"
+
+[deps]
+
+source_file="res://assets/audio/laser/529554__drmrsir__laser-charge.wav"
+dest_files=[ "res://.import/529554__drmrsir__laser-charge.wav-effb39459ea1ddd85f2ec732c98c3b32.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

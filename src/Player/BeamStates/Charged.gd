@@ -1,6 +1,6 @@
 extends State
 
-const DELAY := 0.1
+const DELAY := 0.05
 
 var tween : SceneTreeTween = null
 
@@ -22,8 +22,6 @@ func physics_process(delta: float) -> void:
 func enter(msg: Dictionary = {}) -> void:
 	tween = create_tween().set_loops()
 	tween.tween_property(owner.skin, "modulate", Color.red, DELAY)
-	tween.tween_interval(DELAY)
-	tween.tween_property(owner.skin, "modulate", Color.white,DELAY)
 
 
 func exit() -> void:
@@ -31,4 +29,4 @@ func exit() -> void:
 	var exit_tween = create_tween()
 	exit_tween.tween_property(owner.skin, "modulate", Color.red, DELAY)
 	exit_tween.tween_interval(DELAY * 2)
-	exit_tween.tween_property(owner.skin, "modulate", Color.white, DELAY * 2)
+	exit_tween.tween_property(owner.skin, "modulate", Color.white, owner.get_charged_beam_resource().cooldown)

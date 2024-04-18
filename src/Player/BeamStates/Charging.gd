@@ -1,9 +1,10 @@
 extends State
 
 const DELAY := 0.02
+var tween : SceneTreeTween = null
 
 onready var timer := $Timer
-var tween : SceneTreeTween = null
+onready var audio_stream_player = $AudioStreamPlayer
 
 
 func unhandled_input(event: InputEvent) -> void:
@@ -18,6 +19,8 @@ func physics_process(delta: float) -> void:
 
 func enter(msg: Dictionary = {}) -> void:
 	timer.connect("timeout", self, "_on_Timeout")
+	audio_stream_player.pitch_scale = 4
+	audio_stream_player.play()
 	timer.wait_time = owner.get_charged_beam_resource().charged_wait_time
 	timer.start()
 	tween = create_tween().set_loops()

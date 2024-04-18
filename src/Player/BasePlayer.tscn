@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Commons/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://src/Player/BeamStates/Cancel.gd" type="Script" id=24]
 [ext_resource path="res://src/Player/Detectors/LadderOneWayPlatformDetector.gd" type="Script" id=25]
 [ext_resource path="res://src/Player/Detectors/MovingPlatformDetector.gd" type="Script" id=26]
+[ext_resource path="res://assets/audio/laser/529554__drmrsir__laser-charge.wav" type="AudioStream" id=27]
 [ext_resource path="res://src/Resources/Projectiles/Resources/hyperbeam.tres" type="Resource" id=28]
 [ext_resource path="res://src/Player/States/Move/FiringIdle.gd" type="Script" id=32]
 [ext_resource path="res://src/Resources/Projectiles/Resources/curvedbeam.tres" type="Resource" id=35]
@@ -133,6 +134,10 @@ script = ExtResource( 41 )
 [node name="Timer" type="Timer" parent="BeamStateMachine/Charging"]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BeamStateMachine/Charging"]
+stream = ExtResource( 27 )
+pitch_scale = 4.0
 
 [node name="Charged" type="Node2D" parent="BeamStateMachine"]
 script = ExtResource( 40 )
@@ -276,6 +281,7 @@ margin_bottom = 146.0
 text = "lookdirection"
 
 [node name="PlayerIndicator" type="Label" parent="."]
+visible = false
 margin_left = -10.0
 margin_top = -45.0
 margin_right = 13.0
