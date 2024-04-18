@@ -2,7 +2,6 @@ tool
 class_name Enemy
 extends Actor
 
-
 const BATTERY = preload("res://src/Upgrade/Battery.tscn")
 export(Resource) var resource
 onready var battery_spawn = $BatterySpawn

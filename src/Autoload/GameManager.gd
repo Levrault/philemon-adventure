@@ -77,21 +77,28 @@ func _ready() -> void:
 
 
 func unlock_progression() -> void:
-	print_debug("Player unlock progression")
+	print("-- Player unlock progression --")
 	var data = Serialize.get_current_profile()
 	if data.ability.jump:
+		print("Player has unlocked jump ability")
 		ability_upgrades_status[ability_keys[Ability.JUMP]] = true
 	if data.beam.beam:
+		print("Player has unlocked beam")
 		beam_upgrades_status[beam_keys[BeamType.BEAM]] = true
 	if data.beam.hyperbeam:
+		print("Player has unlocked hyperbeam")
 		beam_upgrades_status[beam_keys[BeamType.HYPERBEAM]] = true
 	if data.cards.lvl_1:
+		print("Player has unlocked card lvl_1")
 		card_upgrades_status[card_keys[Card.LVL_1]] = true
 	if data.cards.lvl_2:
+		print("Player has unlocked card lvl_2")
 		card_upgrades_status[card_keys[Card.LVL_2]] = true
 	if data.cards.lvl_3:
+		print("Player has unlocked card lvl_3")
 		card_upgrades_status[card_keys[Card.LVL_3]] = true
 	if data.cards.lvl_4:
+		print("Player has unlocked card lvl_4")
 		card_upgrades_status[card_keys[Card.LVL_4]] = true
 
 

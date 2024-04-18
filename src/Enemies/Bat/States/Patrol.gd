@@ -26,6 +26,7 @@ func enter(msg: Dictionary = {}) -> void:
 	owner.set_sync_to_physics(true)
 	_tween.playback_process_mode = Tween.TWEEN_PROCESS_PHYSICS
 	_waypoints.reset()
+	_waypoints.reset()
 
 	owner.skin.play("fly")
 	_timer.start()

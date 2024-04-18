@@ -5,6 +5,10 @@ var transition_enabled := false
 onready var jump_input_buffering: Timer = $JumpInputBuffering
 
 
+func unhandled_input(event: InputEvent) -> void:
+	_parent.unhandled_input(event)
+
+
 func physics_process(delta: float) -> void:
 	if Input.is_action_pressed(owner.actions.fire):
 		_state_machine.transition_to("Move/FiringIdle")

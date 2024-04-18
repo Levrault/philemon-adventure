@@ -151,4 +151,4 @@ pause_mode = 2
 
 [node name="AsyncSceneLoading" type="Node2D" parent="."]
 script = ExtResource( 3 )
-current_level = 0
+current_level = 2
