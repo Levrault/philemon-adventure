@@ -49,8 +49,8 @@ tile_data = PoolIntArray( -524300, 29, 0, -524299, 23, 0, -524298, 23, 0, -52429
 [node name="DamageSource" parent="TileMap" index="0" instance=ExtResource( 8 )]
 position = Vector2( 446, 145 )
 damage = 10
+is_instakill = true
 has_throwback_force = false
-looping_damage = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DamageSource" index="0"]
 position = Vector2( 27, 0 )
@@ -75,14 +75,9 @@ position = Vector2( 952, -16 )
 position = Vector2( 0, -8 )
 
 [node name="Lizard" parent="Enemies" index="3" instance=ExtResource( 9 )]
-position = Vector2( 520, -16 )
+position = Vector2( 600, -16 )
 look_direction = -1
 iteration_before_attack = 3
-
-[node name="Lizard2" parent="Enemies" index="4" instance=ExtResource( 9 )]
-position = Vector2( 105, 32 )
-look_direction = -1
-iteration_before_attack = 2
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 5 )]
 position = Vector2( -214, 84 )

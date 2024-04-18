@@ -76,6 +76,25 @@ func _ready() -> void:
 			unlock_card(Card.LVL_4)
 
 
+func unlock_progression() -> void:
+	print_debug("Player unlock progression")
+	var data = Serialize.get_current_profile()
+	if data.ability.jump:
+		ability_upgrades_status[ability_keys[Ability.JUMP]] = true
+	if data.beam.beam:
+		beam_upgrades_status[beam_keys[BeamType.BEAM]] = true
+	if data.beam.hyperbeam:
+		beam_upgrades_status[beam_keys[BeamType.HYPERBEAM]] = true
+	if data.cards.lvl_1:
+		card_upgrades_status[card_keys[Card.LVL_1]] = true
+	if data.cards.lvl_2:
+		card_upgrades_status[card_keys[Card.LVL_2]] = true
+	if data.cards.lvl_3:
+		card_upgrades_status[card_keys[Card.LVL_3]] = true
+	if data.cards.lvl_4:
+		card_upgrades_status[card_keys[Card.LVL_4]] = true
+
+
 func is_beam_upgrade_status_unlocked(beam_type: int) -> bool:
 	return beam_upgrades_status[beam_keys[beam_type]]
 
@@ -123,4 +142,11 @@ func serialize_beam_status() -> Dictionary:
 	var data := {}
 	for value in beam_keys:
 		data[value.to_lower()] = beam_upgrades_status[value]
+	return data
+
+
+func serialize_cards_status() -> Dictionary:
+	var data := {}
+	for value in card_keys:
+		data[value.to_lower()] = card_upgrades_status[value]
 	return data

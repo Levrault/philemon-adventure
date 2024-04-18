@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/Player/BasePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player/Detectors/SaveStationDetector.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://src/Player/HUD/BeamsSelectorBar.gd" type="Script" id=14]
 [ext_resource path="res://src/Player/HUD.gd" type="Script" id=15]
 [ext_resource path="res://src/Player/DebugCanvasLayer.gd" type="Script" id=16]
+[ext_resource path="res://src/Player/Cards.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.5, 1.5 )
@@ -25,6 +26,28 @@ extents = Vector2( 8.5, 1.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7.5, 15 )
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/cards.png-2503d9460b1ef0026b9747df4e3aee9d.stex"
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = SubResource( 4 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="StreamTexture" id=6]
+load_path = "res://.import/cards.png-2503d9460b1ef0026b9747df4e3aee9d.stex"
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = SubResource( 6 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = SubResource( 4 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = SubResource( 4 )
+region = Rect2( 0, 0, 16, 16 )
 
 [node name="Player" instance=ExtResource( 1 )]
 
@@ -167,6 +190,7 @@ texture = ExtResource( 8 )
 script = ExtResource( 13 )
 
 [node name="CurvedBeam" type="TextureRect" parent="HUD/Control/BeamsSelectorBar" index="1"]
+visible = false
 margin_left = 20.0
 margin_right = 36.0
 margin_bottom = 16.0
@@ -174,3 +198,34 @@ rect_pivot_offset = Vector2( 0.8, 0.8 )
 texture = ExtResource( 11 )
 script = ExtResource( 13 )
 id = 2
+
+[node name="Cards" type="HBoxContainer" parent="HUD/Control" index="2"]
+margin_left = 4.0
+margin_top = 39.0
+margin_right = 60.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 17 )
+
+[node name="LVL_1" type="TextureRect" parent="HUD/Control/Cards" index="0"]
+margin_right = 16.0
+margin_bottom = 16.0
+texture = SubResource( 5 )
+
+[node name="LVL_2" type="TextureRect" parent="HUD/Control/Cards" index="1"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="LVL_3" type="TextureRect" parent="HUD/Control/Cards" index="2"]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 16.0
+texture = SubResource( 8 )
+
+[node name="LVL_4" type="TextureRect" parent="HUD/Control/Cards" index="3"]
+margin_left = 60.0
+margin_right = 76.0
+margin_bottom = 16.0
+texture = SubResource( 9 )

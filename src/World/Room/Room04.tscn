@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Platform/FallingPlatform.tscn" type="PackedScene" id=2]
@@ -7,8 +7,6 @@
 [ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/environment/middle_alt.png" type="Texture" id=6]
 [ext_resource path="res://src/Enemies/Crab/Crab.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/Enemies/Bat/Bat.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/Waypoints/Waypoints.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Enemies/Lizard/Lizard.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Props/ForceField.tscn" type="PackedScene" id=12]
@@ -32,6 +30,7 @@ visible = true
 
 [node name="Far" parent="Backgrounds" index="4"]
 visible = true
+position = Vector2( 32, 48 )
 
 [node name="Back3" parent="Backgrounds" index="5" instance=ExtResource( 3 )]
 position = Vector2( 0, -712 )
@@ -134,31 +133,18 @@ type = 2
 position = Vector2( 152, -424 )
 type = 2
 
-[node name="Waypoints" parent="Enemies" index="0" instance=ExtResource( 9 )]
-position = Vector2( -128, -528 )
-points = PoolVector2Array( 0, 0, 240, 0 )
-mode = 1
-
-[node name="Bat" parent="Enemies/Waypoints" index="0" instance=ExtResource( 8 )]
-
-[node name="Lizard2" parent="Enemies" index="1" instance=ExtResource( 10 )]
+[node name="Lizard2" parent="Enemies" index="0" instance=ExtResource( 10 )]
 position = Vector2( 48, -400 )
 look_direction = -1
 
-[node name="Crab" parent="Enemies" index="2" instance=ExtResource( 7 )]
+[node name="Crab" parent="Enemies" index="1" instance=ExtResource( 7 )]
 position = Vector2( -64, -592 )
-is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -16 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
 
-
-[node name="Slime" parent="Enemies" index="3" instance=ExtResource( 15 )]
+[node name="Slime" parent="Enemies" index="2" instance=ExtResource( 15 )]
 position = Vector2( -16, -480 )
-is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -11 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
 
-
-[node name="Slime2" parent="Enemies" index="4" instance=ExtResource( 15 )]
+[node name="Slime2" parent="Enemies" index="3" instance=ExtResource( 15 )]
 position = Vector2( 40, -128 )
-is_patrolling = Object(Position2D,"_import_path":NodePath(""),"pause_mode":0,"physics_interpolation_mode":0,"unique_name_in_owner":false,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -11 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"script":null)
-
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 11 )]
 position = Vector2( -248, 40 )

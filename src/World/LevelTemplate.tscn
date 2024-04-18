@@ -68,5 +68,6 @@ limit_left = -208
 limit_top = -134
 limit_right = 448
 limit_bottom = 138
+smoothing_speed = 10.0
 
 [node name="Foreground" type="Node2D" parent="."]

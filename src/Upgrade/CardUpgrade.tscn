@@ -6,8 +6,9 @@
 
 [node name="CardUpgrade" instance=ExtResource( 3 )]
 script = ExtResource( 2 )
+type = 2
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
 hframes = 4
-frame = 1
+frame = 2

@@ -21,5 +21,6 @@ func _on_Pressed() -> void:
 		GameManager.player_status = GameManager.PlayerStatus.alive
 	else:
 		GameManager.player_status = GameManager.PlayerStatus.spawing
+	GameManager.unlock_progression()
 	LevelManager.current_level_id = LevelManager.Level.keys().find(Serialize.get_current_profile().progression.last_saveroom)
 	print_debug("%s - %s has been set has current profile" % [Serialize.current_profile, profile_name.text])

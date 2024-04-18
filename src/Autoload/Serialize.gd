@@ -102,11 +102,10 @@ func save_data() -> void:
 	var data := get_current_profile()
 	data.ability = GameManager.serialize_ability_status()
 	data.beam = GameManager.serialize_beam_status()
+	data.cards = GameManager.serialize_cards_status()
 	data.progression.last_saveroom = LevelManager.serialize_last_saveroom()
 	data.progression.level_state = LevelManager.states
-	
-	if OS.has_feature("debug") and ProjectSettings.get_setting("game/save_allowed"):
-		save_profile(current_profile, get_current_profile())
+	save_profile(current_profile, get_current_profile())
 
 
 func save_profile(profile_name: String, values: Dictionary) -> void:
