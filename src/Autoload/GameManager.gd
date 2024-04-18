@@ -136,7 +136,7 @@ func unlock_card(card_type: int) -> void:
 func player_died() -> void:
 	player_status = PlayerStatus.death
 	Events.emit_signal("scene_fadeout_transition_displayed", LevelTransition.Transition.THEATRAL)
-	LevelManager.current_level_id = LevelManager.Level.keys().find(Serialize.get_current_profile().progression.last_saveroom)
+	LevelManager.current_level_id = LevelManager.Level.GAME_OVER
 
 
 func serialize_ability_status() -> Dictionary:

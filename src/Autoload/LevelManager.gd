@@ -33,6 +33,7 @@ enum Level {
 	ROOM_21,
 	INTRO,
 	ENDING,
+	GAME_OVER,
 }
 
 var level_keys := Level.keys()
@@ -63,6 +64,8 @@ func get_level_path(level: int) -> String:
 	match level:
 		Level.MAIN_MENU:
 			return "res://src/UI/MainMenu.tscn"
+		Level.GAME_OVER:
+			return "res://src/World/Room/GameOver.tscn"
 		Level.INTRO:
 			return "res://src/World/Room/Intro.tscn"
 		Level.ROOM_01:

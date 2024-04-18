@@ -18,4 +18,8 @@ ingame.begin_mission, "Begin Mission","Commencer la Mission"
 ingame.ending_title, "Mission accomplished!", "Mission accomplie!"
 ingame.ending_description, "Bounty hunter Philémon, you defeated the Cacodeamon! You saved us all! And also, your uncle wish you a happy birthday!", "Chasseur de prime Philémon, vous avez battu le Cacodeamon. Vous nous avez tous sauvé! Et aussi, votre oncle vous souhaite un joyeux anniversaire!"
 ingame.ending_mission, "Ending Mission","Terminer la Mission"
+ingame.game_over,"Game Over", "Gamer Over"
+ingame.restart,"Restart", "Recommencer"
+ingame.quit,"Quit", "Quitter"
+ingame.transmission_lost,"We lost transmission with Philémon !?", "Nous avons perdu les communications avec Philémon !?"
 
