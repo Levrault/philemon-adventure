@@ -27,6 +27,7 @@ func update_collision_shape() -> void:
 
 
 func teleport(player: Player) -> void:
+	GameManager.player_health = player.stats.health
 	player.is_handling_input = false
 	LevelManager.spawn_point = spawn_point
 	LevelManager.last_look_direction_of_player = player.look_direction

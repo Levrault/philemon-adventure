@@ -8,9 +8,10 @@ func _ready() -> void:
 	
 	# Init player
 	player.connect_camera($Camera)
+	player.change_health(GameManager.player_health)
 	
 	if spawns.has_node(LevelManager.spawn_point):
-		Events.emit_signal("player_teleported_to",  spawns.get_node(LevelManager.spawn_point).global_position)
+		Events.emit_signal("player_teleported_to", spawns.get_node(LevelManager.spawn_point).global_position)
 		
 		# Spawn Coop Player
 		for device_index in GameMode.coop_players:

@@ -48,6 +48,7 @@ var card_upgrades_status = {
 	Card.keys()[Card.LVL_4]: false,
 }
 
+var player_health := 0
 var beam_keys := BeamType.keys()
 var ability_keys := Ability.keys()
 var card_keys := Card.keys()

@@ -55,6 +55,15 @@ func _ready() -> void:
 	spawn_position = global_position
 
 
+func change_health(value: int) -> void:
+	if value > stats.max_health:
+		value = stats.max_health
+	if value < 0:
+		value = 0
+	stats.health = value
+	stats.emit_signal("health_changed", stats.health, value)
+
+
 func connect_camera(camera: Camera2D) -> void:
 	$RemoteTransform2D.remote_path = camera.get_path()
 
