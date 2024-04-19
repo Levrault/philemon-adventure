@@ -4,13 +4,11 @@ extends GenericButton
 
 onready var profile_name := $MarginContainer/VBoxContainer/Row1/ProfileName
 onready var level := $MarginContainer/VBoxContainer/Row1/Level
-onready var playtime := $MarginContainer/VBoxContainer/Row2/Playtime
 
 
 func set_data(data: Dictionary) -> void:
 	profile_name.text = data.profile.name
-	playtime.text = tr("profile.playtime").format({time = playtime.seconds2hhmmss(data.stats.total_play_time)})
-	level.text = Serialize.get_current_profile().progression.last_saveroom
+	level.text = tr(Serialize.get_current_profile().progression.last_saveroom_description)
 	
 
 func _on_Pressed() -> void:

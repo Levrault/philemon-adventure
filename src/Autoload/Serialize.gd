@@ -104,6 +104,7 @@ func save_data() -> void:
 	data.beam = GameManager.serialize_beam_status()
 	data.cards = GameManager.serialize_cards_status()
 	data.progression.last_saveroom = LevelManager.serialize_last_saveroom()
+	data.progression.last_saveroom_description = LevelManager.serialize_last_saveroom_description()
 	data.progression.level_state = LevelManager.states
 	save_profile(current_profile, get_current_profile())
 

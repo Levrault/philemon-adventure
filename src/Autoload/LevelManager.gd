@@ -31,6 +31,7 @@ enum Level {
 	ROOM_19,
 	ROOM_20,
 	ROOM_21,
+	ROOM_22,
 	INTRO,
 	ENDING,
 	GAME_OVER,
@@ -110,6 +111,8 @@ func get_level_path(level: int) -> String:
 			return "res://src/World/Room/Room20.tscn"
 		Level.ROOM_21:
 			return "res://src/World/Room/Room21.tscn"
+		Level.ROOM_22:
+			return "res://src/World/Room/Room22.tscn"
 		Level.ENDING:
 			return "res://src/World/Room/Ending.tscn"
 		Level.DEBUG_LEVEL_1:
@@ -146,6 +149,21 @@ func get_level_state(level_name) -> Dictionary:
 
 func serialize_last_saveroom() -> String:
 	return current_level_name
+
+
+func serialize_last_saveroom_description() -> String:
+	match current_level_id:
+		Level.ROOM_02:
+			return "commons.save_station_1"
+		Level.ROOM_05:
+			return "commons.save_station_2"
+		Level.ROOM_10:
+			return "commons.save_station_3"
+		Level.ROOM_18:
+			return "commons.save_station_4"
+		Level.ROOM_22:
+			return "commons.save_station_5"
+	return ""
 
 
 func serialize_level_state() -> Dictionary:
