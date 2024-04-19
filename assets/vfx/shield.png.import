@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/carrot.png-56ab3782ce85b74d14b83fda3b955351.stex"
+path="res://.import/shield.png-9abbcd2135b0523287b7a7dbc6a0282a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/hud/carrot.png"
-dest_files=[ "res://.import/carrot.png-56ab3782ce85b74d14b83fda3b955351.stex" ]
+source_file="res://assets/vfx/shield.png"
+dest_files=[ "res://.import/shield.png-9abbcd2135b0523287b7a7dbc6a0282a.stex" ]
 
 [params]
 

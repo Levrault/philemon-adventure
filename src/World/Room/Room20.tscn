@@ -144,14 +144,7 @@ script = ExtResource( 8 )
 wait_time = 0.5
 one_shot = true
 
-[node name="Boss" parent="Enemies" index="0" instance=ExtResource( 2 )]
-position = Vector2( 248, -40 )
-look_direction = -1
-left_attack_position_path = NodePath("../Left")
-middle_attack_position_path = NodePath("../Middle")
-right_attack_position_path = NodePath("../Right")
-
-[node name="Left" type="Position2D" parent="Enemies" index="1"]
+[node name="Left" type="Position2D" parent="Enemies" index="0"]
 position = Vector2( -136, -32 )
 
 [node name="TriggerExplosion" type="Area2D" parent="Enemies/Left" index="0"]
@@ -191,7 +184,7 @@ position = Vector2( 48, 120 )
 [node name="Explosion7" type="Node2D" parent="Enemies/Left/Explosions" index="6"]
 position = Vector2( -48, 120 )
 
-[node name="Middle" type="Position2D" parent="Enemies" index="2"]
+[node name="Middle" type="Position2D" parent="Enemies" index="1"]
 position = Vector2( 104, -32 )
 
 [node name="TriggerExplosion" type="Area2D" parent="Enemies/Middle" index="0"]
@@ -255,7 +248,7 @@ position = Vector2( 96, 118 )
 [node name="Explosion15" type="Node2D" parent="Enemies/Middle/Explosions" index="14"]
 position = Vector2( -128, 118 )
 
-[node name="Right" type="Position2D" parent="Enemies" index="3"]
+[node name="Right" type="Position2D" parent="Enemies" index="2"]
 position = Vector2( 360, -30 )
 
 [node name="TriggerExplosion" type="Area2D" parent="Enemies/Right" index="0"]
@@ -294,6 +287,13 @@ position = Vector2( 32, 118 )
 
 [node name="Explosion7" type="Node2D" parent="Enemies/Right/Explosions" index="6"]
 position = Vector2( -64, 118 )
+
+[node name="Boss" parent="Enemies" index="3" instance=ExtResource( 2 )]
+position = Vector2( 248, -40 )
+look_direction = -1
+left_attack_position_path = NodePath("../Left")
+middle_attack_position_path = NodePath("../Middle")
+right_attack_position_path = NodePath("../Right")
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 9 )]
 position = Vector2( -213, 82 )
