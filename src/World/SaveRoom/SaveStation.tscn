@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/props/doors.png" type="Texture" id=1]
 [ext_resource path="res://assets/props/floating-platform.png" type="Texture" id=2]
@@ -71,6 +71,9 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 6 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 13, 4.5 )
+
 [node name="SaveStation" type="Node2D" groups=["save_station"]]
 z_index = -1
 script = ExtResource( 3 )
@@ -117,3 +120,9 @@ position = Vector2( 0, -6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -4 )
+shape = SubResource( 6 )

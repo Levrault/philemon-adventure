@@ -12,6 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Global.unpause_game()
 		hide()
 		set_process_unhandled_input(false)
+		
 
 
 func _on_Popup_displayed(text: String) -> void:

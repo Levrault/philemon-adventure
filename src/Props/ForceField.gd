@@ -22,18 +22,22 @@ func set_type(p_type: int) -> void:
 	type = p_type
 	if type == GameManager.Card.LVL_1:
 		$Sprite.modulate = Color("#a3ce27")
+		$Sprite2.modulate = Color("#a3ce27")
 		$CardSprite.frame = 1
 		return
 	if type == GameManager.Card.LVL_2:
-		$Sprite.modulate = Color("#007899")
+		$Sprite.modulate = Color("#4999bb")
+		$Sprite2.modulate = Color("#4999bb")
 		$CardSprite.frame = 3
 		return
 	if type == GameManager.Card.LVL_3:
-		$Sprite.modulate = Color("#be2633")
+		$Sprite.modulate = Color("#e74a57")
+		$Sprite2.modulate = Color("#e74a57")
 		$CardSprite.frame = 2
 		return
 	if type == GameManager.Card.LVL_4:
-		$Sprite.modulate = Color("#000000")
+		$Sprite.modulate = Color("#f76afc")
+		$Sprite2.modulate = Color("#f76afc")
 		$CardSprite.frame = 0
 		return
 

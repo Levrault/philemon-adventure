@@ -8,7 +8,11 @@ onready var level := $MarginContainer/VBoxContainer/Row1/Level
 
 func set_data(data: Dictionary) -> void:
 	profile_name.text = data.profile.name
-	level.text = tr(Serialize.get_current_profile().progression.last_saveroom_description)
+	
+	if data.progression.last_saveroom_description.empty():
+		level.text = tr("profile.new_adventure")
+	else:
+		level.text = tr(data.progression.last_saveroom_description)
 	
 
 func _on_Pressed() -> void:

@@ -11,6 +11,7 @@ var platform_active_position := Vector2.ZERO
 onready var tween := $Tween
 onready var platform := $Platform
 onready var anim := $AnimationPlayer
+onready var collision_shape_2d: CollisionShape2D = $StaticBody2D/CollisionShape2D
 
 
 func _ready() -> void:
@@ -24,12 +25,14 @@ func _ready() -> void:
 
 func active_save_station() -> void:
 	has_player = true
+	collision_shape_2d.set_deferred("disabled", true)
 	tween.interpolate_property(platform, "position", platform.position, platform_active_position, 1.0, Tween.TRANS_SINE)
 	tween.start()
 
 
 func inactive_save_station() -> void:
 	has_player = false
+	collision_shape_2d.set_deferred("disabled", false)
 	tween.stop_all()
 	tween.remove_all()
 	tween.interpolate_property(platform, "position", platform.position, platform_starting_position, .5, Tween.TRANS_SINE)

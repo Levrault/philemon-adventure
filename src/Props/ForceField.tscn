@@ -91,6 +91,30 @@ tracks/6/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite2:hframes")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite2:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "off"
@@ -219,6 +243,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 0, 1 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -354,6 +390,13 @@ position = Vector2( 0, -32 )
 texture = ExtResource( 4 )
 hframes = 4
 frame = 1
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0.639216, 0.807843, 0.152941, 1 )
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 5
+frame = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.639216, 0.807843, 0.152941, 1 )

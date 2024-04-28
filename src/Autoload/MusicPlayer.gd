@@ -32,3 +32,12 @@ func transition() -> void:
 	)
 	tween.start()
 	play()
+
+
+func stop() -> void:
+	volume_db = linear2db(0)
+	
+
+func resume() -> void:
+	transition()
+	

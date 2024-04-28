@@ -29,7 +29,7 @@ margin_bottom = 153.0
 
 [node name="KeyMapTable" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 428.0
-margin_bottom = 248.0
+margin_bottom = 212.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -175,29 +175,6 @@ action = "fire_0"
 description = "input.fire_description"
 placeholder = "shift"
 
-[node name="FireMode" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable" index="6" instance=ExtResource( 2 )]
-margin_top = 216.0
-margin_right = 428.0
-margin_bottom = 248.0
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode/MarginContainer" index="0"]
-margin_right = 420.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode/MarginContainer/FieldContainer" index="0"]
-margin_top = 9.0
-margin_right = 204.0
-margin_bottom = 23.0
-size_flags_horizontal = 3
-text = "input.fire_mode"
-
-[node name="FireMode" parent="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
-margin_left = 208.0
-margin_right = 412.0
-margin_bottom = 32.0
-action = "fire_mode_0"
-description = "input.fire_mode_description"
-placeholder = "ctrl"
-
 [node name="KeyMapListenerDialog" parent="." index="3" instance=ExtResource( 5 )]
 
 [node name="RequiredFieldUnmapped" parent="." index="4" instance=ExtResource( 7 )]
@@ -208,4 +185,3 @@ placeholder = "ctrl"
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/MoveLeft"]
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Jump"]
 [editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/Fire"]
-[editable path="Wrapper/Page/Contents/ScrollContent/KeyMapTable/FireMode"]
