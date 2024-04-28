@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/environment/force-field-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://src/Props/ForceField.gd" type="Script" id=2]
 [ext_resource path="res://assets/audio/force_field/702771__matrixxx__force-field-01.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/upgrade/cards.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -220,6 +221,113 @@ tracks/3/keys = {
 "values": [ 1 ]
 }
 
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CardSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CardSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CardSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.611765 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CardSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CardSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.27451 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "on"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CardSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 2 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CardSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ), Vector2( 0, -36 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CardSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.27451 ), Color( 1, 1, 1, 0.611765 ) ]
+}
+
 [sub_resource type="CircleShape2D" id=5]
 radius = 76.0
 
@@ -234,6 +342,18 @@ autoplay = "on"
 anims/RESET = SubResource( 1 )
 anims/off = SubResource( 3 )
 anims/on = SubResource( 2 )
+
+[node name="CardAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/off = SubResource( 8 )
+anims/on = SubResource( 7 )
+
+[node name="CardSprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 0, -32 )
+texture = ExtResource( 4 )
+hframes = 4
+frame = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.639216, 0.807843, 0.152941, 1 )
