@@ -13,6 +13,7 @@ onready var falling_timer = $FallingTimer
 onready var spawn_timer = $SpawnTimer
 onready var initial_position = global_position
 onready var animation_player = $AnimationPlayer
+onready var collision_shape_2d = $CollisionShape2D
 
 
 func _ready():
@@ -47,4 +48,3 @@ func _on_spawn_timeout() -> void:
 func _on_falling_timeout() -> void:
 	animation_player.play("transition")
 	spawn_timer.start()
-

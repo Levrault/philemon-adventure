@@ -2,6 +2,7 @@ extends Node
 
 onready var in_game_screen_page := owner.get_node("InGameScreenPage")
 
+var blocked_levels := [LevelManager.Level.MAIN_MENU, LevelManager.Level.INTRO, LevelManager.Level.ENDING, LevelManager.Level.GAME_OVER]
 
 func _ready() -> void:
 	yield(owner, "ready")
@@ -10,7 +11,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("pause_0") and not get_tree().paused and LevelManager.current_level_id != LevelManager.Level.MAIN_MENU and LevelManager.current_level_id != LevelManager.Level.INTRO:
+	if event.is_action_pressed("pause_0") and not get_tree().paused and not blocked_levels.has(LevelManager.current_level_id):
 		pause()
 
 

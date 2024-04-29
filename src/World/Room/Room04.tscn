@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/World/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Platform/FallingPlatform.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://src/Portal/SpawnPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Props/Ladder.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/environment/middle_alt.png" type="Texture" id=6]
-[ext_resource path="res://src/Enemies/Crab/Crab.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Enemies/Lizard/Lizard.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Portal/Portal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Props/ForceField.tscn" type="PackedScene" id=12]
@@ -140,16 +139,12 @@ position = Vector2( 152, -424 )
 type = 2
 
 [node name="Lizard2" parent="Enemies" index="0" instance=ExtResource( 10 )]
-position = Vector2( 48, -400 )
-look_direction = -1
+position = Vector2( -152, -592 )
 
-[node name="Crab" parent="Enemies" index="1" instance=ExtResource( 7 )]
-position = Vector2( -64, -592 )
-
-[node name="Slime" parent="Enemies" index="2" instance=ExtResource( 15 )]
+[node name="Slime" parent="Enemies" index="1" instance=ExtResource( 15 )]
 position = Vector2( -16, -480 )
 
-[node name="Slime2" parent="Enemies" index="3" instance=ExtResource( 15 )]
+[node name="Slime2" parent="Enemies" index="2" instance=ExtResource( 15 )]
 position = Vector2( 40, -128 )
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 11 )]

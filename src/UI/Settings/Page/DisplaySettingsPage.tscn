@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/UI/Settings/Updater/WindowModeUpdater.gd" type="Script" id=1]
-[ext_resource path="res://src/UI/Settings/Updater/VSyncUpdater.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/Settings/Updater/CRTUpdater.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/Settings/Updater/ScreenResolutionUpdater.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Settings/Dialog/ConfirmFieldValueDialog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/Settings/Fields/FieldSet.tscn" type="PackedScene" id=5]
@@ -76,31 +76,31 @@ placeholder = "english"
 [node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer/FieldContainer/Locale" index="1"]
 script = ExtResource( 10 )
 
-[node name="VSync" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="1" instance=ExtResource( 5 )]
+[node name="UseCrt" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="1" instance=ExtResource( 5 )]
 margin_top = 36.0
 margin_right = 435.0
 margin_bottom = 68.0
 
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer" index="0"]
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/UseCrt/MarginContainer" index="0"]
 margin_right = 427.0
 
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer" index="0"]
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/UseCrt/MarginContainer/FieldContainer" index="0"]
 margin_top = 10.0
-margin_right = 104.0
+margin_right = 88.0
 margin_bottom = 22.0
-text = "display.vsync"
+text = "display.crt"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Vsync" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer" index="1" instance=ExtResource( 7 )]
-margin_left = 108.0
+[node name="UseCrt" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/UseCrt/MarginContainer/FieldContainer" index="1" instance=ExtResource( 7 )]
+margin_left = 92.0
 margin_right = 419.0
 margin_bottom = 32.0
-key = "use_vsync"
-description = "display.vsync_description"
+key = "use_crt"
+description = "display.crt_description"
 
-[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer/Vsync" index="1"]
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/UseCrt/MarginContainer/FieldContainer/UseCrt" index="1"]
 script = ExtResource( 2 )
 
 [node name="WindowMode" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]
@@ -189,6 +189,6 @@ field_path = NodePath("../Wrapper/Page/Contents/ScrollContent/MarginContainer/VB
 field_path = NodePath("../Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer/ScreenResolution")
 
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale"]
-[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/UseCrt"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution"]

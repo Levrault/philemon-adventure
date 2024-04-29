@@ -18,6 +18,10 @@ signal cinematic_text_displayed(text)
 signal config_file_saved
 signal config_file_loaded
 
+# crt
+signal crt_enabled
+signal crt_disabled
+
 #engine
 signal engine_time_scale_changed(value)
 
