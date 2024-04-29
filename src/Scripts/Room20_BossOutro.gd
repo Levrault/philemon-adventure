@@ -33,3 +33,4 @@ func _on_Boss_explosed() -> void:
 	Global.add_child_to_root(card_upgrade, position_2d.global_position)
 	Events.emit_signal("cinematic_transition_ended")
 	Events.emit_signal("player_input_enabled")
+	MusicPlayer.change_track("ending")

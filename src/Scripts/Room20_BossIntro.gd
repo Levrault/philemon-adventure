@@ -31,6 +31,7 @@ func _on_Trigger_zone_body_entered(body: Node) -> void:
 	Events.connect("cinematic_animation_finished", self, "_on_Cinematic_animation_finished")
 	Events.emit_signal("cinematic_transition_started")
 	trigger_zone.queue_free()
+	MusicPlayer.change_track("boss")
 
 
 func _on_Cinematic_animation_finished() -> void:

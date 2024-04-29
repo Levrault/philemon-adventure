@@ -7,7 +7,7 @@ ingame.curbedbeam_unlocked,"Curved beam has been unlocked it","Tbt:ingame.curved
 ingame.lvl_1_unlocked,"Green Card has been taken. You can pass through all the green force field","Carte verte récupérée. Tu peux maintenant traverser tous les champs de force vert"
 ingame.lvl_2_unlocked,"Blue Card has been taken. You can pass through all the blue force field","Carte bleue récupérée. Tu peux maintenant traverser tous les champs de force bleu"
 ingame.lvl_3_unlocked,"Red Card has been taken. You can pass through all the red force field","Carte rouge récupérée. Tu peux maintenant traverser tous les champs de force rouge"
-ingame.lvl_4_unlocked,"Black Card has been taken. You can pass through all the black force field","Carte noire récupérée. Tu peux maintenant traverser tous les champs de force noir"
+ingame.lvl_4_unlocked,"Pink Card has been taken. You can pass through all the black force field","Carte rose récupérée. Tu peux maintenant traverser tous les champs de force rose"
 ingame.save_data,"Save data?","Sauvegarder les données?"
 ingame.save_data_completed,"Save completed","Sauvegarde complétée"
 ingame.boss,"Defeat the Cacodeamon","Bat le Cacodeamon"

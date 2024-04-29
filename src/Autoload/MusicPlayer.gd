@@ -3,10 +3,13 @@ extends AudioStreamPlayer
 const TRANSITION_DURATION := 1.5
 
 var playlist := {
-	"theme": "res://assets/audio/music/SuperGrottoEscape.ogg",
+	"theme": "res://assets/audio/music/DOS-88 - City Stomper.mp3",
+	"menu": "res://assets/audio/music/Crash Landing.mp3",
+	"boss": "res://assets/audio/music/Race to Mars.mp3",
+	"ending": "res://assets/audio/music/DOS-88 - Far away.mp3",
 }
 
-var current: String = "mall"
+var current: String = ""
 
 onready var tween := $Tween
 
@@ -19,7 +22,7 @@ func change_track(new_music: String) -> void:
 	print_debug("track %s has been changed to %s" % [current, new_music])
 	if new_music == current and playing:
 		return
-	stop()
+	mute()
 	volume_db = linear2db(0)
 	current = new_music
 	stream = load(playlist[current])
@@ -34,8 +37,9 @@ func transition() -> void:
 	play()
 
 
-func stop() -> void:
+func mute() -> void:
 	volume_db = linear2db(0)
+	tween.stop_all()
 	
 
 func resume() -> void:
