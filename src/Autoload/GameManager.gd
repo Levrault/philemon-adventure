@@ -80,6 +80,14 @@ func _ready() -> void:
 func unlock_progression() -> void:
 	print("-- Player unlock progression --")
 	var data = Serialize.get_current_profile()
+	ability_upgrades_status[ability_keys[Ability.JUMP]] = false
+	beam_upgrades_status[beam_keys[BeamType.BEAM]] = false
+	beam_upgrades_status[beam_keys[BeamType.HYPERBEAM]] = false
+	card_upgrades_status[card_keys[Card.LVL_1]] = false
+	card_upgrades_status[card_keys[Card.LVL_2]] = false
+	card_upgrades_status[card_keys[Card.LVL_3]] = false
+	card_upgrades_status[card_keys[Card.LVL_4]] = false
+	
 	if data.ability.jump:
 		print("Player has unlocked jump ability")
 		ability_upgrades_status[ability_keys[Ability.JUMP]] = true

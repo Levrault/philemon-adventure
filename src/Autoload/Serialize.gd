@@ -135,3 +135,11 @@ func erase_profile(profile_name: String) -> void:
 
 func get_current_profile() -> Dictionary:
 	return profiles[current_profile]
+
+
+func reload() -> void:
+	var profile_file = File.new()
+	profile_file.open(SAVE_PATH % current_profile, File.READ)
+	profiles[current_profile] = sync(
+		current_profile, parse_json(profile_file.get_line()), template.duplicate(true)
+	)

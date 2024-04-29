@@ -14,6 +14,8 @@ func _ready() -> void:
 func _unhandled_input(event):
 	if event.is_action_pressed("jump_0"):
 		Events.emit_signal("scene_fadeout_transition_displayed", LevelTransition.Transition.THEATRAL)
+		Serialize.reload()
+		GameManager.unlock_progression()
 		LevelManager.current_level_id = LevelManager.Level.keys().find(Serialize.get_current_profile().progression.last_saveroom)
 		return
 	if event.is_action_pressed("ui_cancel"):
