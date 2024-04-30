@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/theme/main_menu.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/Commons/AtlasIcon/AtlasIcon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/World/Room/Ending.gd" type="Script" id=3]
+[ext_resource path="res://assets/theme/joystick_18.tres" type="DynamicFont" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -79,6 +80,22 @@ root_node = NodePath("../../..")
 anims/RESET = SubResource( 1 )
 anims/show = SubResource( 2 )
 
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+anchor_left = 0.533
+anchor_right = 0.533
+margin_left = -255.84
+margin_top = 32.0
+margin_right = 224.16
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 4 )
+text = "ingame.ending_title"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -90,32 +107,62 @@ margin_right = 198.0
 margin_bottom = 64.0
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 25.0
+margin_right = 396.0
+margin_bottom = 37.0
+size_flags_vertical = 6
+text = "ingame.ending_description_1"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 91.0
+margin_right = 396.0
+margin_bottom = 103.0
+size_flags_vertical = 6
+text = "ingame.ending_description_2"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -198.0
+margin_top = 65.0
+margin_right = 198.0
+margin_bottom = 81.0
+alignment = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/VBoxContainer2"]
 margin_right = 396.0
 margin_bottom = 12.0
-text = "ingame.ending_title"
-align = 1
-valign = 1
-autowrap = true
-
-[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
-margin_top = 58.0
-margin_right = 396.0
-margin_bottom = 70.0
-size_flags_vertical = 6
-text = "ingame.ending_description"
-align = 1
-valign = 1
-autowrap = true
-
-[node name="Label3" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
-margin_top = 116.0
-margin_right = 396.0
-margin_bottom = 128.0
 text = "ingame.intro_author"
 align = 2
 valign = 1
 autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control/VBoxContainer2"]
+margin_top = 16.0
+margin_right = 396.0
+margin_bottom = 28.0
+text = "xoxoxo"
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
