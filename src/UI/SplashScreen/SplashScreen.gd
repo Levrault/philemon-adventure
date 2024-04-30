@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			set_process_unhandled_input(false)
 			finished()
 			return
-		Events.emit_signal("menu_transition_started", "fade")
+		Events.emit_signal("menu_transition_started")
 		animation_player.play(animations_list[current_animation_index])
 
 

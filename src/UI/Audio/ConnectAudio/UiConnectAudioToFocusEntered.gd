@@ -31,7 +31,7 @@ func _on_Menu_transition_finished() -> void:
 	_should_trigger_audio = true
 
 
-func _on_Menu_transition_started(anim_name: String) -> void:
+func _on_Menu_transition_started() -> void:
 	_should_trigger_audio = false
 
 
