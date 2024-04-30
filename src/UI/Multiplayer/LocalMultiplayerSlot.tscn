@@ -78,7 +78,7 @@ align = 1
 
 [node name="PlayerSkin" parent="MarginContainer/Content/LockedContent" instance=ExtResource( 4 )]
 unique_name_in_owner = true
-position = Vector2( 44, 116 )
+position = Vector2( 44, 133 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="SlotCanBeQuitContainer" type="VBoxContainer" parent="MarginContainer/Content/LockedContent"]

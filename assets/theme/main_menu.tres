@@ -175,6 +175,7 @@ OptionButton/styles/focus = SubResource( 12 )
 OptionButton/styles/hover = SubResource( 13 )
 OptionButton/styles/normal = SubResource( 14 )
 OptionButton/styles/pressed = SubResource( 15 )
+PanelContainer/styles/panel = ExtResource( 3 )
 PopupMenu/colors/font_color_hover = Color( 0.984314, 0.94902, 0.211765, 1 )
 PopupMenu/constants/vseparation = 8
 PopupMenu/icons/radio_checked = ExtResource( 16 )
