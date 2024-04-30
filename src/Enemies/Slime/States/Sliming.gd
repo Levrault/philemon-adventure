@@ -9,7 +9,7 @@ func unhandled_input(event: InputEvent) -> void:
 
 
 func physics_process(delta: float) -> void:
-	if owner.ray_cast_wall.is_colliding():
+	if owner.ray_cast_wall.is_colliding() and not owner.ray_cast_wall.get_collider() is Player:
 		owner.global_position = owner.ray_cast_wall.get_collision_point()
 		var normal = owner.ray_cast_wall.get_collision_normal()
 		owner.rotation = normal.rotated(deg2rad(90)).angle()
@@ -17,7 +17,7 @@ func physics_process(delta: float) -> void:
 	
 	owner.ray_cast_floor.rotation_degrees =- max_speed * 10 * owner.look_direction * delta
 
-	if owner.ray_cast_floor.is_colliding():
+	if owner.ray_cast_floor.is_colliding() and not owner.ray_cast_wall.get_collider() is Player:
 		owner.global_position = owner.ray_cast_floor.get_collision_point()
 		var normal = owner.ray_cast_floor.get_collision_normal()
 		owner.rotation = normal.rotated(deg2rad(90)).angle()

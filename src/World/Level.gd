@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	if LevelManager.last_look_direction_of_player != 0:
 		player.flip(LevelManager.last_look_direction_of_player)
-	
+		
 	if not get_tree().get_nodes_in_group("save_station").empty():
 		if GameManager.player_status == GameManager.PlayerStatus.alive:
 			return

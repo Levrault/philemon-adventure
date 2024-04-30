@@ -23,7 +23,7 @@ position = Vector2( 0, -10.5 )
 shape = SubResource( 1 )
 
 [node name="Stats" parent="." index="1"]
-max_health = 40.0
+max_health = 40
 
 [node name="Skin" parent="." index="2" instance=ExtResource( 3 )]
 position = Vector2( 0, -16 )
