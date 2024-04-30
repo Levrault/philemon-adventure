@@ -2,7 +2,7 @@
 extends Node2D
 
 export var autostart := false
-export var autoplay_track := "theme"
+export var autoplay_track := "menu"
 export var delay := 0.0
 
 

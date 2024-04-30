@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 func hit_flash() -> void:
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite.get_material(), "shader_param/active", true, .15)
 	tween.tween_property(sprite.get_material(), "shader_param/active", false, .15)
 

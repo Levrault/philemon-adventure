@@ -6,7 +6,6 @@ var skin_texture_id = GameMode.PlayerSkin.BLUE
 
 
 func _ready() -> void:
-	Events.connect("coop_player_removed", self, "_on_Coop_player_removed")
 	set_process_input(false)
 
 

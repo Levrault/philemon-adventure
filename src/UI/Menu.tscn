@@ -31,7 +31,6 @@ theme = ExtResource( 12 )
 script = ExtResource( 3 )
 
 [node name="MusicController" parent="." instance=ExtResource( 22 )]
-autoplay_track = "menu"
 delay = 0.5
 
 [node name="ColorBackground" type="ColorRect" parent="."]

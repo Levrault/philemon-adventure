@@ -104,7 +104,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "ending"
-length = 2.0
+length = 8.0
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect3:visible")
@@ -125,10 +125,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.0823529, 0.0666667, 0.137255, 0 ), Color( 0.0823529, 0.0666667, 0.137255, 0 ), Color( 0.0823529, 0.0666667, 0.137255, 0.333333 ), Color( 0.0823529, 0.0666667, 0.137255, 0.333333 ), Color( 0.0823529, 0.0666667, 0.137255, 0.666667 ), Color( 0.0823529, 0.0666667, 0.137255, 0.666667 ), Color( 0.0823529, 0.0666667, 0.137255, 1 ) ]
+"values": [ Color( 0.0823529, 0.0666667, 0.137255, 0 ), Color( 0.0823529, 0.0666667, 0.137255, 0 ), Color( 0.0823529, 0.0666667, 0.137255, 1 ) ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -287,7 +287,6 @@ color = Color( 0.0823529, 0.0666667, 0.137255, 0 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 margin_top = -40.0
-margin_right = 480.0
 rect_min_size = Vector2( 480, 40 )
 color = Color( 0, 0, 0, 1 )
 
@@ -295,9 +294,7 @@ color = Color( 0, 0, 0, 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 270.0
-margin_right = 480.0
-margin_bottom = 310.0
+margin_bottom = 40.0
 rect_min_size = Vector2( 480, 40 )
 color = Color( 0, 0, 0, 1 )
 

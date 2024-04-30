@@ -110,6 +110,7 @@ signal data_saved
 # player
 signal player_input_disabled
 signal player_input_enabled
+signal player_run_cpu
 signal player_max_health_changed(value)
 signal player_health_changed(value)
 signal player_moved(player)

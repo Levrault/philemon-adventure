@@ -47,6 +47,7 @@ func _ready() -> void:
 	Events.connect("player_teleported_to", self, "_on_Player_teleported_to")
 	Events.connect("player_input_disabled", self, "set_is_handling_input", [false])
 	Events.connect("player_input_enabled", self, "set_is_handling_input", [true])
+	Events.connect("player_run_cpu", self, "_on_Player_run_cpu")
 	Events.connect("save_data_started", self, "_on_Save_data_started")
 	Events.connect("player_state_changed_to", self, "_on_Player_state_changed_to")
 	Events.connect("coop_player_added", self, "_on_Coop_player_added")
@@ -113,6 +114,10 @@ func set_is_handling_input(value: bool) -> void:
 	state_machine.set_process_unhandled_input(value)
 	beam_state_machine.set_process_unhandled_input(value)
 	is_handling_input = value
+
+
+func _on_Player_run_cpu() -> void:
+	state_machine.transition_to("RunCPU")
 
 
 func has_charged_beam(beam_type: int) -> bool:

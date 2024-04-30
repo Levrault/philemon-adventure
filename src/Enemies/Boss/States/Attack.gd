@@ -14,7 +14,7 @@ func physics_process(delta: float) -> void:
 		Events.emit_signal("camera_shake")
 		_state_machine.transition_to("RecoverAttack")
 		return
-	velocity = Vector2(0, max_speed)
+	velocity = Vector2(0, max_speed * owner.speed_multiplier)
 	velocity = owner.move_and_slide(velocity)
 
 

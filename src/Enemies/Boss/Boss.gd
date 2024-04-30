@@ -17,7 +17,7 @@ var targets = []
 var target: Position2D 
 var target_index := 0
 var going_right = true
-
+var speed_multiplier := 1.0
 
 onready var stats: Stats = $Stats as Stats
 onready var state_machine: StateMachine = $StateMachine
@@ -41,6 +41,14 @@ func active() -> void:
 
 func take_damage(source: Hit) -> void:
 	stats.take_damage(source)
+	
+	if stats.health < 400 and stats.health > 250:
+		speed_multiplier = 1.25
+	elif stats.health < 250 and stats.health > 150:
+		speed_multiplier = 1.5
+	elif stats.health < 150:
+		speed_multiplier = 2
+	
 	if stats.health > 0 and not source.is_instakill:
 		skin.hit_flash()
 		return

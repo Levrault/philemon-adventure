@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/theme/player_hud.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/InGame/UpgradeMessage.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/Commons/AtlasIcon/AtlasIcon.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/audio/jingles/victory-fanfare-light-wills-ever-no-drums.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -78,18 +77,6 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("AudioStreamPlayer:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -170,7 +157,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "show"
-length = 9.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("MessageContainer/Message:visible")
 tracks/0/interp = 1
@@ -214,7 +201,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 3.5 ),
+"times": PoolRealArray( 0, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -226,7 +213,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 3.5, 4.2 ),
+"times": PoolRealArray( 4, 4.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -238,24 +225,12 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 4.2 ),
+"times": PoolRealArray( 4.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ true ],
 "method": "set_process_unhandled_input"
 } ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("AudioStreamPlayer:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
 }
 
 [node name="UpgradeMessage" type="Control"]
@@ -314,7 +289,3 @@ margin_top = 24.0
 margin_right = -24.0
 margin_bottom = 40.0
 action = "jump_0"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-bus = "Music"

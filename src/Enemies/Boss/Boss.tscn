@@ -32,7 +32,7 @@ resource = ExtResource( 14 )
 shape = SubResource( 6 )
 
 [node name="Stats" parent="." instance=ExtResource( 11 )]
-max_health = 500.0
+max_health = 600.0
 
 [node name="Skin" parent="." instance=ExtResource( 1 )]
 

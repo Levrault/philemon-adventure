@@ -26,7 +26,7 @@ func physics_process(delta: float) -> void:
 	var target_global_position :Vector2 = owner.target.global_position
 	var direction = owner.global_position.direction_to(target_global_position)
 
-	var desiredvelocity = direction * max_speed
+	var desiredvelocity = direction * (max_speed * owner.speed_multiplier)
 	var steering = (desiredvelocity - velocity) * delta * 4.0
 	velocity += steering
 	velocity = owner.move_and_slide(velocity)
