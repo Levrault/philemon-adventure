@@ -13,8 +13,8 @@
 
 [node name="ColorBackground" parent="Backgrounds" index="0"]
 margin_left = -332.0
-margin_top = -169.0
-margin_right = 1026.0
+margin_top = -175.0
+margin_right = 1180.0
 margin_bottom = 188.0
 
 [node name="Back2" parent="Backgrounds" index="1" instance=ExtResource( 3 )]

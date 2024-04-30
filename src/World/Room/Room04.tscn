@@ -140,6 +140,7 @@ type = 2
 
 [node name="Lizard2" parent="Enemies" index="0" instance=ExtResource( 10 )]
 position = Vector2( -152, -592 )
+iteration_before_attack = 3
 
 [node name="Slime" parent="Enemies" index="1" instance=ExtResource( 15 )]
 position = Vector2( -16, -480 )
