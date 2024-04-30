@@ -104,6 +104,7 @@ look_direction = -1
 
 [node name="CardUpgrade" parent="Upgrades" index="0" instance=ExtResource( 2 )]
 position = Vector2( 520, -16 )
+type = 2
 
 [node name="Portal" parent="Portals" index="0" instance=ExtResource( 9 )]
 position = Vector2( -208, 40 )

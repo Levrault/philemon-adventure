@@ -211,7 +211,7 @@ anims/transition = SubResource( 5 )
 next/transition = "inactive"
 
 [node name="FallingTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 one_shot = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
