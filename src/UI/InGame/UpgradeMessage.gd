@@ -50,5 +50,7 @@ func _on_Animation_finished(anim_name: String) -> void:
 	hide()
 	if should_change_track:
 		MusicPlayer.change_track("theme")
+	else:
+		MusicPlayer.mute()
 
 

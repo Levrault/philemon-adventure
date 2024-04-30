@@ -19,7 +19,8 @@ func _ready() -> void:
 
 
 func _on_Boss_defeated() -> void:
-	Events.connect("cinematic_animation_finished", self, "_on_Cinematic_animation_finished")
+	if not Events.is_connected("cinematic_animation_finished", self, "_on_Cinematic_animation_finished"):
+		Events.connect("cinematic_animation_finished", self, "_on_Cinematic_animation_finished")
 
 
 func _on_Timeout() -> void:

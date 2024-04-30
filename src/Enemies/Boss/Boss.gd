@@ -33,6 +33,7 @@ func _ready() -> void:
 	targets = [left_attack_position, middle_attack_position, right_attack_position]
 	target = left_attack_position
 	flip(look_direction)
+	$Skin.modulate = Color("ffffff")
 
 
 func active() -> void:
@@ -44,14 +45,18 @@ func take_damage(source: Hit) -> void:
 	
 	if stats.health < 400 and stats.health > 250:
 		speed_multiplier = 1.25
+		$Skin.modulate = Color("ffa2a2")
 	elif stats.health < 250 and stats.health > 150:
 		speed_multiplier = 1.5
+		$Skin.modulate = Color("ff8383")
 	elif stats.health < 150:
+		$Skin.modulate = Color("ff3d3d")
 		speed_multiplier = 2
 	
 	if stats.health > 0 and not source.is_instakill:
 		skin.hit_flash()
 		return
+	$Skin.modulate = Color("ffffff")
 	state_machine.transition_to("Die")
 
 

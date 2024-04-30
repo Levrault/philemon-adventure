@@ -139,7 +139,7 @@ anims/sequence_01 = SubResource( 3 )
 script = ExtResource( 7 )
 
 [node name="Position2D" type="Position2D" parent="Props/BossOutro" index="0"]
-position = Vector2( 104, 85 )
+position = Vector2( 82, 45 )
 
 [node name="DebugBoss" type="Node2D" parent="Props" index="4"]
 script = ExtResource( 8 )
