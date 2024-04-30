@@ -17,15 +17,16 @@ func _ready():
 func _on_Area_spawn_top_entered(body: Node) -> void:
 	if not body is Player:
 		return
+	print_debug("Ascensor Script - Player Spawn Top area detected")
 	area_top.connect("body_entered", self, "_on_Area_top_body_entered")
 	area_spawn_top.set_deferred("monitoring", false)
 	area_spawn_bottom.set_deferred("monitoring", false)
 
 
 func _on_Area_spawn_bottom_entered(body: Node) -> void:
-	print("_on_Area_spawn_bottom_entered")
 	if not body is Player:
 		return
+	print_debug("Ascensor Script - Player Spawn Bottom area detected")
 	area_bottom.connect("body_entered", self, "_on_Area_bottom_body_entered")
 	for platform in platforms:
 		get_node(platform).position = get_node(platform).get_parent().points[1]
@@ -56,6 +57,7 @@ func _on_Area_bottom_body_entered(body: Node) -> void:
 func _on_Area_bottom_stop_body_entered(body: Node) -> void:
 	if not body is Player:
 		return
+	print_debug("Ascensor Script - Player bottom area detected")
 	Events.connect("cinematic_animation_finished", self, "_on_Ascensor_stopped")
 	Events.emit_signal("cinematic_transition_ended")
 	body.is_handling_input = true
@@ -66,6 +68,7 @@ func _on_Area_bottom_stop_body_entered(body: Node) -> void:
 func _on_Area_top_stop_body_entered(body: Node) -> void:
 	if not body is Player:
 		return
+	print_debug("Ascensor Script - Player top area detected")
 	Events.connect("cinematic_animation_finished", self, "_on_Ascensor_stopped")
 	Events.emit_signal("cinematic_transition_ended")
 	body.is_handling_input = true

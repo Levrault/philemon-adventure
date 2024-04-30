@@ -22,8 +22,6 @@ extends Node
 
 const DEFAULT_KEYBOARD := "qwerty"
 const ENGINE_FILE_PATH := "res://engine/engine.cfg"
-const ENGINE_FILE_PATH_OSX := "res://engine/engine_override_osx.cfg"
-const ENGINE_FILE_PATH_X11 := "res://engine/engine_override_x11.cfg"
 const KEYBOARD_FILE_PATH := "res://engine/keyboard.cfg"
 const KEYBOARD_UI_FILE_PATH := "res://engine/keyboard_ui.cfg"
 const GAMEPAD_FILE_PATH := "res://engine/gamepad.cfg"
@@ -61,21 +59,14 @@ var gamepad := {}
 # readable keylist
 var keylist := {}
 
-
 func _init() -> void:
 	_read_engine_file()
-
-	if OS.get_name() == "OSX":
-		_override_engine_file(ENGINE_FILE_PATH_OSX)
-	elif OS.get_name() == "X11":
-		_override_engine_file(ENGINE_FILE_PATH_X11)
 	_read_keylist_file()
 	_read_keyboard_file()
 	_read_gamepad_file()
 	_read_keyboard_ui_file()
 
 	default = get_default()
-
 
 # return the option list for a specific field (Section > Key) of engine.cfg
 func get_option(section: String, key: String, value: String) -> Dictionary:
@@ -87,7 +78,6 @@ func get_option(section: String, key: String, value: String) -> Dictionary:
 
 	return result
 
-
 # return properties for a specific field (Section > Key) of engine.cfg
 func get_properties(section: String, key: String, value: String) -> Dictionary:
 	var result := {}
@@ -97,7 +87,6 @@ func get_properties(section: String, key: String, value: String) -> Dictionary:
 		result = properties
 
 	return result
-
 
 # return all default value of every fields of engine.cfg
 func get_default() -> Dictionary:
@@ -111,7 +100,6 @@ func get_default() -> Dictionary:
 	result["gamepad_bindind"] = get_gamepad_layout()
 	return result
 
-
 func get_keyboard_or_mouse_key_from_keyboard_variant() -> Dictionary:
 	print_debug("The keyboard is a %s" % OS.get_latin_keyboard_variant())
 	var keyboard_scheme := {}
@@ -120,7 +108,6 @@ func get_keyboard_or_mouse_key_from_keyboard_variant() -> Dictionary:
 	else:
 		keyboard_scheme = keyboard[DEFAULT_KEYBOARD].duplicate()
 	return keyboard_scheme
-
 
 # return the corresponding event of keylist.cfg
 func get_keyboard_or_mouse_key_from_scancode(scancode: int) -> String:
@@ -133,16 +120,14 @@ func get_keyboard_or_mouse_key_from_scancode(scancode: int) -> String:
 			return key
 	return ""
 
-
 func get_gamepad_layout() -> Dictionary:
 	var result := {}
 	for section in gamepad:
 		result[section] = gamepad[section]["default"]
 	return result
 
-
 # return the matching event of keylist.cfg based on the joy_string and gamepad type
-func get_gamepad_button_from_joy_string(value: int, joy_string := "", type := "") -> String:
+func get_gamepad_button_from_joy_string(value: int, joy_string:="", type:="") -> String:
 	var device = InputManager.gamepad_button_regex[type]
 	var result := ""
 	for key in keylist.gamepad:
@@ -158,11 +143,9 @@ func get_gamepad_button_from_joy_string(value: int, joy_string := "", type := ""
 			result = key
 	return result
 
-
 # return the mouse translation key
 func get_mouse_button_string(key: String) -> String:
 	return MOUSE_INDEX_TO_STRING[key]
-
 
 func get_icon_atals_map() -> Dictionary:
 	var atlas_map := {}
@@ -182,7 +165,6 @@ func get_icon_atals_map() -> Dictionary:
 
 	return atlas_map
 
-
 func _read_engine_file() -> void:
 	var engine_file := ConfigFile.new()
 	var err = engine_file.load(ENGINE_FILE_PATH)
@@ -197,25 +179,6 @@ func _read_engine_file() -> void:
 		data[section] = {}
 		for key in engine_file.get_section_keys(section):
 			data[section][key] = engine_file.get_value(section, key)
-
-
-func _override_engine_file(file_path: String) -> void:
-	var file := ConfigFile.new()
-	var err = file.load(file_path)
-	if err == ERR_FILE_NOT_FOUND:
-		printerr("%s has not been found" % file_path)
-		return
-	if err != OK:
-		print_debug("%s has encounter an error: %s" % [file_path, err])
-		return
-
-	for section in file.get_sections():
-		for key in file.get_section_keys(section):
-			if not data.has(section):
-				printerr("%s > %s section doesn't exist in engine.cfg" % [file_path, section])
-				continue
-			data[section][key] = file.get_value(section, key)
-
 
 func _read_keylist_file() -> void:
 	var keylist_file := ConfigFile.new()
@@ -232,7 +195,6 @@ func _read_keylist_file() -> void:
 		for key in keylist_file.get_section_keys(section):
 			keylist[section][key] = keylist_file.get_value(section, key)
 
-
 func _read_keyboard_file() -> void:
 	var keyboard_file := ConfigFile.new()
 	var err = keyboard_file.load(KEYBOARD_FILE_PATH)
@@ -248,7 +210,6 @@ func _read_keyboard_file() -> void:
 		for key in keyboard_file.get_section_keys(section):
 			keyboard[section][key] = keyboard_file.get_value(section, key)
 
-
 func _read_gamepad_file() -> void:
 	var gamepad_file := ConfigFile.new()
 	var err = gamepad_file.load(GAMEPAD_FILE_PATH)
@@ -263,7 +224,6 @@ func _read_gamepad_file() -> void:
 		gamepad[section] = {}
 		for key in gamepad_file.get_section_keys(section):
 			gamepad[section][key] = gamepad_file.get_value(section, key)
-
 
 func _read_keyboard_ui_file() -> void:
 	if OS.get_latin_keyboard_variant().to_lower() == DEFAULT_KEYBOARD:

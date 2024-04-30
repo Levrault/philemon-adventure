@@ -8,6 +8,9 @@ export(GameManager.Card) var type := GameManager.Card.LVL_1 setget set_type
 
 
 func _ready() -> void:
+	if Engine.editor_hint:
+		return
+	
 	connect("body_entered", self, "_on_Body_entered")
 	if GameManager.is_card_upgrade_status_unlocked(type):
 		queue_free()

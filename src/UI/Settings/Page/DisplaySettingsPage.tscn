@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/UI/Settings/Updater/WindowModeUpdater.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Settings/Updater/CRTUpdater.gd" type="Script" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://src/UI/Settings/SettingsPageTemplate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UI/Settings/Fields/CheckboxField.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/Settings/Fields/DropDownField.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/UI/Settings/Filter/ResolutionFilter.gd" type="Script" id=9]
 [ext_resource path="res://src/UI/Settings/Updater/LocaleUpdater.gd" type="Script" id=10]
 [ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/theme/main_menu.tres" type="Theme" id=12]
@@ -124,7 +123,7 @@ margin_right = 419.0
 margin_bottom = 26.0
 key = "window_mode"
 description = "display.window_mode_description"
-placeholder = "borderless"
+placeholder = "fullscreen"
 
 [node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode/MarginContainer/FieldContainer/WindowMode" index="1"]
 script = ExtResource( 1 )
@@ -158,9 +157,6 @@ placeholder = "1920x1080 (16:9)"
 [node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer/ScreenResolution" index="1"]
 script = ExtResource( 3 )
 confirmation_dialog_path = NodePath("../../../../../../../../../../../ConfirmFieldValueDialogScreenResolution")
-
-[node name="Filter" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer/ScreenResolution" index="6"]
-script = ExtResource( 9 )
 
 [node name="HSeparator" parent="Wrapper/Page" index="2"]
 margin_top = 158.0

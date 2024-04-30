@@ -11,7 +11,7 @@ func physics_process(delta: float) -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
-	tween = get_tree().create_tween().set_loops()
+	tween = create_tween().set_loops()
 	owner.skin.play("idle")
 	tween.tween_property(owner, "position", (owner.position + Vector2(0, 2)), 1)
 	tween.tween_property(owner, "position", (owner.position + Vector2(0, -2)), 1)
