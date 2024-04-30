@@ -12,21 +12,18 @@ func _ready() -> void:
 	if GameManager.is_card_upgrade_status_unlocked(type):
 		queue_free()
 
-
 func set_type(p_type: int) -> void:
 	type = p_type
 	if type == GameManager.Card.LVL_1:
 		$Sprite.frame = 1
-		return
 	if type == GameManager.Card.LVL_2:
 		$Sprite.frame = 3
-		return
 	if type == GameManager.Card.LVL_3:
 		$Sprite.frame = 2
-		return
 	if type == GameManager.Card.LVL_4:
 		$Sprite.frame = 0
-		return
+	if not Engine.editor_hint:
+		$AnimationPlayer.play("floating")
 
 
 func _on_Body_entered(body: Node) -> void:

@@ -38,7 +38,6 @@ flip_h = true
 
 [node name="CardUpgrade" parent="Props" index="3" instance=ExtResource( 6 )]
 position = Vector2( -168, -80 )
-type = 0
 
 [node name="ForceField" parent="Props" index="4" instance=ExtResource( 5 )]
 position = Vector2( -200, 32 )
