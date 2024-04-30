@@ -5,7 +5,6 @@ onready var spawns := get_node("Spawns")
 func _ready() -> void:
 	if MusicPlayer.current != "theme":
 		MusicPlayer.change_track("theme")
-
 	
 	var player := get_node("Player") as Player
 	

@@ -146,8 +146,4 @@ func get_device_icon_texture_fallback(for_device: String) -> AtlasTexture:
 
 func _set_device(value: String) -> void:
 	device = value
-
-	if device == DEVICE_KEYBOARD or device == DEVICE_MOUSE:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		return
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

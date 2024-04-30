@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/UI/InGame/UpgradeMessage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/InGame/LevelTransition.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/UI/InGame/InGameMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/InGame/Cinematic.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UI/CRT.gd" type="Script" id=9]
+[ext_resource path="res://src/Main.gd" type="Script" id=10]
 [ext_resource path="res://src/UI/InGame/CoopLeavePopupMessage.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Shader" id=1]
@@ -101,21 +102,22 @@ void fragment() {
 shader = SubResource( 1 )
 shader_param/screen_size = Vector2( 480, 270 )
 shader_param/show_curvature = true
-shader_param/curvature_x_amount = 7.0
-shader_param/curvature_y_amount = 5.0
+shader_param/curvature_x_amount = 6.0
+shader_param/curvature_y_amount = 4.0
 shader_param/corner_color = Color( 0, 0, 0, 1 )
 shader_param/show_vignette = true
 shader_param/vignette_opacity = 0.05
 shader_param/show_horizontal_scan_lines = true
 shader_param/horizontal_scan_lines_amount = 180.0
-shader_param/horizontal_scan_lines_opacity = 0.25
+shader_param/horizontal_scan_lines_opacity = 0.15
 shader_param/show_vertical_scan_lines = true
 shader_param/vertical_scan_lines_amount = 320.0
-shader_param/vertical_scan_lines_opacity = 0.25
-shader_param/boost = 1.4
+shader_param/vertical_scan_lines_opacity = 0.15
+shader_param/boost = 1.2
 shader_param/aberration_amount = 0.0
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -134,7 +136,6 @@ pause_mode = 2
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 script = ExtResource( 9 )
 
 [node name="ColorRect" type="ColorRect" parent="CRT"]
