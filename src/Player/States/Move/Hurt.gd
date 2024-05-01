@@ -29,7 +29,7 @@ func physics_process(delta: float) -> void:
 
 func enter(msg: Dictionary = {}) -> void:
 	owner.skin.play("hurt")
-	owner.hitbox.set_collision_mask_bit(GameManager.LAYER.DAMAGE_SOURCE_LAYER, false)
+	owner.hitbox.set_collision_mask_bit(GameManager.LAYER.DAMAGE_SOURCE_PLAYER_LAYER, false)
 	owner.is_snapped_to_floor = false
 	owner.is_handling_input = false
 	owner.momentum.start()
@@ -43,7 +43,7 @@ func enter(msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
-	owner.hitbox.set_collision_mask_bit(GameManager.LAYER.DAMAGE_SOURCE_LAYER, true)
+	owner.hitbox.set_collision_mask_bit(GameManager.LAYER.DAMAGE_SOURCE_PLAYER_LAYER, true)
 	owner.is_handling_input = true
 	owner.is_snapped_to_floor = true
 	owner.stats.set_invulnerable_for_seconds(INVULNERABLE_TIME)

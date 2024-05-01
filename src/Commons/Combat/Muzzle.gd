@@ -21,6 +21,9 @@ func shoot(res: ProjectileResourceBase) -> void:
 		timer.start()
 	
 	var instance = res.scene.instance()
+	
 	Global.add_child_to_root(instance, global_position)
+	if not GameManager.friendly_fire and owner is Player:
+		instance.disable_friendly_fire()
 	instance.init(res)
 	instance.direction = owner.look_direction

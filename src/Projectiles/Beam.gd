@@ -25,6 +25,10 @@ func init(res: ProjectileResourceBase) -> void:
 	damage_source.is_instakill = res.is_instakill
 
 
+func disable_friendly_fire():
+	damage_source.set_collision_layer_bit(GameManager.LAYER.DAMAGE_SOURCE_PLAYER_LAYER, false)
+
+
 func _process(delta: float) -> void:
 	position.x += (speed * direction) * delta
 	if direction == -1:

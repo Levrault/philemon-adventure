@@ -26,7 +26,7 @@ const LAYER = {
 	"WORLD": 0,
 	"PLAYER": 1,
 	"MOVING_PLATFORM" : 3,
-	"DAMAGE_SOURCE_LAYER" : 4,
+	"DAMAGE_SOURCE_PLAYER_LAYER" : 6,
 	"LADDER_ONE_WAY_PLATFORM_LAYER" : 5
 }
 
@@ -48,6 +48,7 @@ var card_upgrades_status = {
 	Card.keys()[Card.LVL_4]: false,
 }
 
+var friendly_fire: bool = false
 var player_health := 99
 var beam_keys := BeamType.keys()
 var ability_keys := Ability.keys()
